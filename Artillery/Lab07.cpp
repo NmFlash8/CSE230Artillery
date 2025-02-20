@@ -17,6 +17,11 @@
 #include "ground.h"     // for GROUND
 #include "position.h"   // for POSITION
 #include <cmath>        // for sin() and cos()
+
+#ifndef M_PI_2
+#define M_PI_2 1.57079632679 // pi/2 radians = 90 degrees
+#endif
+
 using namespace std;
 
 /*************************************************************************
@@ -30,7 +35,7 @@ public:
       ptUpperRight(ptUpperRight),
       ground(ptUpperRight),
       time(0.0),
-      angle(0.0),
+      angle(M_PI_2),
       velocityX(0.0),
       velocityY(0.0),
       isFired(false)  // New: Tracks if the projectile has been fired
@@ -143,7 +148,7 @@ void callBack(const Interface* pUI, void* p)
    pDemo->ground.draw(gout);
 
    // draw the howitzer
-   gout.drawHowitzer(pDemo->ptHowitzer, pDemo->angle, pDemo->time);
+   gout.drawHowitzer(pDemo->ptHowitzer, pDemo->angle - M_PI_2, pDemo->time);
 
    // draw the projectile
    if (pDemo->isFired)  // Updated: Only draw if in motion
