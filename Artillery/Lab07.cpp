@@ -111,14 +111,14 @@ void callBack(const Interface* pUI, void* p)
    // Updated: Apply projectile motion
    if (pDemo->isFired)
    {
-      double gravity = -9.81; // Gravity in m/s²
-      double dt = 0.5;        // Time step in seconds
+      double gravity = -9.8; // Gravity in m/s²
+      double dt = 0.5;       // Time step in seconds
 
-      // Update projectile position using velocity
+      // Update projectile position using kinematic equations
       pDemo->projectilePath[0].addMetersX(pDemo->velocityX * dt);
-      pDemo->projectilePath[0].addMetersY(pDemo->velocityY * dt);
+      pDemo->projectilePath[0].addMetersY(pDemo->velocityY * dt + 0.5 * gravity * dt * dt);
 
-      // Apply gravity to Y velocity
+      // Apply gravity to Y velocity after position update
       pDemo->velocityY += gravity * dt;
 
       // Check if projectile hits the ground

@@ -42,8 +42,7 @@
               "RelativeToolTip": "position.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-20T03:37:02.85Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-20T03:37:02.85Z"
             },
             {
               "$type": "Document",
@@ -55,8 +54,7 @@
               "RelativeToolTip": "ground.cpp",
               "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-20T03:30:31.133Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-20T03:30:31.133Z"
             },
             {
               "$type": "Document",
@@ -68,8 +66,7 @@
               "RelativeToolTip": "test.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-20T03:24:21.319Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-20T03:24:21.319Z"
             },
             {
               "$type": "Document",
@@ -81,8 +78,7 @@
               "RelativeToolTip": "position.cpp",
               "ViewState": "AgIAABQAAAAAAAAAAAAgwB8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-20T03:24:06.386Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-20T03:24:06.386Z"
             },
             {
               "$type": "Document",
@@ -90,9 +86,9 @@
               "Title": "Lab07.cpp",
               "DocumentMoniker": "C:\\Users\\diego\\OneDrive\\Desktop\\BYUI\\Winter Semester 2025\\Encapsulation Design\\CSE230Artillery\\Artillery\\Lab07.cpp",
               "RelativeDocumentMoniker": "Lab07.cpp",
-              "ToolTip": "C:\\Users\\diego\\OneDrive\\Desktop\\BYUI\\Winter Semester 2025\\Encapsulation Design\\CSE230Artillery\\Artillery\\Lab07.cpp*",
-              "RelativeToolTip": "Lab07.cpp*",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAgwLoAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\diego\\OneDrive\\Desktop\\BYUI\\Winter Semester 2025\\Encapsulation Design\\CSE230Artillery\\Artillery\\Lab07.cpp",
+              "RelativeToolTip": "Lab07.cpp",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAGwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-20T03:22:19.934Z",
               "EditorCaption": ""
