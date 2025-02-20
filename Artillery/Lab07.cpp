@@ -126,6 +126,11 @@ void callBack(const Interface* pUI, void* p)
       {
          pDemo->isFired = false;  // Stop the projectile when it lands
       }
+      // Check if the projectile is in the air longer than 20 units of time
+      if (pDemo->time >= 20) 
+      {
+         pDemo->isFired = false;
+      }
    }
 
    //
