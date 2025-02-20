@@ -99,7 +99,7 @@ void callBack(const Interface* pUI, void* p)
 
       // Set the initial velocity based on the howitzer's angle
       double speed = 827.0; // Muzzle velocity (m/s)
-      pDemo->velocityX = speed * cos(pDemo->angle);
+      pDemo->velocityX = -speed * cos(pDemo->angle);
       pDemo->velocityY = speed * sin(pDemo->angle);
 
       // Start the projectile at the howitzer's location
