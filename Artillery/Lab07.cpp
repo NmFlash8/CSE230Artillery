@@ -16,6 +16,7 @@
 #include "uiDraw.h"     // for RANDOM and DRAW*
 #include "ground.h"     // for GROUND
 #include "position.h"   // for POSITION
+#include <cmath>        // for sin() and cos()
 using namespace std;
 
 /*************************************************************************
@@ -25,11 +26,14 @@ using namespace std;
 class Demo
 {
 public:
-   Demo(const Position & ptUpperRight) :
+   Demo(const Position& ptUpperRight) :
       ptUpperRight(ptUpperRight),
       ground(ptUpperRight),
       time(0.0),
-      angle(0.0)
+      angle(0.0),
+      velocityX(0.0),
+      velocityY(0.0),
+      isFired(false)  // New: Tracks if the projectile has been fired
    {
       // Set the horizontal position of the howitzer. This should be random.
       // See uiDraw.h which has random() defined.
@@ -38,22 +42,19 @@ public:
       // Generate the ground and set the vertical position of the howitzer.
       ground.reset(ptHowitzer);
 
-      // This is to make the bullet travel across the screen. Notice how there are 
-      // 20 pixels, each with a different age. This gives the appearance
-      // of a trail that fades off in the distance.
-      for (int i = 0; i < 20; i++)
-      {
-         projectilePath[i].setPixelsX((double)i * 2.0);
-         projectilePath[i].setPixelsY(ptUpperRight.getPixelsY() / 1.5);
-      }
+      // This initializes the projectile at the howitzer's location
+      projectilePath[0] = ptHowitzer;
    }
 
    Ground ground;                 // the ground, described in ground.h
-   Position  projectilePath[20];  // path of the projectile, described in position.h
-   Position  ptHowitzer;          // location of the howitzer
-   Position  ptUpperRight;        // size of the screen
-   double angle;                  // angle of the howitzer, in radians 
-   double time;                   // amount of time since the last firing, in seconds
+   Position projectilePath[1];     // Updated: Only need one position for the projectile
+   Position ptHowitzer;            // location of the howitzer
+   Position ptUpperRight;          // size of the screen
+   double angle;                   // angle of the howitzer, in radians 
+   double time;                    // amount of time since the last firing, in seconds
+   double velocityX;               // New: X component of projectile velocity
+   double velocityY;               // New: Y component of projectile velocity
+   bool isFired;                   // New: Tracks whether the projectile is currently in motion
 };
 
 /*************************************
@@ -86,8 +87,19 @@ void callBack(const Interface* pUI, void* p)
       pDemo->angle += (pDemo->angle >= 0 ? 0.003 : -0.003);
 
    // fire that gun
-   if (pUI->isSpace())
+   if (pUI->isSpace() && !pDemo->isFired)  // Updated: Only fire if not already in motion
+   {
+      pDemo->isFired = true;
       pDemo->time = 0.0;
+
+      // Set the initial velocity based on the howitzer's angle
+      double speed = 827.0; // Muzzle velocity (m/s)
+      pDemo->velocityX = speed * cos(pDemo->angle);
+      pDemo->velocityY = speed * sin(pDemo->angle);
+
+      // Start the projectile at the howitzer's location
+      pDemo->projectilePath[0] = pDemo->ptHowitzer;
+   }
 
    //
    // perform all the game logic
@@ -96,15 +108,24 @@ void callBack(const Interface* pUI, void* p)
    // advance time by half a second.
    pDemo->time += 0.5;
 
-   // move the projectile across the screen
-   for (int i = 0; i < 20; i++)
+   // Updated: Apply projectile motion
+   if (pDemo->isFired)
    {
-      // this bullet is moving left at 1 pixel per frame
-      double x = pDemo->projectilePath[i].getPixelsX();
-      x -= 1.0;
-      if (x < 0)
-         x = pDemo->ptUpperRight.getPixelsX();
-      pDemo->projectilePath[i].setPixelsX(x);
+      double gravity = -9.81; // Gravity in m/s²
+      double dt = 0.5;        // Time step in seconds
+
+      // Update projectile position using velocity
+      pDemo->projectilePath[0].addMetersX(pDemo->velocityX * dt);
+      pDemo->projectilePath[0].addMetersY(pDemo->velocityY * dt);
+
+      // Apply gravity to Y velocity
+      pDemo->velocityY += gravity * dt;
+
+      // Check if projectile hits the ground
+      if (pDemo->projectilePath[0].getMetersY() <= pDemo->ground.getElevationMeters(pDemo->projectilePath[0]))
+      {
+         pDemo->isFired = false;  // Stop the projectile when it lands
+      }
    }
 
    //
@@ -120,14 +141,14 @@ void callBack(const Interface* pUI, void* p)
    gout.drawHowitzer(pDemo->ptHowitzer, pDemo->angle, pDemo->time);
 
    // draw the projectile
-   for (int i = 0; i < 20; i++)
-      gout.drawProjectile(pDemo->projectilePath[i], 0.5 * (double)i);
+   if (pDemo->isFired)  // Updated: Only draw if in motion
+      gout.drawProjectile(pDemo->projectilePath[0], 1.0);
 
    // draw some text on the screen
    gout.setf(ios::fixed | ios::showpoint);
    gout.precision(1);
    gout << "Time since the bullet was fired: "
-        << pDemo->time << "s\n";
+      << pDemo->time << "s\n";
 }
 
 double Position::metersFromPixels = 40.0;
@@ -160,7 +181,6 @@ int main(int argc, char** argv)
 
    // set everything into action
    ui.run(callBack, &demo);
-
 
    return 0;
 }
