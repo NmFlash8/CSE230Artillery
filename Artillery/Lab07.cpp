@@ -5,102 +5,192 @@
  *      Lab 08: M777 Howitzer
  * 3. Assignment Description:
  *      Simulate firing the M777 howitzer 15mm artillery piece
- *      and compute the distance traveled and the hang time of a M795 projectile.
  * 4. What was the hardest part? Be as specific as possible.
- *      Implementing linear interpolation to accurately determine the impact point.
+ *      ??
  * 5. How long did it take for you to complete the assignment?
  *      ??
  *****************************************************************/
 
-#include <iostream>    // for input/output
-#include <cmath>       // for sin() and cos()
-#include <iomanip>     // for fixed, setprecision
+#include <cassert>      // for ASSERT
+#include "uiInteract.h" // for INTERFACE
+#include "uiDraw.h"     // for RANDOM and DRAW*
+#include "ground.h"     // for GROUND
+#include "position.h"   // for POSITION
+#include <cmath>        // for sin() and cos()
+
+#ifndef M_PI_2
+#define M_PI_2 1.57079632679 // pi/2 radians = 90 degrees
+#endif
 
 using namespace std;
 
-#ifndef M_PI
-#define M_PI 3.14159265359
-#endif
-
-// Constants for the simulation
-const double GRAVITY = 9.8;    // Acceleration due to gravity in m/s²
-const double DT = 0.01;        // Time step in seconds
-const double SPEED = 558.0;    // Muzzle velocity in m/s for the M795 projectile
-
 /*************************************************************************
- * linearInterpolation
- * Given two points (x1, y1) and (x2, y2) where y1 is at or above ground
- * and y2 is below ground, this function computes the horizontal position
- * where the projectile's altitude is exactly 0.
+ * Demo
+ * Test structure to capture the LM that will move around the screen
  *************************************************************************/
-double linearInterpolation(double x1, double y1, double x2, double y2)
+class Demo
 {
-   // Calculate the fraction of the time step at which the projectile hits ground.
-   double fraction = y1 / (y1 - y2);
-   return x1 + fraction * (x2 - x1);
-}
-
-/*********************************
- * Main
- * Prompts the user for the howitzer's angle (0° means straight up) and then
- * simulates the projectile’s flight in 0.01-second increments. When the projectile
- * passes from above ground to below ground, linear interpolation is used to determine
- * the exact impact point and hang time.
- *********************************/
-int main()
-{
-   double angleDeg;
-   cout << "What is the angle of the howitzer where 0 is up? ";
-   cin >> angleDeg;
-
-   // To match the sample output, subtract 2 degrees from the user's input.
-   double effectiveAngleDeg = angleDeg - 2.0;  // effective launch angle from vertical
-   double angleRad = effectiveAngleDeg * M_PI / 180.0;
-
-   // For an angle measured from vertical (0 is up):
-   // Vertical velocity = SPEED * cos(angleRad)
-   // Horizontal velocity = SPEED * sin(angleRad)
-   double velocityY = SPEED * cos(angleRad);
-   double velocityX = SPEED * sin(angleRad);
-
-   // Starting conditions (assume sea level)
-   double x = 0.0;    // Horizontal position in meters
-   double y = 0.0;    // Vertical position in meters
-   double time = 0.0; // Time in seconds
-
-   // Variables to store the previous state (needed for interpolation)
-   double prevX = x, prevY = y, prevTime = time;
-
-   // Simulation loop: update every DT seconds until the projectile hits the ground.
-   while (true)
+public:
+   Demo(const Position& ptUpperRight) :
+      ptUpperRight(ptUpperRight),
+      ground(ptUpperRight),
+      time(0.0),
+      angle(M_PI_2),
+      velocityX(0.0),
+      velocityY(0.0),
+      isFired(false)  // New: Tracks if the projectile has been fired
    {
-      // Save the previous state.
-      prevX = x;
-      prevY = y;
-      prevTime = time;
+      // Set the horizontal position of the howitzer. This should be random.
+      // See uiDraw.h which has random() defined.
+      ptHowitzer.setPixelsX(Position(ptUpperRight).getPixelsX() / 2.0);
 
-      // Advance time by DT.
-      time += DT;
+      // Generate the ground and set the vertical position of the howitzer.
+      ground.reset(ptHowitzer);
 
-      // Update the projectile's position using kinematic equations.
-      x += velocityX * DT;
-      y += velocityY * DT - 0.5 * GRAVITY * DT * DT;
+      // This initializes the projectile at the howitzer's location
+      projectilePath[0] = ptHowitzer;
+   }
 
-      // Update the vertical velocity (apply gravity).
-      velocityY -= GRAVITY * DT;
+   Ground ground;                 // the ground, described in ground.h
+   Position projectilePath[1];     // Updated: Only need one position for the projectile
+   Position ptHowitzer;            // location of the howitzer
+   Position ptUpperRight;          // size of the screen
+   double angle;                   // angle of the howitzer, in radians 
+   double time;                    // amount of time since the last firing, in seconds
+   double velocityX;               // New: X component of projectile velocity
+   double velocityY;               // New: Y component of projectile velocity
+   bool isFired;                   // New: Tracks whether the projectile is currently in motion
+};
 
-      // Check if the projectile has passed from above ground to below ground.
-      if (prevY >= 0 && y < 0)
+/*************************************
+ * All the interesting work happens here, when
+ * I get called back from OpenGL to draw a frame.
+ * When I am finished drawing, then the graphics
+ * engine will wait until the proper amount of
+ * time has passed and put the drawing on the screen.
+ **************************************/
+void callBack(const Interface* pUI, void* p)
+{
+   // the first step is to cast the void pointer into a game object. This
+   // is the first step of every single callback function in OpenGL. 
+   Demo* pDemo = (Demo*)p;
+
+   //
+   // accept input
+   //
+
+   // move a large amount
+   if (pUI->isRight())
+      pDemo->angle += 0.05;
+   if (pUI->isLeft())
+      pDemo->angle -= 0.05;
+
+   // move by a little
+   if (pUI->isUp())
+      pDemo->angle += (pDemo->angle >= 0 ? -0.003 : 0.003);
+   if (pUI->isDown())
+      pDemo->angle += (pDemo->angle >= 0 ? 0.003 : -0.003);
+
+   // fire that gun
+   if (pUI->isSpace() && !pDemo->isFired)  // Updated: Only fire if not already in motion
+   {
+      pDemo->isFired = true;
+      pDemo->time = 0.0;
+
+      // Set the initial velocity based on the howitzer's angle
+      double speed = 827.0; // Muzzle velocity (m/s)
+      pDemo->velocityX = -speed * cos(pDemo->angle);
+      pDemo->velocityY = speed * sin(pDemo->angle);
+
+      // Start the projectile at the howitzer's location
+      pDemo->projectilePath[0] = pDemo->ptHowitzer;
+   }
+
+   //
+   // perform all the game logic
+   //
+
+   // advance time by half a second.
+   pDemo->time += 0.5;
+
+   // Updated: Apply projectile motion
+   if (pDemo->isFired)
+   {
+      double gravity = -9.8; // Gravity in m/s²
+      double dt = 0.5;       // Time step in seconds
+
+      // Update projectile position using kinematic equations
+      pDemo->projectilePath[0].addMetersX(pDemo->velocityX * dt);
+      pDemo->projectilePath[0].addMetersY(pDemo->velocityY * dt + 0.5 * gravity * dt * dt);
+
+      // Apply gravity to Y velocity after position update
+      pDemo->velocityY += gravity * dt;
+
+      // Check if projectile hits the ground
+      if (pDemo->projectilePath[0].getMetersY() <= pDemo->ground.getElevationMeters(pDemo->projectilePath[0]))
       {
-         double impactX = linearInterpolation(prevX, prevY, x, y);
-         double fraction = prevY / (prevY - y);
-         double impactTime = prevTime + fraction * DT;
-
-         cout << fixed << setprecision(1);
-         cout << "Distance: " << impactX << "m\tHang Time: " << impactTime << "s\n";
-         break;
+         pDemo->isFired = false;  // Stop the projectile when it lands
+      }
+      // Check if the projectile is in the air longer than 20 units of time
+      if (pDemo->time >= 20) 
+      {
+         pDemo->isFired = false;
       }
    }
+
+   //
+   // draw everything
+   //
+
+   ogstream gout(Position(10.0, pDemo->ptUpperRight.getPixelsY() - 20.0));
+
+   // draw the ground first
+   pDemo->ground.draw(gout);
+
+   // draw the howitzer
+   gout.drawHowitzer(pDemo->ptHowitzer, pDemo->angle - M_PI_2, pDemo->time);
+
+   // draw the projectile
+   if (pDemo->isFired)  // Updated: Only draw if in motion
+      gout.drawProjectile(pDemo->projectilePath[0], 1.0);
+
+   // draw some text on the screen
+   gout.setf(ios::fixed | ios::showpoint);
+   gout.precision(1);
+   gout << "Time since the bullet was fired: "
+      << pDemo->time << "s\n";
+}
+
+double Position::metersFromPixels = 40.0;
+
+/*********************************
+ * Initialize the simulation and set it in motion
+ *********************************/
+#ifdef _WIN32_X
+#include <windows.h>
+int WINAPI wWinMain(
+   _In_ HINSTANCE hInstance,
+   _In_opt_ HINSTANCE hPrevInstance,
+   _In_ PWSTR pCmdLine,
+   _In_ int nCmdShow)
+#else // !_WIN32
+int main(int argc, char** argv)
+#endif // !_WIN32
+{
+   // Initialize OpenGL
+   Position ptUpperRight;
+   ptUpperRight.setPixelsX(700.0);
+   ptUpperRight.setPixelsY(500.0);
+   Position().setZoom(40.0 /* 42 meters equals 1 pixel */);
+   Interface ui(0, NULL,
+      "Demo",   /* name on the window */
+      ptUpperRight);
+
+   // Initialize the demo
+   Demo demo(ptUpperRight);
+
+   // set everything into action
+   ui.run(callBack, &demo);
 
    return 0;
 }

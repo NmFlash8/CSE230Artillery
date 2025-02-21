@@ -8,6 +8,7 @@
  *    or the location on the field.
  ************************************************************************/
 
+
 #pragma once
 
 #include <iostream> 
@@ -75,6 +76,7 @@ inline double computeDistance(const Position& pos1, const Position& pos2)
 // stream I/O useful for debugging
 std::ostream& operator << (std::ostream& out, const Position& pt);
 std::istream& operator >> (std::istream& in, Position& pt);
+
 
 /*********************************************
  * PT

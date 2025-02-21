@@ -42,9 +42,9 @@ std::ostream& operator << (std::ostream& out, const Position& pt)
 }
 
 /*******************************************
- * POSITION extraction
- *       Prompt for coordinates
- *******************************************/
+* POSITION extraction
+*       Prompt for coordinates
+******************************************/
 std::istream& operator >> (std::istream& in, Position& pt)
 {
    double x;
@@ -56,6 +56,3 @@ std::istream& operator >> (std::istream& in, Position& pt)
 
    return in;
 }
-
-// Definition of the static member variable.
-double Position::metersFromPixels = 40.0;
