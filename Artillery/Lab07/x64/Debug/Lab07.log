@@ -1,2 +1,11 @@
-﻿  Lab07.cpp
-  Lab07.vcxproj -> C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\CSE230Artillery\Artillery\x64\Debug\Lab07.exe
+﻿  ground.cpp
+  Lab07.cpp
+  position.cpp
+  prototype.cpp
+  test.cpp
+  uiDraw.cpp
+  uiInteract.cpp
+  Generating Code...
+  LINK : C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\Artillery\x64\Debug\Lab07.exe not found or not built by the last incremental link; performing full link
+prototype.obj : error LNK2005: main already defined in Lab07.obj
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\Artillery\x64\Debug\Lab07.exe : fatal error LNK1169: one or more multiply defined symbols found
