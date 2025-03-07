@@ -12,6 +12,9 @@
 
 #include "angle.h"
 #include "unitTest.h"
+#include <iostream>
+
+using namespace std;
 
 /*******************************
  * TEST ANGLE
@@ -648,6 +651,7 @@ private:
       double dx = -99.9;
       // exercise
       dx = a.getDx();
+
       // verify
       assertEquals(dx, 0.5);
       assertEquals(a.radians, M_PI / 6.0);

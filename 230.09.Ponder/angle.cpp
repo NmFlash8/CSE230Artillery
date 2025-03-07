@@ -148,7 +148,7 @@ Angle& Angle::add(double delta)
  ********************************************/
 double Angle::getDx() const
 {
-   return cos(radians);
+   return sin(radians);
 }
 
 /******************************************
@@ -156,7 +156,7 @@ double Angle::getDx() const
  ******************************************/
 double Angle::getDy() const
 {
-   return sin(radians);
+   return cos(radians);
 }
 
 /***********************************************

@@ -1,8 +1,2 @@
-﻿  acceleration.cpp
-  angle.cpp
-  main.cpp
-  position.cpp
-  test.cpp
-  velocity.cpp
-  Generating Code...
+﻿  angle.cpp
   Lab09.vcxproj -> C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.09.Ponder\x64\Debug\Lab09.exe

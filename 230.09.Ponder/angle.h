@@ -16,7 +16,6 @@ class TestPosition;
 class TestVelocity;
 class TestAcceleration;
 class TestAngle;
-class TestLander;
 
 /************************************
  * ANGLE
@@ -27,7 +26,6 @@ public:
    friend TestAcceleration;
    friend TestVelocity;
    friend TestAngle;
-   friend TestLander;
 
    // Constructors
    Angle();                                        // Default constructor
@@ -37,10 +35,10 @@ public:
    // Getters
    double getDegrees() const;                      // Get the angle in degrees
    double getRadians() const;                      // Get the angle in radians
-   double getDx() const;                           // Get horizontal component
-   double getDy() const;                           // Get vertical component
-   bool isRight() const;                           // Check if angle is right side
-   bool isLeft() const;                            // Check if angle is left side
+   double getDx()      const;                      // Get horizontal component
+   double getDy()      const;                      // Get vertical component
+   bool   isRight()    const;                      // Check if angle is right side
+   bool   isLeft()     const;                      // Check if angle is left side
 
    // Setters
    void setDegrees(double degrees);                // Set using degrees
