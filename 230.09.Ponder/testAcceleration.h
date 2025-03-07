@@ -316,16 +316,19 @@ private:
     *****************************************************************
     *****************************************************************/
 
-   /*********************************************
-    * name:    ADD DDX ZERO
-    * input:   a=(2.3, 4.5) ddx=0.0
-    * output:  a=(2.3, 4.5)
-    *********************************************/
+    /*********************************************
+     * name:    ADD DDX ZERO
+     * input:   a=(2.3, 4.5) ddx=0.0
+     * output:  a=(2.3, 4.5)
+     *********************************************/
    void addDDX_zero()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration a(2.3, 4.5);
+      a.addDDX(0.0);
+      assertEquals(a.getDDX(), 2.3);
+      assertEquals(a.getDDY(), 4.5);
    }
-   
+
    /*********************************************
     * name:    ADD DDX 4.1
     * input:   a=(2.3, 4.5) ddx=4.1
@@ -333,7 +336,10 @@ private:
     *********************************************/
    void addDDX_value()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration a(2.3, 4.5);
+      a.addDDX(4.1);
+      assertEquals(a.getDDX(), 6.4);
+      assertEquals(a.getDDY(), 4.5);
    }
 
    /*********************************************
@@ -343,7 +349,10 @@ private:
     *********************************************/
    void addDDY_zero()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration a(2.3, 4.5);
+      a.addDDY(0.0);
+      assertEquals(a.getDDX(), 2.3);
+      assertEquals(a.getDDY(), 4.5);
    }
 
    /*********************************************
@@ -353,7 +362,10 @@ private:
     *********************************************/
    void addDDY_value()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration a(2.3, 4.5);
+      a.addDDY(4.1);
+      assertEquals(a.getDDX(), 2.3);
+      assertEquals(a.getDDY(), 8.6);
    }
 
    /*********************************************
@@ -363,7 +375,12 @@ private:
     *********************************************/
    void add_zeroZero()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration aLHS(0.0, 0.0);
+      Acceleration aRHS(0.0, 0.0);
+      aLHS.addDDX(aRHS.getDDX());
+      aLHS.addDDY(aRHS.getDDY());
+      assertEquals(aLHS.getDDX(), 0.0);
+      assertEquals(aLHS.getDDY(), 0.0);
    }
 
    /*********************************************
@@ -373,7 +390,12 @@ private:
     *********************************************/
    void add_valueZero()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration aLHS(1.1, 2.2);
+      Acceleration aRHS(0.0, 0.0);
+      aLHS.addDDX(aRHS.getDDX());
+      aLHS.addDDY(aRHS.getDDY());
+      assertEquals(aLHS.getDDX(), 1.1);
+      assertEquals(aLHS.getDDY(), 2.2);
    }
 
    /*********************************************
@@ -383,7 +405,12 @@ private:
     *********************************************/
    void add_zeroValue()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration aLHS(0.0, 0.0);
+      Acceleration aRHS(4.4, 7.7);
+      aLHS.addDDX(aRHS.getDDX());
+      aLHS.addDDY(aRHS.getDDY());
+      assertEquals(aLHS.getDDX(), 4.4);
+      assertEquals(aLHS.getDDY(), 7.7);
    }
 
    /*********************************************
@@ -393,7 +420,14 @@ private:
     *********************************************/
    void add_valueValue()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration aLHS(1.1, 2.2);
+      Acceleration aRHS(4.4, 7.7);
+      aLHS.addDDX(aRHS.getDDX());
+      aLHS.addDDY(aRHS.getDDY());
+      assertEquals(aLHS.getDDX(), 5.5);
+      assertEquals(aLHS.getDDY(), 9.9);
    }
+
+
 
 };
