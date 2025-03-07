@@ -11,11 +11,9 @@
 
 #include "unitTest.h"
 #include "velocity.h"
+#include "acceleration.h"
+#include "angle.h"
 
-/*********************************************
- * TEST VELOCITY
- * Unit tests for Velocity
- *********************************************/
 class TestVelocity : public UnitTest
 {
 public:
@@ -68,13 +66,12 @@ private:
     * CONSTRUCTOR
     *****************************************************************
     *****************************************************************/
-   
-   
-   /*********************************************
-    * name:    DEFAULT CONSTRUCTOR
-    * input:   nothing
-    * output:  zero
-    *********************************************/
+
+    /*********************************************
+     * name:    DEFAULT CONSTRUCTOR
+     * input:   nothing
+     * output:  zero
+     *********************************************/
    void constructor_default()
    {  // setup
       // exercise
@@ -84,7 +81,7 @@ private:
       assertEquals(v.dx, 0.0);
       assertEquals(v.dy, 0.0);
    }  // teardown
-      
+
    /*********************************************
     * name:    NON DEFAULT CONSTRUCTOR
     * input:   2.3, 4.5
@@ -94,7 +91,7 @@ private:
    {  // setup
       double dx = 2.3;
       double dy = 4.5;
-      
+
       // exercise
       Velocity v(dx, dy);
 
@@ -111,11 +108,11 @@ private:
     *****************************************************************
     *****************************************************************/
 
-   /*********************************************
-    * name:    GET DX
-    * input:   (2.3, 4.5)
-    * output:  2.3
-    *********************************************/
+    /*********************************************
+     * name:    GET DX
+     * input:   (2.3, 4.5)
+     * output:  2.3
+     *********************************************/
    void getDX()
    {  // setup
       Velocity v;
@@ -152,7 +149,7 @@ private:
       assertEquals(v.dy, 4.5);
       assertEquals(dy, 4.5);
    }  // teardown
-   
+
    /*********************************************
     * name:    GET SPEED ZERO
     * input:   (0.0, 0.0)
@@ -173,7 +170,7 @@ private:
       assertEquals(v.dy, 0.0);
       assertEquals(s, 0.0);
    }  // teardown
-   
+
    /*********************************************
     * name:    GET SPEED RIGHT
     * input:   (2.3, 0.0)
@@ -215,7 +212,7 @@ private:
       assertEquals(v.dy, 4.5);
       assertEquals(s, 4.5);
    }  // teardown
-   
+
    /*********************************************
     * name:    GET SPEED LEFT
     * input:   (-2.3, 0.0)
@@ -257,7 +254,7 @@ private:
       assertEquals(v.dy, -4.5);
       assertEquals(s, 4.5);
    }  // teardown
-   
+
    /*********************************************
     * name:    GET SPEED DIAGONAL
     * input:   (3.0, -4.0)
@@ -279,18 +276,18 @@ private:
       assertEquals(v.dy, -4.0);
       assertEquals(s, 5.0);
    }  // teardown
-   
+
    /*****************************************************************
     *****************************************************************
     * SETTERS
     *****************************************************************
     *****************************************************************/
-   
-   /*********************************************
-    * name:    SET DX
-    * input:   (99.9, 88.8) setDX(-1.1)
-    * output:  (-1.1, 88.8)
-    *********************************************/
+
+    /*********************************************
+     * name:    SET DX
+     * input:   (99.9, 88.8) setDX(-1.1)
+     * output:  (-1.1, 88.8)
+     *********************************************/
    void setDX()
    {  // setup
       Velocity v;
@@ -327,7 +324,7 @@ private:
       assertEquals(v.dy, -1.1);
       assertEquals(dy, -1.1);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET UP
     * input:   (-99.9, -88.8) 0 degrees, 3.3=speed
@@ -347,11 +344,11 @@ private:
 
       // verify
       assertEquals(v.dx, 0.0);  // 0.0 = 3.3 sin(0)
-      assertEquals(v.dy, 3.3);  // 3.3 = 3.3 cos(0)
+      assertEquals(v.dy, 3.3);    // 3.3 = 3.3 cos(0)
       assertEquals(angle.radians, 0.0);
       assertEquals(magnitude, 3.3);
    }
-   
+
    /*********************************************
     * name:    SET DOWN
     * input:   (-99.9, -88.8) 180 degrees, 3.3=speed
@@ -371,7 +368,7 @@ private:
 
       // verify
       assertEquals(v.dx, 0.0);   // 0    = 3.3 sin(180)
-      assertEquals(v.dy, -3.3);  // -3.3 = 3.3 cos(180)
+      assertEquals(v.dy, -3.3);   // -3.3 = 3.3 cos(180)
       assertEquals(angle.radians, M_PI);
       assertEquals(magnitude, 3.3);
    }
@@ -399,10 +396,10 @@ private:
       assertEquals(angle.radians, M_PI_2);
       assertEquals(magnitude, 3.3);
    }
-   
+
    /*********************************************
     * name:    SET LEFT
-    * input:   (-99.9, -88.8) 270 degreess, 3.3
+    * input:   (-99.9, -88.8) 270 degrees, 3.3
     * output:  (-3.3, 0.0)
     *********************************************/
    void set_left()
@@ -419,14 +416,14 @@ private:
 
       // verify
       assertEquals(v.dx, -3.3); // -3.3 = 3.3 sin(270)
-      assertEquals(v.dy,  0.0); //  0.0 = 3.3 cos(270)
+      assertEquals(v.dy, 0.0); //  0.0 = 3.3 cos(270)
       assertEquals(angle.radians, M_PI_2 + M_PI);
       assertEquals(magnitude, 3.3);
    }
-   
+
    /*********************************************
     * name:    SET DIAGONAL
-    * input:   (-99.9, -88.8) ~57 degreess, 1.0
+    * input:   (-99.9, -88.8) ~57 degrees, 1.0
     * output:  (0.84, 0.54)
     *********************************************/
    void set_diagonal()
@@ -443,19 +440,29 @@ private:
 
       // verify
       assertEquals(v.dx, 0.8414);  // 0.8414 = 1.0 sin(57)
-      assertEquals(v.dy, 0.5403);  // 0.5403 = 1.0 cos(57)
+      assertEquals(v.dy, 0.5403);    // 0.5403 = 1.0 cos(57)
       assertEquals(angle.radians, 1.0);
       assertEquals(magnitude, 1.0);
    }
-   
-   /*********************************************
-    * name:    REVERSE STATIONARY
-    * input:   (0, 0)
-    * output:  (0, 0)
-    *********************************************/
+
+   /*****************************************************************
+    *****************************************************************
+    * REVERSE
+    *****************************************************************
+    *****************************************************************/
+
+    /*********************************************
+     * name:    REVERSE STATIONARY
+     * input:   (0, 0)
+     * output:  (0, 0)
+     *********************************************/
    void reverse_stationary()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration a(0, 0);
+      a.setDDX(-a.getDDX());
+      a.setDDY(-a.getDDY());
+      assertEquals(a.getDDX(), 0.0);
+      assertEquals(a.getDDY(), 0.0);
    }
 
    /*********************************************
@@ -465,7 +472,11 @@ private:
     *********************************************/
    void reverse_up()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration a(0, 10);
+      a.setDDX(-a.getDDX());
+      a.setDDY(-a.getDDY());
+      assertEquals(a.getDDX(), 0.0);
+      assertEquals(a.getDDY(), -10.0);
    }
 
    /*********************************************
@@ -475,7 +486,11 @@ private:
     *********************************************/
    void reverse_down()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration a(0, -12.34);
+      a.setDDX(-a.getDDX());
+      a.setDDY(-a.getDDY());
+      assertEquals(a.getDDX(), 0.0);
+      assertEquals(a.getDDY(), 12.34);
    }
 
    /*********************************************
@@ -485,7 +500,11 @@ private:
     *********************************************/
    void reverse_left()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration a(-300, 0);
+      a.setDDX(-a.getDDX());
+      a.setDDY(-a.getDDY());
+      assertEquals(a.getDDX(), 300.0);
+      assertEquals(a.getDDY(), 0.0);
    }
 
    /*********************************************
@@ -495,7 +514,11 @@ private:
     *********************************************/
    void reverse_right()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration a(0.0123, 0);
+      a.setDDX(-a.getDDX());
+      a.setDDY(-a.getDDY());
+      assertEquals(a.getDDX(), -0.0123);
+      assertEquals(a.getDDY(), 0.0);
    }
 
    /*********************************************
@@ -505,7 +528,11 @@ private:
     *********************************************/
    void reverse_diagonal()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration a(123.456, -7.89);
+      a.setDDX(-a.getDDX());
+      a.setDDY(-a.getDDY());
+      assertEquals(a.getDDX(), -123.456);
+      assertEquals(a.getDDY(), 7.89);
    }
 
    /*****************************************************************
@@ -513,12 +540,12 @@ private:
     * ADD
     *****************************************************************
     *****************************************************************/
-   
-   /*********************************************
-    * name:    ADD DX  zero
-    * input:   (2.3, 4.5) 0.0
-    * output:  (2.3, 4.5)
-    *********************************************/
+
+    /*********************************************
+     * name:    ADD DX  zero
+     * input:   (2.3, 4.5) 0.0
+     * output:  (2.3, 4.5)
+     *********************************************/
    void addDX_zero()
    {  // setup
       Velocity v;
@@ -553,7 +580,7 @@ private:
       // verify
       assertEquals(v.dx, 6.4);
       assertEquals(v.dy, 4.5);
-      assertEquals(dx,  4.1);
+      assertEquals(dx, 4.1);
    }  // teardown
 
    /*********************************************
@@ -670,7 +697,7 @@ private:
 
       // verify
       assertEquals(v.dx, 8.3);  //  8.3 = 2.3 + 6.0 x 1
-      assertEquals(v.dy, 11.5); // 11.5 = 4.5 + 7.0 x 1
+      assertEquals(v.dy, 11.5);   // 11.5 = 4.5 + 7.0 x 1
       assertEquals(a.ddx, 6.0);
       assertEquals(a.ddy, 7.0);
       assertEquals(t, 1.0);
@@ -709,7 +736,11 @@ private:
     *********************************************/
    void addV_stationary()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration vLHS(0, 0);
+      Acceleration vRHS(2.3, 4.5);
+      vLHS.add(vRHS);
+      assertEquals(vLHS.getDDX(), 2.3);
+      assertEquals(vLHS.getDDY(), 4.5);
    }
 
    /*********************************************
@@ -719,7 +750,11 @@ private:
     *********************************************/
    void addV_nothing()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration vLHS(2.3, 4.5);
+      Acceleration vRHS(0, 0);
+      vLHS.add(vRHS);
+      assertEquals(vLHS.getDDX(), 2.3);
+      assertEquals(vLHS.getDDY(), 4.5);
    }
 
    /*********************************************
@@ -729,7 +764,10 @@ private:
     *********************************************/
    void addV_moving()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Acceleration vLHS(2.3, 4.5);
+      Acceleration vRHS(100, 200);
+      vLHS.add(vRHS);
+      assertEquals(vLHS.getDDX(), 102.3);
+      assertEquals(vLHS.getDDY(), 204.5);
    }
-
 };
