@@ -37,6 +37,10 @@ public:
    // Getters
    double getDegrees() const;                      // Get the angle in degrees
    double getRadians() const;                      // Get the angle in radians
+   double getDx() const;                           // Get horizontal component
+   double getDy() const;                           // Get vertical component
+   bool isRight() const;                           // Check if angle is right side
+   bool isLeft() const;                            // Check if angle is left side
 
    // Setters
    void setDegrees(double degrees);                // Set using degrees
@@ -47,6 +51,7 @@ public:
    void setLeft();                                 // Set to 3Pi/2 radians (left)
    void reverse();                                 // Reverse the direction by Pi radians
    Angle& add(double delta);                       // Add a delta in radians
+   void setDxDy(double dx, double dy);             // Set angle based on components
 
 private:
    double normalize(double radians) const;         // Normalize radians between (0, 2Pi)

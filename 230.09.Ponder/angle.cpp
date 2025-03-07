@@ -61,7 +61,6 @@ double Angle::normalize(double radians) const
    return radians;
 }
 
-
 /***********************************
  * ANGLE : Get the angle in radians
  ***********************************/
@@ -142,4 +141,44 @@ Angle& Angle::add(double delta)
 {
    radians = normalize(radians + delta);
    return *this;
+}
+
+/********************************************
+ * ANGLE : Get the horizontal component (dx)
+ ********************************************/
+double Angle::getDx() const
+{
+   return cos(radians);
+}
+
+/******************************************
+ * ANGLE : Get the vertical component (dy)
+ ******************************************/
+double Angle::getDy() const
+{
+   return sin(radians);
+}
+
+/***********************************************
+ * ANGLE : Check if the angle is on the right
+ ***********************************************/
+bool Angle::isRight() const
+{
+   return (radians == M_PI / 2);
+}
+
+/**********************************************
+ * ANGLE : Check if the angle is on the left
+ **********************************************/
+bool Angle::isLeft() const
+{
+   return (radians == 3 * M_PI / 2);
+}
+
+/***********************************************
+ * ANGLE : Set angle based on dx and dy components
+ ***********************************************/
+void Angle::setDxDy(double dx, double dy)
+{
+   radians = normalize(atan2(dy, dx));
 }

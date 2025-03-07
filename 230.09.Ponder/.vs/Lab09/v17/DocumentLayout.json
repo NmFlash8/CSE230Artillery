@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.09.Ponder\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8D306AC8-0CB5-4AE0-9699-4A2C535C132A}|Lab09.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.09.Ponder\\angle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8D306AC8-0CB5-4AE0-9699-4A2C535C132A}|Lab09.vcxproj|solutionrelative:angle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D306AC8-0CB5-4AE0-9699-4A2C535C132A}|Lab09.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.09.Ponder\\angle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8D306AC8-0CB5-4AE0-9699-4A2C535C132A}|Lab09.vcxproj|solutionrelative:angle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "angle.cpp",
+              "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.09.Ponder\\angle.cpp",
+              "RelativeDocumentMoniker": "angle.cpp",
+              "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.09.Ponder\\angle.cpp",
+              "RelativeToolTip": "angle.cpp",
+              "ViewState": "AgIAAJcAAAAAAAAAAADwv6sAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-07T03:26:58.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "angle.h",
+              "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.09.Ponder\\angle.h",
+              "RelativeDocumentMoniker": "angle.h",
+              "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.09.Ponder\\angle.h",
+              "RelativeToolTip": "angle.h",
+              "ViewState": "AgIAABMAAAAAAAAAAADwvxEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-07T03:26:37.533Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
