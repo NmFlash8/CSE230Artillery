@@ -173,6 +173,5 @@ int main()
    cout << "Distance: "  << impact_distance << "m  ";
    cout << "Hang Time: " << impact_time     << "s  ";
    cout << endl << endl;
-
    return 0;
 }
