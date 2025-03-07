@@ -164,7 +164,8 @@ double Angle::getDy() const
  ***********************************************/
 bool Angle::isRight() const
 {
-   return (radians == M_PI / 2);
+   // In our coordinate system, the angle is considered "right" if the horizontal component is positive.
+   return (getDx() > 0);
 }
 
 /**********************************************
@@ -172,7 +173,8 @@ bool Angle::isRight() const
  **********************************************/
 bool Angle::isLeft() const
 {
-   return (radians == 3 * M_PI / 2);
+   // In our coordinate system, the angle is considered "left" if the horizontal component is negative.
+   return (getDx() < 0);
 }
 
 /***********************************************
@@ -180,5 +182,9 @@ bool Angle::isLeft() const
  ***********************************************/
 void Angle::setDxDy(double dx, double dy)
 {
-   radians = normalize(atan2(dy, dx));
+   // Standard atan2 returns an angle (theta) measured from the positive x-axis.
+   // Our system defines 0° as up, so we convert:
+   //    our angle = normalize( (pi/2) - theta )
+   double theta = atan2(dy, dx);
+   radians = normalize((M_PI / 2) - theta);
 }
