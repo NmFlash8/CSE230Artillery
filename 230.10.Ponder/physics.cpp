@@ -15,6 +15,7 @@
  * From a list of domains and ranges, linear interpolate
  *********************************************************/
  // Table-based function for calculating gravity, speed of sound, density, and drag
+/*
 double calculateFromTable(double altitude, const vector<pair<double, double>>& table)
 {
    for (size_t i = 0; i < table.size() - 1; ++i)
@@ -27,6 +28,7 @@ double calculateFromTable(double altitude, const vector<pair<double, double>>& t
    }
    return -1;  // Return -1 if no valid range is found
 }
+*/
 
 
  /*********************************************************

@@ -323,8 +323,16 @@ private:
     *********************************************/
    void addDDX_zero()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Acceleration a(2.3, 4.5);
+
+      // Exercise
+      a.addDDX(0.0);
+
+      // Verify
+      assert(a.getDDX() == 2.3);
+      assert(a.getDDY() == 4.5);
+   }  // teardown
    
    /*********************************************
     * name:    ADD DDX 4.1
@@ -333,8 +341,18 @@ private:
     *********************************************/
    void addDDX_value()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      const double TOLERANCE = 0.0001;
+
+      // Setup
+      Acceleration a(2.3, 4.5);
+
+      // Exercise
+      a.addDDX(4.1);
+
+      // Verify
+      assert(fabs(a.getDDX() - 6.4) < TOLERANCE);
+      assert(fabs(a.getDDY() - 4.5) < TOLERANCE);
+   }  // teardown
 
    /*********************************************
     * name:    ADD DDY ZERO
@@ -343,8 +361,16 @@ private:
     *********************************************/
    void addDDY_zero()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Acceleration a(2.3, 4.5);
+
+      // Exercise
+      a.addDDY(0.0);
+
+      // Verify
+      assert(a.getDDX() == 2.3);
+      assert(a.getDDY() == 4.5);
+   }  // teardown
 
    /*********************************************
     * name:    ADD DDY 4.1
@@ -353,8 +379,16 @@ private:
     *********************************************/
    void addDDY_value()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Acceleration a(2.3, 4.5);
+
+      // Exercise
+      a.addDDY(4.1);
+
+      // Verify
+      assert(a.getDDX() == 2.3);
+      assert(a.getDDY() == 8.6);
+   }  // teardown
 
    /*********************************************
     * name:    ADD NOTHING TO NOTHING
@@ -363,8 +397,17 @@ private:
     *********************************************/
    void add_zeroZero()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Acceleration aLHS(0.0, 0.0);
+      Acceleration aRHS(0.0, 0.0);
+
+      // Exercise
+      aLHS.add(aRHS);
+
+      // Verify
+      assert(aLHS.getDDX() == 0.0);
+      assert(aLHS.getDDY() == 0.0);
+   }  // teardown
 
    /*********************************************
     * name:    ADD NOTHING TO A VALUE
@@ -373,8 +416,17 @@ private:
     *********************************************/
    void add_valueZero()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Acceleration aLHS(1.1, 2.2);
+      Acceleration aRHS(0.0, 0.0);
+
+      // Exercise
+      aLHS.add(aRHS);
+
+      // Verify
+      assert(aLHS.getDDX() == 1.1);
+      assert(aLHS.getDDY() == 2.2);
+   }  // teardown
 
    /*********************************************
     * name:    ADD A VALUE TO NOTHING
@@ -383,8 +435,17 @@ private:
     *********************************************/
    void add_zeroValue()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Acceleration aLHS(0.0, 0.0);
+      Acceleration aRHS(4.4, 7.7);
+
+      // Exercise
+      aLHS.add(aRHS);
+
+      // Verify
+      assert(aLHS.getDDX() == 4.4);
+      assert(aLHS.getDDY() == 7.7);
+   }  // teardown
 
    /*********************************************
     * name:    ADD A VALUE TO ANOTHER VALUE
@@ -393,7 +454,15 @@ private:
     *********************************************/
    void add_valueValue()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Acceleration aLHS(1.1, 2.2);
+      Acceleration aRHS(4.4, 7.7);
 
+      // Exercise
+      aLHS.add(aRHS);
+
+      // Verify
+      assert(aLHS.getDDX() == 5.5);
+      assert(aLHS.getDDY() == 9.9);
+   }  // teardown
 };
