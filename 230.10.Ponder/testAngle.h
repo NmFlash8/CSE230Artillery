@@ -12,11 +12,12 @@
 
 #include "angle.h"
 #include "unitTest.h"
+#include <cassert>
 
-/*******************************
- * TEST ANGLE
- * A friend class for Angle which contains the Angle unit tests
- ********************************/
+ /*******************************
+  * TEST ANGLE
+  * A friend class for Angle which contains the Angle unit tests
+  ********************************/
 class TestAngle : public UnitTest
 {
 public:
@@ -84,11 +85,11 @@ private:
     *****************************************************************/
 
 
-   /*********************************************
-    * name:    DEFAULT CONSTRUCTOR
-    * input:   nothing
-    * output:  zero
-    *********************************************/
+    /*********************************************
+     * name:    DEFAULT CONSTRUCTOR
+     * input:   nothing
+     * output:  zero
+     *********************************************/
    void defaultConstructor()
    {  // setup
       // exercise
@@ -103,11 +104,11 @@ private:
     *****************************************************************
     *****************************************************************/
 
-   /*********************************************
-    * name:    SET UP
-    * input:   nothing
-    * output:  0 degrees
-    *********************************************/
+    /*********************************************
+     * name:    SET UP
+     * input:   nothing
+     * output:  0 degrees
+     *********************************************/
    void setUp()
    {  // setup
       Angle a;
@@ -132,7 +133,7 @@ private:
       // verify
       assertEquals(a.radians, M_PI);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET RIGHT
     * input:   nothing
@@ -147,7 +148,7 @@ private:
       // verify
       assertEquals(a.radians, M_PI_2);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET LEFT
     * input:   nothing
@@ -162,7 +163,7 @@ private:
       // verify
       assertEquals(a.radians, M_PI + M_PI_2);
    }  // teardown
-   
+
    /*********************************************
     * name:    REVERSE
     * input:   90
@@ -177,7 +178,7 @@ private:
       // verify
       assertEquals(a.radians, M_PI_2 + M_PI);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET RADIANS - NO NORMALIZATION
     * input:   45 degrees
@@ -192,7 +193,7 @@ private:
       // verify
       assertEquals(a.radians, 0.785398);
    }  // teardown
-      
+
    /*********************************************
     * name:    SET RADIANS - NEGATIVE
     * input:   -90
@@ -207,7 +208,7 @@ private:
       // verify
       assertEquals(a.radians, M_PI + M_PI_2);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET RADIANS - ONE LAP
     * input:   45 + 360 degrees
@@ -222,7 +223,7 @@ private:
       // verify
       assertEquals(a.radians, 0.785398);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET RADIANS - SIX LAP
     * input:   45 + (6 x 360) degrees
@@ -237,7 +238,7 @@ private:
       // verify
       assertEquals(a.radians, 0.785398);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET RADIANS - NEGATIVE 3/4
     * input:   -270 degrees
@@ -252,7 +253,7 @@ private:
       // verify
       assertEquals(a.radians, M_PI_2);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET RADIANS - NEGATIVE ONE LAP
     * input:   -45 - 360 degrees
@@ -267,7 +268,7 @@ private:
       // verify
       assertEquals(a.radians, 5.49779);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET RADIANS - NEGATIVE SIX LAP
     * input:   -45 - 360*6 degrees
@@ -282,7 +283,7 @@ private:
       // verify
       assertEquals(a.radians, 5.49779);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET DEGREES - NO NORMALIZATION
     * input:   45 degrees
@@ -297,7 +298,7 @@ private:
       // verify
       assertEquals(a.radians, 0.785398);
    }  // teardown
-      
+
    /*********************************************
     * name:    SET DEGREES - NEGATIVE
     * input:   -90
@@ -312,7 +313,7 @@ private:
       // verify
       assertEquals(a.radians, M_PI + M_PI_2);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET DEGREES - ONE LAP
     * input:   45 + 360 degrees
@@ -327,7 +328,7 @@ private:
       // verify
       assertEquals(a.radians, 0.785398);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET DEGREES - SIX LAP
     * input:   45 + (6 x 360) degrees
@@ -342,7 +343,7 @@ private:
       // verify
       assertEquals(a.radians, 0.785398);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET DEGREES - NEGATIVE 3/4
     * input:   -270 degrees
@@ -357,7 +358,7 @@ private:
       // verify
       assertEquals(a.radians, M_PI_2);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET DEGREES - NEGATIVE ONE LAP
     * input:   -45 - 360 degrees
@@ -372,7 +373,7 @@ private:
       // verify
       assertEquals(a.radians, 5.49779);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET DEGREES - NEGATIVE SIX LAP
     * input:   -45 - 360*6 degrees
@@ -383,36 +384,36 @@ private:
       Angle a;
       a.radians = -99.9;
       // exercise
-      a.setDegrees(-45.0 - 360.0*6.0);
+      a.setDegrees(-45.0 - 360.0 * 6.0);
       // verify
       assertEquals(a.radians, 5.49779);
    }  // teardown
-   
+
    /*****************************************************************
     *****************************************************************
     * ADD
     *****************************************************************
     *****************************************************************/
-   
-   /*********************************************
-    * name:    ADD ZERO
-    * input:   (45 degrees) 0
-    * output:  45 degrees
-    *********************************************/
+
+    /*********************************************
+     * name:    ADD ZERO
+     * input:   (45 degrees) 0
+     * output:  45 degrees
+     *********************************************/
    void add_0()
    {  // setup
       Angle a;
       a.radians = 0.785398;
       double r = 0.0;
-      
+
       // exercise
       a.add(r);
-      
+
       // verify
       assertEquals(a.radians, 0.785398);
       assertEquals(r, 0.0);
    }  // teardown
-   
+
    /*********************************************
     * name:    ADD VALUE
     * input:   (45 degrees) 180 degrees
@@ -423,7 +424,7 @@ private:
       Angle a;
       a.radians = 0.785398;
       double r = M_PI;
-      
+
       // exercise
       a.add(r);
 
@@ -431,7 +432,7 @@ private:
       assertEquals(a.radians, 0.785398 + M_PI);
       assertEquals(r, M_PI);
    }  // teardown
-   
+
    /*********************************************
     * name:    ADD POSITIVE ONE LAP
     * input:   (45 degrees) 180 + 360 degrees
@@ -442,7 +443,7 @@ private:
       Angle a;
       a.radians = 0.785398;
       double r = M_PI + M_PI * 2.0;
-      
+
       // exercise
       a.add(r);
 
@@ -450,7 +451,7 @@ private:
       assertEquals(a.radians, 0.785398 + M_PI);
       assertEquals(r, M_PI + M_PI * 2.0);
    }  // teardown
-  
+
    /*********************************************
     * name:    ADD NEGATIVE ONE LAP
     * input:   (45 degrees) -90 degrees
@@ -461,7 +462,7 @@ private:
       Angle a;
       a.radians = 0.785398;
       double r = -M_PI_2;
-      
+
       // exercise
       a.add(r);
 
@@ -469,7 +470,7 @@ private:
       assertEquals(a.radians, 5.49779);
       assertEquals(r, -M_PI_2);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET DX DY  UP
     * input:   dx=0 dy=1
@@ -477,7 +478,13 @@ private:
     *********************************************/
    void setDxDy_up()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      const double TOLERANCE = 0.0001;
+
+      // Create an angle of 0 degrees (up)
+      Angle angle(0);
+
+      // Assert that getDx() returns 0
+      assert(fabs(angle.getDx() - 0.0) < TOLERANCE);
    }
 
 
@@ -488,8 +495,18 @@ private:
     *********************************************/
    void setDxDy_right()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      const double TOLERANCE = 0.0001;
+
+      // Setup
+      Angle a;
+      double dx = 4, dy = 0;
+
+      // Exercise
+      a.setDxDy(dx, dy);
+
+      // Verify
+      assert(fabs(a.getDegrees() - 90.0) < TOLERANCE);
+   }  // Teardown
 
    /*********************************************
     * name:    SET DX DY  LEFT
@@ -498,8 +515,18 @@ private:
     *********************************************/
    void setDxDy_left()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      const double TOLERANCE = 0.0001;
+
+      // Setup
+      Angle a;
+      double dx = -0.01, dy = 0;
+
+      // Exercise
+      a.setDxDy(dx, dy);
+
+      // Verify
+      assert(fabs(a.getDegrees() - 270.0) < TOLERANCE);
+   }  // Teardown 
 
    /*********************************************
     * name:    SET DX DY  DIAGONAL
@@ -526,12 +553,12 @@ private:
     * GETTERS
     *****************************************************************
     *****************************************************************/
-   
-   /*********************************************
-    * name:    GET DEGREES - 0
-    * input:   0 degrees
-    * output:  0 degrees
-    *********************************************/
+
+    /*********************************************
+     * name:    GET DEGREES - 0
+     * input:   0 degrees
+     * output:  0 degrees
+     *********************************************/
    void getDegrees_0()
    {  // setup
       Angle a;
@@ -543,7 +570,7 @@ private:
       assertEquals(d, 0.0);
       assertEquals(a.radians, 0.0);
    }  // teardown
-   
+
    /*********************************************
     * name:    GET DEGREES - 270
     * input:   270 degrees
@@ -560,7 +587,7 @@ private:
       assertEquals(d, 270.0);
       assertEquals(a.radians, M_PI + M_PI_2);
    }  // teardown
-   
+
    /*********************************************
     * name:    GET RADIANS - 0
     * input:   0 degrees
@@ -577,7 +604,7 @@ private:
       assertEquals(r, 0.0);
       assertEquals(a.radians, 0.0);
    }  // teardown
-   
+
    /*********************************************
     * name:    GET RADIANS - 270
     * input:   270 degrees
@@ -594,16 +621,26 @@ private:
       assertEquals(r, M_PI + M_PI_2);
       assertEquals(a.radians, M_PI + M_PI_2);
    }  // teardown
-   
+
    /*********************************************
     * name:    GET DX - UP
     * input:   0 degrees
-    * output:  0 
+    * output:  0
     *********************************************/
    void getDx_up()
-   { 
-      assertUnit(NOT_YET_IMPLEMENTED); 
-   }
+   {
+      const double TOLERANCE = 0.0001;
+
+      // Setup
+      Angle a;
+      a.setUp();
+
+      // Exercise
+      double dx = a.getDx();
+
+      // Verify
+      assert(fabs(dx - 0.0) < TOLERANCE);
+   }  // Teardown 
 
    /*********************************************
     * name:    GET DX - DOWN
@@ -612,9 +649,18 @@ private:
     *********************************************/
    void getDx_down()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      const double TOLERANCE = 0.0001;
 
+      // Setup
+      Angle a;
+      a.setDown();
+
+      // Exercise
+      double dx = a.getDx();
+
+      // Verify
+      assert(fabs(dx - 0.0) < TOLERANCE);
+   }  // Teardown
 
    /*********************************************
     * name:    GET DX - LEFT
@@ -623,8 +669,18 @@ private:
     *********************************************/
    void getDx_left()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      const double TOLERANCE = 0.0001;
+
+      // Setup
+      Angle a;
+      a.setLeft();
+
+      // Exercise
+      double dx = a.getDx();
+
+      // Verify
+      assert(fabs(dx + 1.0) < TOLERANCE);
+   }  // Teardown
 
    /*********************************************
     * name:    GET DX - RIGHT
@@ -633,8 +689,18 @@ private:
     *********************************************/
    void getDx_right()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      const double TOLERANCE = 0.0001;
+
+      // Setup
+      Angle a;
+      a.setRight();
+
+      // Exercise
+      double dx = a.getDx();
+
+      // Verify
+      assert(fabs(dx - 1.0) < TOLERANCE);
+   }  // Teardown
 
    /*********************************************
     * name:    GET DX - DIAGONAL
@@ -661,8 +727,18 @@ private:
     *********************************************/
    void getDy_up()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      const double TOLERANCE = 0.0001;
+
+      // Setup
+      Angle a;
+      a.setUp();
+
+      // Exercise
+      double dy = a.getDy();
+
+      // Verify
+      assert(fabs(dy - 1.0) < TOLERANCE);
+   }  // Teardown
 
    /*********************************************
     * name:    GET DY - DOWN
@@ -671,9 +747,18 @@ private:
     *********************************************/
    void getDy_down()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      const double TOLERANCE = 0.0001;
 
+      // Setup
+      Angle a;
+      a.setDown();
+
+      // Exercise
+      double dy = a.getDy();
+
+      // Verify
+      assert(fabs(dy + 1.0) < TOLERANCE);
+   }  // Teardown
 
    /*********************************************
     * name:    GET DY - LEFT
@@ -682,8 +767,18 @@ private:
     *********************************************/
    void getDy_left()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      const double TOLERANCE = 0.0001;
+
+      // Setup
+      Angle a;
+      a.setLeft();
+
+      // Exercise
+      double dy = a.getDy();
+
+      // Verify
+      assert(fabs(dy - 0.0) < TOLERANCE);
+   }  // Teardown
 
    /*********************************************
     * name:    GET DY - RIGHT
@@ -692,8 +787,18 @@ private:
     *********************************************/
    void getDy_right()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      const double TOLERANCE = 0.0001;
+
+      // Setup
+      Angle a;
+      a.setRight();
+
+      // Exercise
+      double dy = a.getDy();
+
+      // Verify
+      assert(fabs(dy - 0.0) < TOLERANCE);
+   }  // Teardown
 
    /*********************************************
     * name:    GET DY - DIAGONAL
@@ -719,8 +824,16 @@ private:
     *********************************************/
    void isRight_right()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Angle a;
+      a.setDegrees(30.0);
+
+      // Exercise
+      bool result = a.isRight();
+
+      // Verify
+      assert(result == true);
+   }  // Teardown 
 
    /*********************************************
     * name:    IS RIGHT - LEFT
@@ -729,8 +842,16 @@ private:
     *********************************************/
    void isRight_left()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Angle a;
+      a.setDegrees(330.0);
+
+      // Exercise
+      bool result = a.isRight();
+
+      // Verify
+      assert(result == false);
+   }  // Teardown
 
    /*********************************************
     * name:    IS LEFT - right
@@ -739,8 +860,16 @@ private:
     *********************************************/
    void isLeft_right()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Angle a;
+      a.setDegrees(30.0);
+
+      // Exercise
+      bool result = a.isLeft();
+
+      // Verify
+      assert(result == false);
+   }  // Teardown
 
       /*********************************************
     * name:    IS LEFT - LEFT
@@ -749,7 +878,14 @@ private:
     *********************************************/
    void isLeft_left()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Angle a;
+      a.setDegrees(330.0);
 
+      // Exercise
+      bool result = a.isLeft();
+
+      // Verify
+      assert(result == true);
+   }  // Teardown
 };
