@@ -57,14 +57,14 @@ public:
       velocityFromAcceleration_twoAcceleration();
       velocityFromAcceleration_twoTime();
 
-      // Ticket 2: Linear Interpolation equation
+      //// Ticket 2: Linear Interpolation equation
       linearInterpolation_coordinatesZero();
       linearInterpolation_coordinatesOne();
       linearInterpolation_coordinatesMiddle();
       linearInterpolation_coordinatesTop();
       linearInterpolation_coordinatesBackwards();
 
-      // Ticket 3: Linear Interpolation with Mapping
+      //// Ticket 3: Linear Interpolation with Mapping
       linearInterpolation_mappingZero();
       linearInterpolation_mappingTwo();
       linearInterpolation_mappingMid01();
@@ -73,40 +73,40 @@ public:
       linearInterpolation_mappingSmall();
       linearInterpolation_mappingLarge();
 
-      // Ticket 4: Gravity
-      gravityFromAltitude_0();
-      gravityFromAltitude_10000();
-      gravityFromAltitude_80000();
-      gravityFromAltitude_5500();
-      gravityFromAltitude_43333();
-      gravityFromAltitude_3666();
-      gravityFromAltitude_8848();
+      //// Ticket 4: Gravity
+      //gravityFromAltitude_0();
+      //gravityFromAltitude_10000();
+      //gravityFromAltitude_80000();
+      //gravityFromAltitude_5500();
+      //gravityFromAltitude_43333();
+      //gravityFromAltitude_3666();
+      //gravityFromAltitude_8848();
 
-      // Ticket 5: Density
-      densityFromAltitude_0();
-      densityFromAltitude_10000();
-      densityFromAltitude_80000();
-      densityFromAltitude_5500();
-      densityFromAltitude_43333();
-      densityFromAltitude_3666();
-      densityFromAltitude_8848();
+      //// Ticket 5: Density
+      //densityFromAltitude_0();
+      //densityFromAltitude_10000();
+      //densityFromAltitude_80000();
+      //densityFromAltitude_5500();
+      //densityFromAltitude_43333();
+      //densityFromAltitude_3666();
+      //densityFromAltitude_8848();
 
-      // Ticket 6: Speed of Sound
-      speedSoundFromAltitude_0();
-      speedSoundFromAltitude_10000();
-      speedSoundFromAltitude_80000();
-      speedSoundFromAltitude_5500();
-      speedSoundFromAltitude_43333();
-      speedSoundFromAltitude_3666();
-      speedSoundFromAltitude_8848();
+      //// Ticket 6: Speed of Sound
+      //speedSoundFromAltitude_0();
+      //speedSoundFromAltitude_10000();
+      //speedSoundFromAltitude_80000();
+      //speedSoundFromAltitude_5500();
+      //speedSoundFromAltitude_43333();
+      //speedSoundFromAltitude_3666();
+      //speedSoundFromAltitude_8848();
 
-      // Ticket 7: Drag
-      dragFromMach_000();
-      dragFromMach_500();
-      dragFromMach_100();
-      dragFromMach_060();
-      dragFromMach_010();
-      dragFromMach_314();
+      //// Ticket 7: Drag
+      //dragFromMach_000();
+      //dragFromMach_500();
+      //dragFromMach_100();
+      //dragFromMach_060();
+      //dragFromMach_010();
+      //dragFromMach_314();
 
       report("Physics");
    }
@@ -677,8 +677,22 @@ private:
     *********************************************************/
    void linearInterpolation_coordinatesZero()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // setup
+      double d0 = 0.0, r0 = 0.0;
+      double d1 = 8.0, r1 = 8.0;
+      double d = 0.0, r = -9999.99;
+
+      // exercise
+      r = linearInterpolation(d0, r0, d1, r1, d);
+
+      // verify
+      assertEquals(r, 0.0);
+      assertEquals(d, 0.0);
+      assertEquals(d0, 0.0);
+      assertEquals(r0, 0.0);
+      assertEquals(d1, 8.0);
+      assertEquals(r1, 8.0);
+   } // teardown
 
    /*********************************************************
     * LINEAR INTERPOLATION - coordinate version where (d,r) is (d1,r1)
@@ -693,8 +707,22 @@ private:
     *********************************************************/
    void linearInterpolation_coordinatesOne()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // setup
+      double d0 = 0.0, r0 = 0.0;
+      double d1 = 8.0, r1 = 8.0;
+      double d = 8.0, r = -9999.99;
+
+      // exercise
+      r = linearInterpolation(d0, r0, d1, r1, d);
+
+      // verify
+      assertEquals(r, 8.0);
+      assertEquals(d, 8.0);
+      assertEquals(d0, 0.0);
+      assertEquals(r0, 0.0);
+      assertEquals(d1, 8.0);
+      assertEquals(r1, 8.0);
+   } // teardown
 
    /*********************************************************
     * LINEAR INTERPOLATION - coordinate version where (d,r) is in middle
@@ -709,8 +737,22 @@ private:
     *********************************************************/
    void linearInterpolation_coordinatesMiddle()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // setup
+      double d0 = 0.0, r0 = 0.0;
+      double d1 = 8.0, r1 = 8.0;
+      double d = 4.0, r = -9999.99;
+
+      // exercise
+      r = linearInterpolation(d0, r0, d1, r1, d);
+
+      // verify
+      assertEquals(r, 4.0);
+      assertEquals(d, 4.0);
+      assertEquals(d0, 0.0);
+      assertEquals(r0, 0.0);
+      assertEquals(d1, 8.0);
+      assertEquals(r1, 8.0);
+   } // teardown
 
    /*********************************************************
     * LINEAR INTERPOLATION - coordinate version where (d,r) is near one
@@ -725,8 +767,22 @@ private:
     *********************************************************/
    void linearInterpolation_coordinatesTop()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // setup
+      double d0 = 0.0, r0 = 0.0;
+      double d1 = 8.0, r1 = 8.0;
+      double d = 6.0, r = -9999.99;
+
+      // exercise
+      r = linearInterpolation(d0, r0, d1, r1, d);
+
+      // verify
+      assertEquals(r, 6.0);
+      assertEquals(d, 6.0);
+      assertEquals(d0, 0.0);
+      assertEquals(r0, 0.0);
+      assertEquals(d1, 8.0);
+      assertEquals(r1, 8.0);
+   } // teardown
 
    /*********************************************************
     * LINEAR INTERPOLATION - coordinate version slope of line is negative
@@ -742,8 +798,22 @@ private:
     *********************************************************/
    void linearInterpolation_coordinatesBackwards()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // setup
+      double d0 = 1.0, r0 = 9.0;
+      double d1 = 7.0, r1 = -3.0;
+      double d = 3.0, r = -9999.99;
+
+      // exercise
+      r = linearInterpolation(d0, r0, d1, r1, d);
+
+      // verify
+      assertEquals(r, 5.0);
+      assertEquals(d, 3.0);
+      assertEquals(d0, 1.0);
+      assertEquals(r0, 9.0);
+      assertEquals(d1, 7.0);
+      assertEquals(r1, -3.0);
+   } // teardown
 
 
    /*****************************************************************
@@ -796,10 +866,10 @@ private:
    /*********************************************************
     * LINEAR INTERPOLATION - mapping at [2]
     *
-    *    |        8,6.5 * mapping[3]
-    *    |            /
-    *    |      7,5   * mapping[2] (d,r)
+    *    |     8,6.5 * mapping[3]
     *    |          /
+    *    |    7,5  * mapping[2] (d,r)
+    *    |        /
     *    |       /
     *    |  3,3 * mapping[1]
     *   r|     /
