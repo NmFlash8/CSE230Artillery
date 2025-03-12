@@ -15,7 +15,33 @@
  *********************************************************/
 double linearInterpolation(const Mapping mapping[], int numMapping, double domain)
 {
-   return -99.9;
+   // Edge cases: If the domain is outside the range of the provided mappings, return the boundary values.
+   if (domain <= mapping[0].domain)
+   {
+      return mapping[0].range;
+   }
+   if (domain >= mapping[numMapping - 1].domain)
+   {
+      return mapping[numMapping - 1].range;
+   }
+
+   // Find the two mappings to interpolate between
+   for (int i = 0; i < numMapping - 1; ++i)
+   {
+      if (domain >= mapping[i].domain && domain <= mapping[i + 1].domain)
+      {
+         double d0 = mapping[i].domain;
+         double r0 = mapping[i].range;
+         double d1 = mapping[i + 1].domain;
+         double r1 = mapping[i + 1].range;
+
+         // Perform linear interpolation
+         return linearInterpolation(d0, r0, d1, r1, domain);
+      }
+   }
+
+   // If no match is found (shouldn't happen if data is valid), return a default value
+   return -999.999;
 }
 
 /*********************************************************
