@@ -9,6 +9,26 @@
   
  #include "physics.h"  // for the prototypes
  
+
+ /*********************************************************
+ * calculateFromTable
+ * From a list of domains and ranges, linear interpolate
+ *********************************************************/
+ // Table-based function for calculating gravity, speed of sound, density, and drag
+double calculateFromTable(double altitude, const vector<pair<double, double>>& table)
+{
+   for (size_t i = 0; i < table.size() - 1; ++i)
+   {
+      if (altitude >= table[i].first && altitude <= table[i + 1].first)
+      {
+         return linearInterpolation(altitude, table[i].first, table[i + 1].first,
+            table[i].second, table[i + 1].second);
+      }
+   }
+   return -1;  // Return -1 if no valid range is found
+}
+
+
  /*********************************************************
  * LINEAR INTERPOLATION
  * From a list of domains and ranges, linear interpolate

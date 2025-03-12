@@ -74,13 +74,13 @@ public:
       linearInterpolation_mappingLarge();
 
       //// Ticket 4: Gravity
-      //gravityFromAltitude_0();
-      //gravityFromAltitude_10000();
-      //gravityFromAltitude_80000();
-      //gravityFromAltitude_5500();
-      //gravityFromAltitude_43333();
-      //gravityFromAltitude_3666();
-      //gravityFromAltitude_8848();
+      gravityFromAltitude_0();
+      gravityFromAltitude_10000();
+      gravityFromAltitude_80000();
+      gravityFromAltitude_5500();
+      gravityFromAltitude_43333();
+      gravityFromAltitude_3666();
+      gravityFromAltitude_8848();
 
       //// Ticket 5: Density
       //densityFromAltitude_0();
@@ -1079,9 +1079,15 @@ private:
      * output: gravity=9.807
      ********************************************************/
    void gravityFromAltitude_0()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double altitude = 0.0;
+      double gravity = -999.999;
+      // exercise
+      gravity = gravityFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 0.0);
+      assertEquals(gravity, 9.807, 0.001);
+   }  // teardown
 
 
     /*******************************************************
@@ -1090,9 +1096,15 @@ private:
      * output: gravity=9.776
      ********************************************************/
    void gravityFromAltitude_10000()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double altitude = 10000.0;
+      double gravity = -999.999;
+      // exercise
+      gravity = gravityFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 10000.0);
+      assertEquals(gravity, 9.776, 0.001);
+   }  // teardown
 
     /*******************************************************
      * GRAVITY FROM ALTITUDE - at the high range, 80,000m
@@ -1100,9 +1112,15 @@ private:
      * output: gravity=9.564
      ********************************************************/
    void gravityFromAltitude_80000()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double altitude = 80000.0;
+      double gravity = -999.999;
+      // exercise
+      gravity = gravityFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 80000.0);
+      assertEquals(gravity, 9.564, 0.001);
+   }  // teardown
 
     /*******************************************************
      * GRAVITY FROM ALTITUDE - exactly between two values, 5,500m
@@ -1110,9 +1128,15 @@ private:
      * output: gravity=9.7895
      ********************************************************/
    void gravityFromAltitude_5500()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double altitude = 5500.0;
+      double gravity = -999.999;
+      // exercise
+      gravity = gravityFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 5500.0);
+      assertEquals(gravity, 9.7895, 0.001);
+   }  // teardown
 
     /*******************************************************
      * GRAVITY FROM ALTITUDE - one-third between two values, 43,333.3m
@@ -1120,9 +1144,15 @@ private:
      * output: gravity=9.674
      ********************************************************/
    void gravityFromAltitude_43333()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double altitude = 43333.3;
+      double gravity = -999.999;
+      // exercise
+      gravity = gravityFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 43333.3);
+      assertEquals(gravity, 9.674, 0.001);
+   }  // teardown
 
     /*******************************************************
      * GRAVITY FROM ALTITUDE - two-third between two values, 3,666.6m
@@ -1130,9 +1160,15 @@ private:
      * output: gravity=9.795
      ********************************************************/
    void gravityFromAltitude_3666()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double altitude = 3666.6;
+      double gravity = -999.999;
+      // exercise
+      gravity = gravityFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 3666.6);
+      assertEquals(gravity, 9.795, 0.001);
+   }  // teardown
 
     /*******************************************************
      * GRAVITY FROM ALTITUDE - elevation of Mt Everest, 8,848.86m
