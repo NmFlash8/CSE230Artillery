@@ -45,6 +45,7 @@ public:
    double getMetersY()       const { return 9.9; }
    double getPixelsX()       const { return 9.9; }
    double getPixelsY()       const { return 9.9; }
+   double getZoom()          const { return metersFromPixels; }
 
    // setters
    void setZoom(double z) {}

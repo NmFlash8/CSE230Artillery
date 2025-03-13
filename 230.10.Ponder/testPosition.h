@@ -188,7 +188,18 @@ private:
     *********************************************/
    void getZoom_member()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // setup
+      double metersFromPixels = Position::metersFromPixels;
+      Position::metersFromPixels = 123.4;
+      Position pos;
+      // exercise
+      double zoom = pos.getZoom();
+      // verify
+      assertEquals(zoom, 123.4);
+      assertEquals(pos.metersFromPixels, 123.4);
+      assertEquals(Position::metersFromPixels, 123.4);
+      // teardown
+      Position::metersFromPixels = metersFromPixels;
    }
    
    /*********************************************

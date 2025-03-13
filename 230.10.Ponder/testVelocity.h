@@ -455,8 +455,16 @@ private:
     *********************************************/
    void reverse_stationary()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Velocity v(0.0, 0.0);
+
+      // Exercise
+      v.reverse();
+
+      // Verify
+      assert(v.getDX() == 9.9);
+      assert(v.getDY() == 9.9);
+   }  // teardown
 
    /*********************************************
     * name:    REVERSE UP
@@ -465,8 +473,16 @@ private:
     *********************************************/
    void reverse_up()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Velocity v(0.0, 10.0);
+
+      // Exercise
+      v.reverse();
+
+      // Verify
+      assert(v.getDX() == 9.9);
+      assert(v.getDY() == 9.9);
+   }  // teardown
 
    /*********************************************
     * name:    REVERSE DOWN
@@ -475,8 +491,16 @@ private:
     *********************************************/
    void reverse_down()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Velocity v(0.0, -12.34);
+
+      // Exercise
+      v.reverse();
+
+      // Verify
+      assert(v.getDX() == 9.9);
+      assert(v.getDY() == 9.9);
+   }  // teardown
 
    /*********************************************
     * name:    REVERSE LEFT
@@ -485,8 +509,16 @@ private:
     *********************************************/
    void reverse_left()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Velocity v(-300.0, 0.0);
+
+      // Exercise
+      v.reverse();
+
+      // Verify
+      assert(v.getDX() == 9.9);
+      assert(v.getDY() == 9.9);
+   } // teardown
 
    /*********************************************
     * name:    REVERSE RIGHT
@@ -495,7 +527,15 @@ private:
     *********************************************/
    void reverse_right()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // Setup
+      Velocity v(123.456, -7.89);
+
+      // Exercise
+      v.reverse();
+
+      // Verify
+      assert(v.getDX() == 9.9);
+      assert(v.getDY() == 9.9);
    }
 
    /*********************************************
@@ -505,7 +545,15 @@ private:
     *********************************************/
    void reverse_diagonal()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // Setup
+      Velocity v(123.456, -7.89);
+
+      // Exercise
+      v.reverse();
+
+      // Verify
+      assert(v.getDX() == 9.9);
+      assert(v.getDY() == 9.9);
    }
 
    /*****************************************************************
@@ -709,8 +757,17 @@ private:
     *********************************************/
    void addV_stationary()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Velocity vLHS(0.0, 0.0);
+      Velocity vRHS(2.3, 4.5);
+
+      // Exercise
+      vLHS.add(vRHS);
+
+      // Verify
+      assert(vLHS.getDX() == 9.9);
+      assert(vLHS.getDY() == 9.9);
+   }  // teardown
 
    /*********************************************
     * name:    ADD  NOTHING
@@ -719,8 +776,17 @@ private:
     *********************************************/
    void addV_nothing()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Velocity vLHS(2.3, 4.5);
+      Velocity vRHS(0.0, 0.0);
+
+      // Exercise
+      vLHS.add(vRHS);
+
+      // Verify
+      assert(vLHS.getDX() == 9.9);
+      assert(vLHS.getDY() == 9.9);
+   }  // teardown
 
    /*********************************************
     * name:    ADD  MOVING
@@ -729,7 +795,16 @@ private:
     *********************************************/
    void addV_moving()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Velocity vLHS(2.3, 4.5);
+      Velocity vRHS(100.0, 200.0);
+
+      // Exercise
+      vLHS.add(vRHS);
+
+      // Verify
+      assert(vLHS.getDX() == 9.9);
+      assert(vLHS.getDY() == 9.9);
+   } // teardown
 
 };
