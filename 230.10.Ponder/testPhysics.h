@@ -83,30 +83,30 @@ public:
       gravityFromAltitude_8848();
 
       //// Ticket 5: Density
-      //densityFromAltitude_0();
-      //densityFromAltitude_10000();
-      //densityFromAltitude_80000();
-      //densityFromAltitude_5500();
-      //densityFromAltitude_43333();
-      //densityFromAltitude_3666();
-      //densityFromAltitude_8848();
+      densityFromAltitude_0();
+      densityFromAltitude_10000();
+      densityFromAltitude_80000();
+      densityFromAltitude_5500();
+      densityFromAltitude_43333();
+      densityFromAltitude_3666();
+      densityFromAltitude_8848();
 
       //// Ticket 6: Speed of Sound
-      //speedSoundFromAltitude_0();
-      //speedSoundFromAltitude_10000();
-      //speedSoundFromAltitude_80000();
-      //speedSoundFromAltitude_5500();
-      //speedSoundFromAltitude_43333();
-      //speedSoundFromAltitude_3666();
-      //speedSoundFromAltitude_8848();
+      speedSoundFromAltitude_0();
+      speedSoundFromAltitude_10000();
+      speedSoundFromAltitude_80000();
+      speedSoundFromAltitude_5500();
+      speedSoundFromAltitude_43333();
+      speedSoundFromAltitude_3666();
+      speedSoundFromAltitude_8848();
 
       //// Ticket 7: Drag
-      //dragFromMach_000();
-      //dragFromMach_500();
-      //dragFromMach_100();
-      //dragFromMach_060();
-      //dragFromMach_010();
-      //dragFromMach_314();
+      dragFromMach_000();
+      dragFromMach_500();
+      dragFromMach_100();
+      dragFromMach_060();
+      dragFromMach_010();
+      dragFromMach_314();
 
       report("Physics");
    }
@@ -1202,9 +1202,15 @@ private:
      * output: density=1.225
      ********************************************************/
    void densityFromAltitude_0()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   { // setup
+      double altitude = 0;
+      double density = -999.999;
+      // exercise
+      density = densityFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 0);
+      assertEquals(density, 1.225);
+   } // teardown
 
     /*******************************************************
      * DENSITY FROM ALTITUDE - exactly on 10,000 meters
@@ -1212,9 +1218,15 @@ private:
      * output: density=0.4135000
      ********************************************************/
    void densityFromAltitude_10000()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   { // setup
+      double altitude = 10000;
+      double density = -999.999;
+      // exercise
+      density = densityFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 10000);
+      assertEquals(density, 0.4135000);
+   } // teardown
 
     /*******************************************************
      * DENSITY FROM ALTITUDE - at the high range, 80,000m
@@ -1222,9 +1234,15 @@ private:
      * output: density=0.0000185
      ********************************************************/
    void densityFromAltitude_80000()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   { // setup
+      double altitude = 80000;
+      double density = -999.999;
+      // exercise
+      density = densityFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 80000);
+      assertEquals(density, 0.0000185);
+   } // teardown
 
     /*******************************************************
      * DENSITY FROM ALTITUDE - exactly between two values, 5,5000m
@@ -1232,9 +1250,15 @@ private:
      * output: density=0.69825
      ********************************************************/
    void densityFromAltitude_5500()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   { // setup
+      double altitude = 5500;
+      double density = -999.999;
+      // exercise
+      density = densityFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 5500);
+      assertEquals(density, 0.69825);
+   } // teardown
 
     /*******************************************************
      * DENSITY FROM ALTITUDE - one-third between two values, 43,333.3m
@@ -1242,9 +1266,15 @@ private:
      * output: density=0.0030063   almost a vacuum
      ********************************************************/
    void densityFromAltitude_43333()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   { // setup
+      double altitude = 43333;
+      double density = -999.999;
+      // exercise
+      density = densityFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 43333);
+      assertEquals(density, 0.0030063);
+   } // teardown
 
     /*******************************************************
      * DENSITY FROM ALTITUDE - two-third between two values, 3,666.6m
@@ -1252,9 +1282,15 @@ private:
      * output: density=0.849372
      ********************************************************/
    void densityFromAltitude_3666()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   { // setup
+      double altitude = 3666.6;
+      double density = -999.999;
+      // exercise
+      density = densityFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 3666.6);
+      assertEquals(density, 0.849372);
+   } // teardown
 
     /*******************************************************
      * DENSITY FROM ALTITUDE - elevation of Mt Everest, 8,848.86m
@@ -1287,9 +1323,15 @@ private:
      * output: 340m/s
      ********************************************************/
    void speedSoundFromAltitude_0()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double altitude = 0.0;
+      double speed = -99.99;
+      // exercise
+      speed = speedSoundFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 0.0);
+      assertEquals(speed, 340.0);
+   }  // teardown
 
     /*******************************************************
      * SPEED OF SOUND FROM ALTITUDE : 10,000m
@@ -1297,9 +1339,15 @@ private:
      * output: 299.0m/s
      ********************************************************/
    void speedSoundFromAltitude_10000()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double altitude = 10000.0;
+      double speed = -99.99;
+      // exercise
+      speed = speedSoundFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 10000.0);
+      assertEquals(speed, 299.0);
+   }  // teardown
 
     /*******************************************************
      * SPEED OF SOUND FROM ALTITUDE : 80,000m
@@ -1307,9 +1355,15 @@ private:
      * output: 269.0m/s
      ********************************************************/
    void speedSoundFromAltitude_80000()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double altitude = 80000.0;
+      double speed = -99.99;
+      // exercise
+      speed = speedSoundFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 80000.0);
+      assertEquals(speed, 269.0);
+   }  // teardown
 
     /*******************************************************
      * SPEED OF SOUND FROM ALTITUDE : 5,500m
@@ -1317,9 +1371,15 @@ private:
      * output: 318.0m/s
      ********************************************************/
    void speedSoundFromAltitude_5500()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double altitude = 5500.0;
+      double speed = -99.99;
+      // exercise
+      speed = speedSoundFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 5500.0);
+      assertEquals(speed, 318.0);
+   }  // teardown
 
     /*******************************************************
      * SPEED OF SOUND FROM ALTITUDE : 43,333m
@@ -1327,9 +1387,15 @@ private:
      * output: 328.3329m/s
      ********************************************************/
    void speedSoundFromAltitude_43333()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double altitude = 43333.0;
+      double speed = -99.99;
+      // exercise
+      speed = speedSoundFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 43333.0);
+      assertEquals(speed, 328.3329);
+   }  // teardown
 
     /*******************************************************
      * SPEED OF SOUND FROM ALTITUDE : 3,666m
@@ -1337,9 +1403,15 @@ private:
      * output: 325.336m/s
      ********************************************************/
    void speedSoundFromAltitude_3666()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double altitude = 3666.0;
+      double speed = -99.99;
+      // exercise
+      speed = speedSoundFromAltitude(altitude);
+      // verify
+      assertEquals(altitude, 3666.0);
+      assertEquals(speed, 325.336);
+   }  // teardown
 
     /*******************************************************
      * SPEED OF SOUND FROM ALTITUDE : on top of Mount Everest
@@ -1371,9 +1443,15 @@ private:
      * output: 0
      ********************************************************/
    void dragFromMach_000()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double speedMach = 0.0;
+      double drag = -99.99;
+      // exercise
+      drag = dragFromMach(speedMach);
+      // verify
+      assertEquals(speedMach, 0.0);
+      assertEquals(drag, 0.0);
+   }  // teardown
 
     /*******************************************************
      * DRAG FROM MACH : top speed
@@ -1381,9 +1459,15 @@ private:
      * output: 0.2656
      ********************************************************/
    void dragFromMach_500()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double speedMach = 5.00;
+      double drag = -99.99;
+      // exercise
+      drag = dragFromMach(speedMach);
+      // verify
+      assertEquals(speedMach, 5.00);
+      assertEquals(drag, 0.2656);
+   }  // teardown
 
     /*******************************************************
      * DRAG FROM MACH : speed of sound
@@ -1391,9 +1475,15 @@ private:
      * output: 0.4258
      ********************************************************/
    void dragFromMach_100()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double speedMach = 1.00;
+      double drag = -99.99;
+      // exercise
+      drag = dragFromMach(speedMach);
+      // verify
+      assertEquals(speedMach, 1.00);
+      assertEquals(drag, 0.4258);
+   }  // teardown
 
     /*******************************************************
      * DRAG FROM MACH : halfway between 0.5 and 0.7
@@ -1401,9 +1491,15 @@ private:
      * output: 0.1845
      ********************************************************/
    void dragFromMach_060()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double speedMach = 0.6;
+      double drag = -99.99;
+      // exercise
+      drag = dragFromMach(speedMach);
+      // verify
+      assertEquals(speedMach, 0.6);
+      assertEquals(drag, 0.1845);
+   }  // teardown
 
     /*******************************************************
      * DRAG FROM MACH : one third between 0 and .3
@@ -1411,9 +1507,15 @@ private:
      * output: 0.0543
      ********************************************************/
    void dragFromMach_010()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      double speedMach = 0.1;
+      double drag = -99.99;
+      // exercise
+      drag = dragFromMach(speedMach);
+      // verify
+      assertEquals(speedMach, 0.1);
+      assertEquals(drag, 0.0543);
+   }  // teardown
 
     /*******************************************************
      * DRAG FROM MACH : random spot
