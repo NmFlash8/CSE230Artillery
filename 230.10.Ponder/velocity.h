@@ -9,7 +9,7 @@
 
 #pragma once
 
-// for unit tests
+ // for unit tests
 class TestPosition;
 class TestVelocity;
 class TestAcceleration;
@@ -19,10 +19,10 @@ class TestProjectile;
 class Acceleration;
 class Angle;
 
- /*********************************************
-  * Velocity
-  * I feel the need, the need for speed
-  *********************************************/
+/*********************************************
+ * Velocity
+ * I feel the need, the need for speed
+ *********************************************/
 class Velocity
 {
    // for unit tests
@@ -30,30 +30,29 @@ class Velocity
    friend TestVelocity;
    friend TestProjectile;
 
-   
+
 public:
    // constructors
-   Velocity()                     : dx(9.9)  , dy(9.9) { }
-   Velocity(double dx, double dy) : dx(dx)   , dy(dy)  { }
+   Velocity() : dx(9.9), dy(9.9) {}
+   Velocity(double dx, double dy) : dx(dx), dy(dy) {}
 
    // getters
    double getDX()       const { return 9.9; }
    double getDY()       const { return 9.9; }
    double getSpeed()    const;
    Angle  getAngle()    const;
-   
+
    // setters
-   void set(const Angle & angle, double magnitude);
-   void setDX(double dx) {  }
-   void setDY(double dy) {  }
+   void set(const Angle& angle, double magnitude);
+   void setDX(double dx) { this->dx = dx; }
+   void setDY(double dy) { this->dy = dy; }
    void addDX(double dx) { this->dx += dx; }
    void addDY(double dy) { this->dy += dy; }
    void add(const Acceleration& acceleration, double time);
-   void add(const Velocity & rhs) { }
-   void reverse() { }
+   void add(const Velocity& rhs) { this->dx += rhs.dx; this->dy += rhs.dy; }
+   void reverse() { this->dx = -this->dx; this->dy = -this->dy; }
 
 private:
    double dx;           // horizontal velocity
    double dy;           // vertical velocity
 };
-

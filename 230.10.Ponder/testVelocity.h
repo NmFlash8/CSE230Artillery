@@ -12,10 +12,10 @@
 #include "unitTest.h"
 #include "velocity.h"
 
-/*********************************************
- * TEST VELOCITY
- * Unit tests for Velocity
- *********************************************/
+ /*********************************************
+  * TEST VELOCITY
+  * Unit tests for Velocity
+  *********************************************/
 class TestVelocity : public UnitTest
 {
 public:
@@ -68,13 +68,13 @@ private:
     * CONSTRUCTOR
     *****************************************************************
     *****************************************************************/
-   
-   
-   /*********************************************
-    * name:    DEFAULT CONSTRUCTOR
-    * input:   nothing
-    * output:  zero
-    *********************************************/
+
+
+    /*********************************************
+     * name:    DEFAULT CONSTRUCTOR
+     * input:   nothing
+     * output:  zero
+     *********************************************/
    void constructor_default()
    {  // setup
       // exercise
@@ -84,7 +84,7 @@ private:
       assertEquals(v.dx, 0.0);
       assertEquals(v.dy, 0.0);
    }  // teardown
-      
+
    /*********************************************
     * name:    NON DEFAULT CONSTRUCTOR
     * input:   2.3, 4.5
@@ -94,7 +94,7 @@ private:
    {  // setup
       double dx = 2.3;
       double dy = 4.5;
-      
+
       // exercise
       Velocity v(dx, dy);
 
@@ -111,11 +111,11 @@ private:
     *****************************************************************
     *****************************************************************/
 
-   /*********************************************
-    * name:    GET DX
-    * input:   (2.3, 4.5)
-    * output:  2.3
-    *********************************************/
+    /*********************************************
+     * name:    GET DX
+     * input:   (2.3, 4.5)
+     * output:  2.3
+     *********************************************/
    void getDX()
    {  // setup
       Velocity v;
@@ -152,7 +152,7 @@ private:
       assertEquals(v.dy, 4.5);
       assertEquals(dy, 4.5);
    }  // teardown
-   
+
    /*********************************************
     * name:    GET SPEED ZERO
     * input:   (0.0, 0.0)
@@ -173,7 +173,7 @@ private:
       assertEquals(v.dy, 0.0);
       assertEquals(s, 0.0);
    }  // teardown
-   
+
    /*********************************************
     * name:    GET SPEED RIGHT
     * input:   (2.3, 0.0)
@@ -215,7 +215,7 @@ private:
       assertEquals(v.dy, 4.5);
       assertEquals(s, 4.5);
    }  // teardown
-   
+
    /*********************************************
     * name:    GET SPEED LEFT
     * input:   (-2.3, 0.0)
@@ -257,7 +257,7 @@ private:
       assertEquals(v.dy, -4.5);
       assertEquals(s, 4.5);
    }  // teardown
-   
+
    /*********************************************
     * name:    GET SPEED DIAGONAL
     * input:   (3.0, -4.0)
@@ -279,18 +279,18 @@ private:
       assertEquals(v.dy, -4.0);
       assertEquals(s, 5.0);
    }  // teardown
-   
+
    /*****************************************************************
     *****************************************************************
     * SETTERS
     *****************************************************************
     *****************************************************************/
-   
-   /*********************************************
-    * name:    SET DX
-    * input:   (99.9, 88.8) setDX(-1.1)
-    * output:  (-1.1, 88.8)
-    *********************************************/
+
+    /*********************************************
+     * name:    SET DX
+     * input:   (99.9, 88.8) setDX(-1.1)
+     * output:  (-1.1, 88.8)
+     *********************************************/
    void setDX()
    {  // setup
       Velocity v;
@@ -327,7 +327,7 @@ private:
       assertEquals(v.dy, -1.1);
       assertEquals(dy, -1.1);
    }  // teardown
-   
+
    /*********************************************
     * name:    SET UP
     * input:   (-99.9, -88.8) 0 degrees, 3.3=speed
@@ -351,7 +351,7 @@ private:
       assertEquals(angle.radians, 0.0);
       assertEquals(magnitude, 3.3);
    }
-   
+
    /*********************************************
     * name:    SET DOWN
     * input:   (-99.9, -88.8) 180 degrees, 3.3=speed
@@ -399,7 +399,7 @@ private:
       assertEquals(angle.radians, M_PI_2);
       assertEquals(magnitude, 3.3);
    }
-   
+
    /*********************************************
     * name:    SET LEFT
     * input:   (-99.9, -88.8) 270 degreess, 3.3
@@ -419,11 +419,11 @@ private:
 
       // verify
       assertEquals(v.dx, -3.3); // -3.3 = 3.3 sin(270)
-      assertEquals(v.dy,  0.0); //  0.0 = 3.3 cos(270)
+      assertEquals(v.dy, 0.0); //  0.0 = 3.3 cos(270)
       assertEquals(angle.radians, M_PI_2 + M_PI);
       assertEquals(magnitude, 3.3);
    }
-   
+
    /*********************************************
     * name:    SET DIAGONAL
     * input:   (-99.9, -88.8) ~57 degreess, 1.0
@@ -447,7 +447,7 @@ private:
       assertEquals(angle.radians, 1.0);
       assertEquals(magnitude, 1.0);
    }
-   
+
    /*********************************************
     * name:    REVERSE STATIONARY
     * input:   (0, 0)
@@ -561,12 +561,12 @@ private:
     * ADD
     *****************************************************************
     *****************************************************************/
-   
-   /*********************************************
-    * name:    ADD DX  zero
-    * input:   (2.3, 4.5) 0.0
-    * output:  (2.3, 4.5)
-    *********************************************/
+
+    /*********************************************
+     * name:    ADD DX  zero
+     * input:   (2.3, 4.5) 0.0
+     * output:  (2.3, 4.5)
+     *********************************************/
    void addDX_zero()
    {  // setup
       Velocity v;
@@ -601,7 +601,7 @@ private:
       // verify
       assertEquals(v.dx, 6.4);
       assertEquals(v.dy, 4.5);
-      assertEquals(dx,  4.1);
+      assertEquals(dx, 4.1);
    }  // teardown
 
    /*********************************************
