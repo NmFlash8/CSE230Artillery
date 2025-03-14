@@ -212,9 +212,25 @@ private:
     *********************************************/
    void getZoom_anotherVariable()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Position pos1;
+      pos1.setMeters(99.9, 0);  // Set metersFromPixels for pos1 to 99.9
+      Position pos2;
+      pos2.setMeters(123.4, 0);  // Set metersFromPixels for pos2 to 123.4
 
+      // Exercise
+      // Assuming you are setting metersFromPixels directly, or via a setter function.
+      pos1.setMetersX(99.9);  // Set pos1's metersFromPixels to 99.9
+      pos2.setMetersX(123.4);  // Set pos2's metersFromPixels to 123.4
+
+      // Verify
+      double zoom = pos2.getMetersX();  // The zoom should be the last value of metersFromPixels, which is 123.4
+
+      // Assertions
+      assertEquals(zoom, 123.4);  // The zoom should be equal to pos2's metersFromPixels value
+      assertEquals(pos1.getMetersX(), 123.4);  // pos1's metersFromPixels should also reflect the last assignment
+      assertEquals(pos2.getMetersX(), 123.4);  // pos2's metersFromPixels should remain 123.4
+   }
 
    /*********************************************
     * name:    GET METERS X
@@ -271,8 +287,16 @@ private:
     *********************************************/
    void getPixelsX_noZoom()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Position pos(123.4, 567.8);  // Set position with x=123.4, y=567.8
+      pos.setZoom(1);  // Set metersFromPixels (zoom) to 1
+
+      // Exercise
+      double x = pos.getPixelsX();  // Get the x value (should be 123.4)
+
+      // Verify
+      assertEquals(x, 123.4);  // x should be equal to 123.4
+   }  //Teardown
    
    /*********************************************
     * name:    GET PIXELS X ZOOM
@@ -282,8 +306,16 @@ private:
     *********************************************/
    void getPixelsX_zoom()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Position pos(123.4, 567.8);  // Set position with x=123.4, y=567.8
+      pos.setZoom(100);  // Set metersFromPixels (zoom) to 100
+
+      // Exercise
+      double x = pos.getPixelsX();  // Calculate the x value in pixels
+
+      // Verify
+      assertEquals(x, 1.234, 0.0001);  // x should be approximately 1.234
+   }  //Teardown
 
    /*********************************************
     * name:    GET PIXELS Y NO ZOOM
@@ -292,8 +324,16 @@ private:
     *********************************************/
    void getPixelsY_noZoom()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Position pos(123.4, 567.8);  // Set position with x=123.4, y=567.8
+      pos.setZoom(1);  // Set metersFromPixels (zoom) to 1
+
+      // Exercise
+      double y = pos.getPixelsY();  // Get the y value in pixels
+
+      // Verify
+      assertEquals(y, 567.8, 0.0001);  // y should be 567.8
+   }  //Teardown
 
    /*********************************************
     * name:    GET PIXELS Y ZOOM
@@ -302,8 +342,16 @@ private:
     *********************************************/
    void getPixelsY_zoom()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Position pos(123.4, 567.8);  // Set position with x=123.4, y=567.8
+      pos.setZoom(100);  // Set metersFromPixels (zoom) to 100
+
+      // Exercise
+      double y = pos.getPixelsY();  // Get the y value in pixels
+
+      // Verify
+      assertEquals(y, 5.678, 0.0001);  // y should be 5.678
+   }  //Teardown
 
    /*****************************************************************
     *****************************************************************

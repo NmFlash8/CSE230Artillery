@@ -69,7 +69,6 @@ private:
 };
 
 
-
 // stream I/O useful for debugging
 std::ostream & operator << (std::ostream & out, const Position& pt);
 std::istream & operator >> (std::istream & in,        Position& pt);
