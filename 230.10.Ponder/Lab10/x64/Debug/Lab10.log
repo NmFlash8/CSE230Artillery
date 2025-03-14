@@ -1,4 +1,18 @@
-﻿  test.cpp
+﻿  acceleration.cpp
+  angle.cpp
+  main.cpp
+  physics.cpp
+  position.cpp
+  test.cpp
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.10.Ponder\testPosition.h(317,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+  (compiling source file 'test.cpp')
+  
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.10.Ponder\testPosition.h(335,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+  (compiling source file 'test.cpp')
+  
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.10.Ponder\testPosition.h(353,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+  (compiling source file 'test.cpp')
+  
 C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.10.Ponder\testPhysics.h(1089,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
@@ -17,4 +31,7 @@ C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.10.Ponder\testPhysics.h(1154
 C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.10.Ponder\testPhysics.h(1170,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
+  velocity.cpp
+  Generating Code...
+  LINK : C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.10.Ponder\x64\Debug\Lab10.exe not found or not built by the last incremental link; performing full link
   Lab10.vcxproj -> C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.10.Ponder\x64\Debug\Lab10.exe
