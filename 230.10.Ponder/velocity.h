@@ -37,8 +37,8 @@ public:
    Velocity(double dx, double dy) : dx(dx), dy(dy) {}
 
    // getters
-   double getDX()       const { return 9.9; }
-   double getDY()       const { return 9.9; }
+   double getDX()       const { return dx; }
+   double getDY()       const { return dy; }
    double getSpeed()    const;
    Angle  getAngle()    const;
 
@@ -50,7 +50,7 @@ public:
    void addDY(double dy) { this->dy += dy; }
    void add(const Acceleration& acceleration, double time);
    void add(const Velocity& rhs) { this->dx += rhs.dx; this->dy += rhs.dy; }
-   void reverse() { this->dx = -this->dx; this->dy = -this->dy; }
+   void reverse() { dx = -dx; dy = -dy; }
 
 private:
    double dx;           // horizontal velocity

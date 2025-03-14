@@ -462,8 +462,8 @@ private:
       v.reverse();
 
       // Verify
-      assert(v.getDX() == 9.9);
-      assert(v.getDY() == 9.9);
+      assert(v.getDX() == 0.0);
+      assert(v.getDY() == 0.0);
    }  // teardown
 
    /*********************************************
@@ -480,8 +480,8 @@ private:
       v.reverse();
 
       // Verify
-      assert(v.getDX() == 9.9);
-      assert(v.getDY() == 9.9);
+      assert(v.getDX() == 0.0);
+      assert(v.getDY() == -10.0);
    }  // teardown
 
    /*********************************************
@@ -498,8 +498,8 @@ private:
       v.reverse();
 
       // Verify
-      assert(v.getDX() == 9.9);
-      assert(v.getDY() == 9.9);
+      assert(v.getDX() == 0.0);
+      assert(v.getDY() == 12.34);
    }  // teardown
 
    /*********************************************
@@ -516,8 +516,8 @@ private:
       v.reverse();
 
       // Verify
-      assert(v.getDX() == 9.9);
-      assert(v.getDY() == 9.9);
+      assert(v.getDX() == 300.0);
+      assert(v.getDY() == 0.0);
    } // teardown
 
    /*********************************************
@@ -528,14 +528,14 @@ private:
    void reverse_right()
    {
       // Setup
-      Velocity v(123.456, -7.89);
+      Velocity v(0.0123, 0.0);
 
       // Exercise
       v.reverse();
 
       // Verify
-      assert(v.getDX() == 9.9);
-      assert(v.getDY() == 9.9);
+      assert(v.getDX() == -0.0123);
+      assert(v.getDY() == 0.0);
    }
 
    /*********************************************
@@ -552,8 +552,8 @@ private:
       v.reverse();
 
       // Verify
-      assert(v.getDX() == 9.9);
-      assert(v.getDY() == 9.9);
+      assert(v.getDX() == -123.456);
+      assert(v.getDY() == 7.89);
    }
 
    /*****************************************************************
@@ -765,8 +765,8 @@ private:
       vLHS.add(vRHS);
 
       // Verify
-      assert(vLHS.getDX() == 9.9);
-      assert(vLHS.getDY() == 9.9);
+      assert(vLHS.getDX() == 2.3);
+      assert(vLHS.getDY() == 4.5);
    }  // teardown
 
    /*********************************************
@@ -784,8 +784,8 @@ private:
       vLHS.add(vRHS);
 
       // Verify
-      assert(vLHS.getDX() == 9.9);
-      assert(vLHS.getDY() == 9.9);
+      assert(vLHS.getDX() == 2.3);
+      assert(vLHS.getDY() == 4.5);
    }  // teardown
 
    /*********************************************
@@ -803,8 +803,8 @@ private:
       vLHS.add(vRHS);
 
       // Verify
-      assert(vLHS.getDX() == 9.9);
-      assert(vLHS.getDY() == 9.9);
+      assert(vLHS.getDX() == 102.3);
+      assert(vLHS.getDY() == 204.5);
    } // teardown
 
 };
