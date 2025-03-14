@@ -46,9 +46,9 @@ public:
    void set(const Angle & angle, double magnitude);
    void setDX(double dx) {  }
    void setDY(double dy) {  }
-   void addDX(double dx) {  }
-   void addDY(double dy) {  }
-   void add(const Acceleration & acceleration, double time);
+   void addDX(double dx) { this->dx += dx; }
+   void addDY(double dy) { this->dy += dy; }
+   void add(const Acceleration& acceleration, double time);
    void add(const Velocity & rhs) { }
    void reverse() { }
 
