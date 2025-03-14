@@ -1167,7 +1167,7 @@ private:
       gravity = gravityFromAltitude(altitude);
       // verify
       assertEquals(altitude, 3666.6);
-      assertEquals(gravity, 9.795, 0.001);
+      assertEquals(gravity,  9.795, 0.001);
    }  // teardown
 
     /*******************************************************
@@ -1209,7 +1209,7 @@ private:
       density = densityFromAltitude(altitude);
       // verify
       assertEquals(altitude, 0);
-      assertEquals(density, 1.225);
+      assertEquals(density,  1.225);
    } // teardown
 
     /*******************************************************
@@ -1225,7 +1225,7 @@ private:
       density = densityFromAltitude(altitude);
       // verify
       assertEquals(altitude, 10000);
-      assertEquals(density, 0.4135000);
+      assertEquals(density,  0.4135000);
    } // teardown
 
     /*******************************************************
@@ -1241,7 +1241,7 @@ private:
       density = densityFromAltitude(altitude);
       // verify
       assertEquals(altitude, 80000);
-      assertEquals(density, 0.0000185);
+      assertEquals(density,  0.0000185);
    } // teardown
 
     /*******************************************************
@@ -1257,7 +1257,7 @@ private:
       density = densityFromAltitude(altitude);
       // verify
       assertEquals(altitude, 5500);
-      assertEquals(density, 0.69825);
+      assertEquals(density,  0.69825);
    } // teardown
 
     /*******************************************************
@@ -1273,7 +1273,7 @@ private:
       density = densityFromAltitude(altitude);
       // verify
       assertEquals(altitude, 43333);
-      assertEquals(density, 0.0030063);
+      assertEquals(density,  0.0030063);
    } // teardown
 
     /*******************************************************
@@ -1325,12 +1325,12 @@ private:
    void speedSoundFromAltitude_0()
    {  // setup
       double altitude = 0.0;
-      double speed = -99.99;
+      double speed =   -99.99;
       // exercise
       speed = speedSoundFromAltitude(altitude);
       // verify
       assertEquals(altitude, 0.0);
-      assertEquals(speed, 340.0);
+      assertEquals(speed,    340.0);
    }  // teardown
 
     /*******************************************************
@@ -1341,12 +1341,12 @@ private:
    void speedSoundFromAltitude_10000()
    {  // setup
       double altitude = 10000.0;
-      double speed = -99.99;
+      double speed =   -99.99;
       // exercise
       speed = speedSoundFromAltitude(altitude);
       // verify
       assertEquals(altitude, 10000.0);
-      assertEquals(speed, 299.0);
+      assertEquals(speed,    299.0);
    }  // teardown
 
     /*******************************************************
@@ -1357,12 +1357,12 @@ private:
    void speedSoundFromAltitude_80000()
    {  // setup
       double altitude = 80000.0;
-      double speed = -99.99;
+      double speed =   -99.99;
       // exercise
       speed = speedSoundFromAltitude(altitude);
       // verify
       assertEquals(altitude, 80000.0);
-      assertEquals(speed, 269.0);
+      assertEquals(speed,    269.0);
    }  // teardown
 
     /*******************************************************
@@ -1373,12 +1373,12 @@ private:
    void speedSoundFromAltitude_5500()
    {  // setup
       double altitude = 5500.0;
-      double speed = -99.99;
+      double speed =   -99.99;
       // exercise
       speed = speedSoundFromAltitude(altitude);
       // verify
       assertEquals(altitude, 5500.0);
-      assertEquals(speed, 318.0);
+      assertEquals(speed,    318.0);
    }  // teardown
 
     /*******************************************************
@@ -1389,12 +1389,12 @@ private:
    void speedSoundFromAltitude_43333()
    {  // setup
       double altitude = 43333.0;
-      double speed = -99.99;
+      double speed =   -99.99;
       // exercise
       speed = speedSoundFromAltitude(altitude);
       // verify
       assertEquals(altitude, 43333.0);
-      assertEquals(speed, 328.3329);
+      assertEquals(speed,    328.3329);
    }  // teardown
 
     /*******************************************************
@@ -1405,12 +1405,12 @@ private:
    void speedSoundFromAltitude_3666()
    {  // setup
       double altitude = 3666.0;
-      double speed = -99.99;
+      double speed =   -99.99;
       // exercise
       speed = speedSoundFromAltitude(altitude);
       // verify
       assertEquals(altitude, 3666.0);
-      assertEquals(speed, 325.336);
+      assertEquals(speed,    325.336);
    }  // teardown
 
     /*******************************************************
@@ -1421,7 +1421,7 @@ private:
    void speedSoundFromAltitude_8848()
    {  // setup
       double altitude = 8848.0;
-      double speed = -99.99;
+      double speed =   -99.99;
       // exercise
       speed = speedSoundFromAltitude(altitude);
       // verify
@@ -1445,12 +1445,12 @@ private:
    void dragFromMach_000()
    {  // setup
       double speedMach = 0.0;
-      double drag = -99.99;
+      double drag =     -99.99;
       // exercise
       drag = dragFromMach(speedMach);
       // verify
       assertEquals(speedMach, 0.0);
-      assertEquals(drag, 0.0);
+      assertEquals(drag,      0.0);
    }  // teardown
 
     /*******************************************************
@@ -1461,12 +1461,12 @@ private:
    void dragFromMach_500()
    {  // setup
       double speedMach = 5.00;
-      double drag = -99.99;
+      double drag =     -99.99;
       // exercise
       drag = dragFromMach(speedMach);
       // verify
       assertEquals(speedMach, 5.00);
-      assertEquals(drag, 0.2656);
+      assertEquals(drag,      0.2656);
    }  // teardown
 
     /*******************************************************
@@ -1477,12 +1477,12 @@ private:
    void dragFromMach_100()
    {  // setup
       double speedMach = 1.00;
-      double drag = -99.99;
+      double drag =     -99.99;
       // exercise
       drag = dragFromMach(speedMach);
       // verify
       assertEquals(speedMach, 1.00);
-      assertEquals(drag, 0.4258);
+      assertEquals(drag,      0.4258);
    }  // teardown
 
     /*******************************************************
@@ -1493,12 +1493,12 @@ private:
    void dragFromMach_060()
    {  // setup
       double speedMach = 0.6;
-      double drag = -99.99;
+      double drag =     -99.99;
       // exercise
       drag = dragFromMach(speedMach);
       // verify
       assertEquals(speedMach, 0.6);
-      assertEquals(drag, 0.1845);
+      assertEquals(drag,      0.1845);
    }  // teardown
 
     /*******************************************************
@@ -1509,12 +1509,12 @@ private:
    void dragFromMach_010()
    {  // setup
       double speedMach = 0.1;
-      double drag = -99.99;
+      double drag =     -99.99;
       // exercise
       drag = dragFromMach(speedMach);
       // verify
       assertEquals(speedMach, 0.1);
-      assertEquals(drag, 0.0543);
+      assertEquals(drag,      0.0543);
    }  // teardown
 
     /*******************************************************
