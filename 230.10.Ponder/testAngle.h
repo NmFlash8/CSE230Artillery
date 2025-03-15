@@ -2,7 +2,7 @@
  * Header File:
  *    TEST ANGLE
  * Author:
- *    <your name here>
+ *    Diego Estrada & Noah McSheehy
  * Summary:
  *    All the unit tests for ANGLE
  ************************************************************************/

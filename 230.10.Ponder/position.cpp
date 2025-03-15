@@ -2,7 +2,7 @@
  * Source File:
  *    POSITION
  * Author:
- *    <your name here>
+ *    Diego Estrada & Noah McSheehy
  * Summary:
  *    Everything we need to know about a location on the screen.
  ************************************************************************/
@@ -52,6 +52,8 @@ Position& Position::operator = (const Position& posRHS)
  *************************************************************************/
 void Position::add(const Acceleration& a, const Velocity& v, double t)
 {
+   x += v.getDX() * t + 0.5 * a.getDDX() * t * t;
+   y += v.getDY() * t + 0.5 * a.getDDY() * t * t;
 }
 
 

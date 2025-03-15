@@ -2,7 +2,7 @@
  * Header File:
  *    TEST PHYSICS
  * Author:
- *    <your name here>
+ *    Diego Estrada & Noah McSheehy
  * Summary:
  *    All the automation for the physics functions
  ************************************************************************/

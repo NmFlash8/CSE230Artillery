@@ -2,7 +2,7 @@
  * Header File:
  *    POSITION
  * Author:
- *    <your name here>
+ *    Diego Estrada & Noah McSheehy
  * Summary:
  *    Everything we need to know about a location on the screen.
  ************************************************************************/
@@ -49,8 +49,9 @@ public:
    double getZoom()    const { return metersFromPixels;     }
 
    // setters
-   void setZoom(double z) {}
-   void setMeters(double xMeters, double yMeters) { x = xMeters; y = yMeters; }
+   void setZoom(double z)           { metersFromPixels = z; }
+   void setMeters(double xMeters, 
+                  double yMeters)   { x = xMeters; y = yMeters; }
    void setMetersX(double xMeters)  { x = xMeters; }
    void setMetersY(double yMeters)  { y = yMeters; }
    void setPixelsX(double xPixels)  { x = xPixels * metersFromPixels; }

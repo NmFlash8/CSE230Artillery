@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{21EAB9E4-544D-40AC-94ED-4540E4761AD7}|Lab10.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\testPosition.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{21EAB9E4-544D-40AC-94ED-4540E4761AD7}|Lab10.vcxproj|solutionrelative:testPosition.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{21EAB9E4-544D-40AC-94ED-4540E4761AD7}|Lab10.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\position.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{21EAB9E4-544D-40AC-94ED-4540E4761AD7}|Lab10.vcxproj|solutionrelative:position.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{21EAB9E4-544D-40AC-94ED-4540E4761AD7}|Lab10.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\acceleration.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{21EAB9E4-544D-40AC-94ED-4540E4761AD7}|Lab10.vcxproj|solutionrelative:acceleration.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{21EAB9E4-544D-40AC-94ED-4540E4761AD7}|Lab10.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\position.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{21EAB9E4-544D-40AC-94ED-4540E4761AD7}|Lab10.vcxproj|solutionrelative:position.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21EAB9E4-544D-40AC-94ED-4540E4761AD7}|Lab10.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\velocity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{21EAB9E4-544D-40AC-94ED-4540E4761AD7}|Lab10.vcxproj|solutionrelative:velocity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21EAB9E4-544D-40AC-94ED-4540E4761AD7}|Lab10.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\testPosition.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{21EAB9E4-544D-40AC-94ED-4540E4761AD7}|Lab10.vcxproj|solutionrelative:testPosition.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,19 +30,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "testPosition.h",
-              "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\testPosition.h",
-              "RelativeDocumentMoniker": "testPosition.h",
-              "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\testPosition.h",
-              "RelativeToolTip": "testPosition.h",
-              "ViewState": "AgIAABoAAAAAAAAAAAAAACEAAAATAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "acceleration.h",
+              "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\acceleration.h",
+              "RelativeDocumentMoniker": "acceleration.h",
+              "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\acceleration.h",
+              "RelativeToolTip": "acceleration.h",
+              "ViewState": "AgIAABUAAAAAAAAAAAAIwCUAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-14T02:31:02.061Z",
+              "WhenOpened": "2025-03-15T02:04:46.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "velocity.h",
+              "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\velocity.h",
+              "RelativeDocumentMoniker": "velocity.h",
+              "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\velocity.h",
+              "RelativeToolTip": "velocity.h",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACcAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-15T02:05:08.304Z",
               "EditorCaption": ""
             },
             {
@@ -45,22 +66,35 @@
               "RelativeDocumentMoniker": "position.h",
               "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\position.h",
               "RelativeToolTip": "position.h",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAACgAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAIwEcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-03-14T02:30:57.985Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "position.cpp",
               "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\position.cpp",
               "RelativeDocumentMoniker": "position.cpp",
               "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\position.cpp",
               "RelativeToolTip": "position.cpp",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAAAEwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAIwDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-10T15:52:18.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "testPosition.h",
+              "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\testPosition.h",
+              "RelativeDocumentMoniker": "testPosition.h",
+              "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.10.Ponder\\testPosition.h",
+              "RelativeToolTip": "testPosition.h",
+              "ViewState": "AgIAADIDAAAAAAAAAAAkwEkDAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-14T02:31:02.061Z",
               "EditorCaption": ""
             }
           ]
