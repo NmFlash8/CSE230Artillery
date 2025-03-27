@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\testPosition.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|solutionrelative:testPosition.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\position.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|solutionrelative:position.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "testPosition.h",
+              "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\testPosition.h",
+              "RelativeDocumentMoniker": "testPosition.h",
+              "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\testPosition.h",
+              "RelativeToolTip": "testPosition.h",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAAAK4AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-27T00:16:54.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "position.h",
+              "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\position.h",
+              "RelativeDocumentMoniker": "position.h",
+              "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\position.h",
+              "RelativeToolTip": "position.h",
+              "ViewState": "AgIAADQAAAAAAAAAAAAmwD4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-27T00:19:01.112Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
