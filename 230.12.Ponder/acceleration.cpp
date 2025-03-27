@@ -1,28 +1,35 @@
 /***********************************************************************
  * Source File:
- *    ACCELERATION 
+ *    ACCELERATION
  * Author:
- *    <your name here>
+ *    Br. Helfrich
  * Summary:
  *    Everything we need to know about changing speed
  ************************************************************************/
 
 #include "acceleration.h"
 #include "angle.h"
-
 #include <cmath>
 
+
+ /*********************************************
+  * ACCELERATION : ADD
+  *  a += a
+  *********************************************/
+void Acceleration::add(const Acceleration& acceleration)
+{
+   ddx += acceleration.ddx;
+   ddy += acceleration.ddy;
+}
 
 
 /*********************************************
  * ACCELERATION : SET
  *  set from angle and direction
  *********************************************/
-void Acceleration::set(const Angle & a, double magnitude)
+void Acceleration::set(const Angle& angle, double magnitude)
 {
-   
-}
-void AccelerationDummy::set(const Angle& a, double magnitude)
-{
-   assert(false);
+   double angleRad = angle.getRadians();  // Get radians from angle class
+   ddy = magnitude * cos(angleRad);
+   ddx = magnitude * sin(angleRad);
 }
