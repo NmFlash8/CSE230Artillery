@@ -70,7 +70,7 @@ class Howitzer
       }
 
       // get the elevation
-      const Angle & getElevation() const { return elevation; }
+      const Angle & getElevation() { return elevation; }
 
    private:
       Position position;      // initial position of the projectile

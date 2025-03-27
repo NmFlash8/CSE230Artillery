@@ -63,9 +63,21 @@ private:
      *                 and the muzzle velocity is correct)
      *********************************************/
    void defaultConstructor()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // Setup
+      Howitzer howitzer;
+
+      // Exercise
+      double muzzleVelocity = howitzer.getMuzzleVelocity();
+      double elevation = howitzer.getElevation().getDegrees();
+      double posX = howitzer.getPosition().getPixelsX();
+      double posY = howitzer.getPosition().getPixelsY();
+
+      // Verify
+      assert(muzzleVelocity == DEFAULT_MUZZLE_VELOCITY);
+      assert(elevation == 45.0);
+      assert(posX == 0.0);
+      assert(posY == 0.0);
+   }  // Teardown
 
    /*****************************************************************
     *****************************************************************
@@ -79,39 +91,74 @@ private:
      * output:  pos=(0,0)
      *********************************************/
    void getPosition_zero()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // Setup
+      Howitzer howitzer;
+      howitzer.getPosition().setPixelsX(0.0);
+      howitzer.getPosition().setPixelsY(0.0);
+
+      // Exercise
+      Position pos = howitzer.getPosition();
+
+      // Verify
+      assert(pos.getPixelsX() == 0.0);
+      assert(pos.getPixelsY() == 0.0);
+   }  // Teardown
+
 
    /*********************************************
     * name:    GET POSITION MIDDLE
-     * input:   h.pos=(123.4, 567.8)
-     * output:  pos=(123.4, 567.8)
+    * input:   h.pos=(123.4, 567.8)
+    * output:  pos=(123.4, 567.8)
     *********************************************/
    void getPosition_middle()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // Setup
+      Howitzer howitzer;
+      howitzer.getPosition().setPixelsX(123.4);
+      howitzer.getPosition().setPixelsY(567.8);
+
+      // Exercise
+      Position pos = howitzer.getPosition();
+
+      // Verify
+      assert(pos.getPixelsX() == 123.4);
+      assert(pos.getPixelsY() == 567.8);
+   }  // Teardown
+
 
    /*********************************************
     * name:    GET MUZZLE VELOCITY - SLOW SPEED
-     * input:   h.muzzleVelocity=(24.68)
-     * output:  m=24.68
+    * input:   h.muzzleVelocity=(24.68)
+    * output:  m=24.68
     *********************************************/
    void getMuzzleVelocity_slow()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // Setup
+      Howitzer howitzer;
+      howitzer.muzzleVelocity = 24.68;
+
+      // Exercise
+      double m = howitzer.getMuzzleVelocity();
+
+      // Verify
+      assert(m == 24.68);
+   }  // Teardown
 
    /*********************************************
     * name:    GET MUZZLE VELOCITY - STANDARD SPEED
-     * input:   h.muzzleVelocity=(827.00)
-     * output:  m=827
+    * input:   h.muzzleVelocity=(827.00)
+    * output:  m=827
     *********************************************/
    void getMuzzleVelocity_standard()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // Setup
+      Howitzer howitzer;
+      howitzer.muzzleVelocity = 827.00;
+
+      // Exercise
+      double m = howitzer.getMuzzleVelocity();
+
+      // Verify
+      assert(m == 827.00);
+   }  // Teardown
+
 
    /*********************************************
     * name:    GET ELEVATION - up

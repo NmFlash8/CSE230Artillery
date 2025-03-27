@@ -188,8 +188,7 @@ private:
     *          Position::metersFromPixels=123.4
     *********************************************/
    void getZoom_member()
-   {
-      // Setup
+   {  // Setup
       Position pos;
       pos.metersFromPixels = 123.4;
 
@@ -198,9 +197,7 @@ private:
 
       // Verify
       assert(zoom == 123.4);
-
-      // Teardown (not needed in this case)
-   }
+   }  // Teardown
    
    /*********************************************
     * name:    GET ZOOM : another variable
