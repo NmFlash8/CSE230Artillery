@@ -1,0 +1,36 @@
+﻿  acceleration.cpp
+  angle.cpp
+  ground.cpp
+  main.cpp
+  physics.cpp
+  position.cpp
+  projectile.cpp
+  simulation.cpp
+  test.cpp
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testPosition.h(474,29): error C2504: 'VelocityDummy': base class undefined
+  (compiling source file 'test.cpp')
+  
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testPosition.h(481,30): error C2504: 'VelocityDummy': base class undefined
+  (compiling source file 'test.cpp')
+  
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testPosition.h(490,33): error C2504: 'AccelerationDummy': base class undefined
+  (compiling source file 'test.cpp')
+  
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testPosition.h(497,34): error C2504: 'AccelerationDummy': base class undefined
+  (compiling source file 'test.cpp')
+  
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testPosition.h(575,11): error C2664: 'void Position::add(const Acceleration &,const Velocity &,double)': cannot convert argument 1 from 'TestPosition::Acceleration23' to 'const Acceleration &'
+  (compiling source file 'test.cpp')
+      C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testPosition.h(575,15):
+      Reason: cannot convert from 'TestPosition::Acceleration23' to 'const Acceleration'
+      C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testPosition.h(575,15):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+      C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\position.h(63,9):
+      see declaration of 'Position::add'
+      C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testPosition.h(575,11):
+      while trying to match the argument list '(TestPosition::Acceleration23, TestPosition::Velocity54, double)'
+  
+  uiDraw.cpp
+  uiInteract.cpp
+  velocity.cpp
+  Generating Code...
