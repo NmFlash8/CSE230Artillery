@@ -13,6 +13,7 @@
 #include "position.h"
 #include "velocity.h"
 #include "acceleration.h"
+#include <cassert>
 
 using namespace std;
 
@@ -188,7 +189,17 @@ private:
     *********************************************/
    void getZoom_member()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // Setup
+      Position pos;
+      pos.metersFromPixels = 123.4;
+
+      // Exercise
+      double zoom = pos.metersFromPixels;
+
+      // Verify
+      assert(zoom == 123.4);
+
+      // Teardown (not needed in this case)
    }
    
    /*********************************************
@@ -201,7 +212,21 @@ private:
     *********************************************/
    void getZoom_anotherVariable()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // Setup
+      Position pos1, pos2;
+      pos1.metersFromPixels = 99.9;
+      pos2.metersFromPixels = 123.4;
+
+      // Exercise
+      double zoom = pos2.metersFromPixels;
+      pos1.metersFromPixels = zoom;
+
+      // Verify
+      assert(zoom == 123.4);
+      assert(pos1.metersFromPixels == 123.4);
+      assert(pos2.metersFromPixels == 123.4);
+
+      // Teardown
    }
 
 
@@ -260,7 +285,19 @@ private:
     *********************************************/
    void getPixelsX_noZoom()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // Setup
+      Position pos;
+      pos.metersFromPixels = 1.0;
+      pos.x = 123.4;
+      pos.y = 567.8;
+
+      // Exercise
+      double x = pos.x;
+
+      // Verify
+      assert(x == 123.4);
+
+      // Teardown
    }
    
    /*********************************************
@@ -270,7 +307,19 @@ private:
     *********************************************/
    void getPixelsX_zoom()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // Setup
+      Position pos;
+      pos.metersFromPixels = 100.0;
+      pos.x = 123.4;
+      pos.y = 567.8;
+
+      // Exercise
+      double x = pos.x / pos.metersFromPixels;
+
+      // Verify
+      assert(x == 1.234);
+
+      // Teardown
    }
 
    /*********************************************
@@ -280,7 +329,19 @@ private:
     *********************************************/
    void getPixelsY_noZoom()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // Setup
+      Position pos;
+      pos.metersFromPixels = 1.0;
+      pos.x = 123.4;
+      pos.y = 567.8;
+
+      // Exercise
+      double y = pos.y; 
+
+      // Verify
+      assert(y == 567.8);
+
+      // Teardown
    }
 
    /*********************************************
@@ -350,7 +411,20 @@ private:
     *********************************************/
    void setPixelsX_noZoom()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // Setup
+      Position pos;
+      pos.metersFromPixels = 1.0;
+      pos.x = 999.9;
+      pos.y = 888.8;
+
+      // Exercise
+      pos.x = 123.4;
+
+      // Verify
+      assert(pos.x == 123.4);
+      assert(pos.y == 888.8); 
+
+      // Teardown
    }
 
    /*********************************************
@@ -360,7 +434,20 @@ private:
     *********************************************/
    void setPixelsX_zoom()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // Setup
+      Position pos;
+      pos.metersFromPixels = 100.0;
+      pos.x = 999.9;
+      pos.y = 888.8;
+
+      // Exercise
+      pos.x = 123.4 * pos.metersFromPixels;
+
+      // Verify
+      assert(pos.x == 123.4 * 100);  
+      assert(pos.y == 888.8);       
+
+      // Teardown
    }
    
    /*********************************************
