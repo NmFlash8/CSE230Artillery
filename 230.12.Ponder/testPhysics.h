@@ -16,6 +16,7 @@
 #include "physics.h"
 #include "unitTest.h"
 
+const double EPSILON = 1e-6;
 
 
 /*******************************
@@ -1339,7 +1340,17 @@ private:
      ********************************************************/
    void dragFromMach_000()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // Setup
+      double speedMach = 0.0;
+      double expectedDrag = 0.0;
+
+      // Exercise
+      double result = dragFromMach(speedMach); 
+
+      // Verify
+      assert(fabs(result - expectedDrag) < EPSILON);
+
+      // Teardown
    }
 
     /*******************************************************
@@ -1359,7 +1370,17 @@ private:
      ********************************************************/
    void dragFromMach_100()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      const double speedMach = 1.0; 
+      const double expectedDrag = 0.4258; 
+
+      // EXERCISE
+      double result = dragFromMach(speedMach);
+
+      // VERIFY
+      assert(fabs(result - expectedDrag) < EPSILON);
+
+      // TEARDOWN
    }
 
     /*******************************************************
@@ -1369,7 +1390,17 @@ private:
      ********************************************************/
    void dragFromMach_060()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      const double speedMach = 0.6; 
+      const double expectedDrag = 0.1845; 
+
+      // EXERCISE
+      double result = dragFromMach(speedMach);
+
+      // VERIFY
+      assert(fabs(result - expectedDrag) < EPSILON);
+
+      // TEARDOWN
    }
 
     /*******************************************************
@@ -1379,7 +1410,17 @@ private:
      ********************************************************/
    void dragFromMach_010()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      const double speedMach = 0.1; 
+      const double expectedDrag = 0.0543; 
+
+      // EXERCISE
+      double result = dragFromMach(speedMach);
+
+      // VERIFY
+      assert(fabs(result - expectedDrag) < EPSILON);
+
+      // TEARDOWN
    }
 
     /*******************************************************
