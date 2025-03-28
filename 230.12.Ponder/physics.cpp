@@ -35,7 +35,20 @@ double linearInterpolation(const Mapping mapping[], int numMapping, double domai
          double r0 = mapping[i].range;
          double d1 = mapping[i + 1].domain;
          double r1 = mapping[i + 1].range;
-
+         {
+    // Setup: Define the altitude and expected gravity
+    double altitude = 43333.3;
+    double expectedGravity = 9.7933;
+    
+    // Exercise: Call the function that calculates gravity based on altitude
+    double result = gravityFromAltitude(altitude);  // Replace with actual function call
+    
+    // Verify: Check if the result is within an acceptable range
+    const double EPSILON = 1e-4;  // Precision tolerance for floating-point comparison
+    assert(fabs(result - expectedGravity) < EPSILON);
+    
+    // Teardown: No specific teardown needed for this test
+}
          // Perform linear interpolation
          return linearInterpolation(d0, r0, d1, r1, domain);
       }

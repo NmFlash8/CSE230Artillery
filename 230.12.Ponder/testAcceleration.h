@@ -321,7 +321,19 @@ private:
     *********************************************/
    void addDDX_zero()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      Acceleration acc(2.3, 4.5);
+      double ddx = 0.0;          
+      const double EPSILON = 0.0001;
+
+      // EXERCISE
+      acc.addDDX(ddx);
+
+      // VERIFY
+      assert(fabs(acc.getDDX() - 2.3) < EPSILON);
+      assert(fabs(acc.getDDY() - 4.5) < EPSILON);
+
+      // TEARDOWN
    }
    
    /*********************************************
@@ -331,7 +343,19 @@ private:
     *********************************************/
    void addDDX_value()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      Acceleration acc(2.3, 4.5);
+      double ddx = 4.1;           
+      const double EPSILON = 0.0001;
+
+      // EXERCISE
+      acc.addDDX(ddx); 
+
+      // VERIFY
+      assert(fabs(acc.getDDX() - 6.4) < EPSILON);
+      assert(fabs(acc.getDDY() - 4.5) < EPSILON); 
+
+      // TEARDOWN
    }
 
    /*********************************************
@@ -341,7 +365,19 @@ private:
     *********************************************/
    void addDDY_zero()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      Acceleration acc(2.3, 4.5); 
+      double ddy = 0.0;          
+      const double EPSILON = 0.0001;
+
+      // EXERCISE
+      acc.addDDY(ddy); 
+
+      // VERIFY
+      assert(fabs(acc.getDDX() - 2.3) < EPSILON); 
+      assert(fabs(acc.getDDY() - 4.5) < EPSILON); 
+
+      // TEARDOWN
    }
 
    /*********************************************
@@ -351,7 +387,19 @@ private:
     *********************************************/
    void addDDY_value()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      Acceleration acc(2.3, 4.5); 
+      double ddy = 4.1;           
+      const double EPSILON = 0.0001;
+
+      // EXERCISE
+      acc.addDDY(ddy); 
+
+      // VERIFY
+      assert(fabs(acc.getDDX() - 2.3) < EPSILON);
+      assert(fabs(acc.getDDY() - 8.6) < EPSILON); 
+
+      // TEARDOWN
    }
 
    /*********************************************
@@ -361,7 +409,19 @@ private:
     *********************************************/
    void add_zeroZero()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      Acceleration aLHS(0.0, 0.0); 
+      Acceleration aRHS(0.0, 0.0); 
+      const double EPSILON = 0.0001;
+
+      // EXERCISE
+      aLHS.add(aRHS); 
+
+      // VERIFY
+      assert(fabs(aLHS.getDDX() - 0.0) < EPSILON); 
+      assert(fabs(aLHS.getDDY() - 0.0) < EPSILON); 
+
+      // TEARDOWN
    }
 
    /*********************************************
@@ -371,7 +431,19 @@ private:
     *********************************************/
    void add_valueZero()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      Acceleration aLHS(1.1, 2.2); 
+      Acceleration aRHS(0.0, 0.0); 
+      const double EPSILON = 0.0001;
+
+      // EXERCISE
+      aLHS.add(aRHS); 
+
+      // VERIFY
+      assert(fabs(aLHS.getDDX() - 1.1) < EPSILON);
+      assert(fabs(aLHS.getDDY() - 2.2) < EPSILON);
+
+      // TEARDOWN
    }
 
    /*********************************************
@@ -381,7 +453,19 @@ private:
     *********************************************/
    void add_zeroValue()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      Acceleration aLHS(0.0, 0.0); 
+      Acceleration aRHS(4.4, 7.7); 
+      const double EPSILON = 0.0001;
+
+      // EXERCISE
+      aLHS.add(aRHS); 
+
+      // VERIFY
+      assert(fabs(aLHS.getDDX() - 4.4) < EPSILON); 
+      assert(fabs(aLHS.getDDY() - 7.7) < EPSILON); 
+
+      // TEARDOWN
    }
 
    /*********************************************
@@ -391,7 +475,19 @@ private:
     *********************************************/
    void add_valueValue()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      Acceleration aLHS(1.1, 2.2);
+      Acceleration aRHS(4.4, 7.7); 
+      const double EPSILON = 0.0001;
+
+      // EXERCISE
+      aLHS.add(aRHS); 
+
+      // VERIFY
+      assert(fabs(aLHS.getDDX() - 5.5) < EPSILON);
+      assert(fabs(aLHS.getDDY() - 9.9) < EPSILON); 
+
+      // TEARDOWN
    }
 
 };

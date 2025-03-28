@@ -12,6 +12,8 @@
 
 #include "angle.h"
 #include "unitTest.h"
+#include <cmath>
+#include <cassert>
 
 /*******************************
  * TEST ANGLE
@@ -479,7 +481,6 @@ private:
    {
       assertUnit(NOT_YET_IMPLEMENTED);
    }
-
 
    /*********************************************
     * name:    SET DX DY  RIGHT

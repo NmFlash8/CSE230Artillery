@@ -613,7 +613,22 @@ private:
     *********************************************************/
    void linearInterpolation_coordinatesZero()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      double d0 = 0.0;
+      double r0 = 0.0;
+      double d1 = 8.0;
+      double r1 = 8.0;
+      double d = d0; 
+      double expected = r0;  
+      const double EPSILON = 0.0001;
+
+      // EXERCISE
+      double result = linearInterpolation(d0, r0, d1, r1, d);
+
+      // VERIFY
+      assert(fabs(result - expected) < EPSILON);
+
+      // TEARDOWN
    }
 
    /*********************************************************
@@ -629,7 +644,22 @@ private:
     *********************************************************/
    void linearInterpolation_coordinatesOne()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      double d0 = 0.0;
+      double r0 = 0.0;
+      double d1 = 8.0;
+      double r1 = 8.0;
+      double d = d1; 
+      double expected = r1;  
+      const double EPSILON = 0.0001;
+
+      // EXERCISE
+      double result = linearInterpolation(d0, r0, d1, r1, d);
+
+      // VERIFY
+      assert(fabs(result - expected) < EPSILON);
+
+      // TEARDOWN
    }
 
    /*********************************************************
@@ -645,7 +675,22 @@ private:
     *********************************************************/
    void linearInterpolation_coordinatesMiddle()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      double d0 = 0.0;
+      double r0 = 0.0;
+      double d1 = 8.0;
+      double r1 = 8.0;
+      double d = 4.0;  
+      double expected = 4.0; 
+      const double EPSILON = 0.0001;
+
+      // EXERCISE
+      double result = linearInterpolation(d0, r0, d1, r1, d);
+
+      // VERIFY
+      assert(fabs(result - expected) < EPSILON);
+
+      // TEARDOWN
    }
 
    /*********************************************************
@@ -661,7 +706,22 @@ private:
     *********************************************************/
    void linearInterpolation_coordinatesTop()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      double d0 = 0.0;
+      double r0 = 0.0;
+      double d1 = 8.0;
+      double r1 = 8.0;
+      double d = 6.0;
+      double expected = 6.0;
+      const double EPSILON = 0.0001;
+
+      // EXERCISE
+      double result = linearInterpolation(d0, r0, d1, r1, d);
+
+      // VERIFY
+      assert(fabs(result - expected) < EPSILON);
+
+      // TEARDOWN
    }
 
    /*********************************************************
@@ -678,9 +738,23 @@ private:
     *********************************************************/
    void linearInterpolation_coordinatesBackwards()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // SETUP
+      double d0 = 1.0;   
+      double r0 = 9.0;   
+      double d1 = 7.0;    
+      double r1 = -3.0;   
+      double d = 3.0;     
+      double expected = 5.0;  
+      const double EPSILON = 0.0001;
 
+      // EXERCISE
+      double result = linearInterpolation(d0, r0, d1, r1, d);
+
+      // VERIFY
+      assert(fabs(result - expected) < EPSILON);
+
+      // TEARDOWN 
+   }
 
    /*****************************************************************
     *****************************************************************
@@ -744,9 +818,26 @@ private:
     *********************************************************/
    void linearInterpolation_mappingTwo()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // SETUP
+      Mapping mapping[] = {
+          {1.0, 2.0},   // mapping[0]
+          {3.0, 3.0},   // mapping[1]
+          {7.0, 5.0},   // mapping[2] (d, r)
+          {8.0, 6.5}    // mapping[3]
+      };
+      int numMapping = sizeof(mapping) / sizeof(mapping[0]);
+      double d = 7.0; 
+      double expected = 5.0; 
+      const double EPSILON = 0.0001;
 
+      // EXERCISE
+      double result = linearInterpolation(mapping, numMapping, d);
+
+      // VERIFY
+      assert(fabs(result - expected) < EPSILON);
+
+      // TEARDOWN
+   }
 
    /*********************************************************
     * LINEAR INTERPOLATION - mapping midway between [0]and[1]
@@ -764,9 +855,26 @@ private:
     *********************************************************/
    void linearInterpolation_mappingMid01()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // SETUP
+      Mapping mapping[] = {
+          {1.0, 2.0},   // mapping[0]
+          {3.0, 3.0},   // mapping[1]
+          {7.0, 5.0},   // mapping[2]
+          {8.0, 6.5}    // mapping[3]
+      };
+      int numMapping = sizeof(mapping) / sizeof(mapping[0]);
+      double d = 2.0; 
+      double expected = 2.5;
+      const double EPSILON = 0.0001;
 
+      // EXERCISE
+      double result = linearInterpolation(mapping, numMapping, d);
+
+      // VERIFY
+      assert(fabs(result - expected) < EPSILON);
+
+      // TEARDOWN
+   }
 
    /*********************************************************
     * LINEAR INTERPOLATION - mapping closer to [1] than [0]
@@ -784,9 +892,26 @@ private:
     *********************************************************/
    void linearInterpolation_mappingTop01()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // SETUP
+      Mapping mapping[] = {
+          {1.0, 2.0},   // mapping[0]
+          {3.0, 3.0},   // mapping[1]
+          {7.0, 5.0},   // mapping[2]
+          {8.0, 6.5}    // mapping[3]
+      };
+      int numMapping = sizeof(mapping) / sizeof(mapping[0]);
+      double d = 2.8; 
+      double expected = 2.9; 
+      const double EPSILON = 0.0001;
 
+      // EXERCISE
+      double result = linearInterpolation(mapping, numMapping, d);
+
+      // VERIFY
+      assert(fabs(result - expected) < EPSILON);
+
+      // TEARDOWN
+   }
 
    /*********************************************************
     * LINEAR INTERPOLATION - mapping closer to [2] than [3]
@@ -804,7 +929,22 @@ private:
     *********************************************************/
    void linearInterpolation_mappinglower23()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      Mapping mapping[] = {
+          {1, 2},
+          {3, 3},
+          {7, 5},   // mapping[2]
+          {8, 6.5}  // mapping[3]
+      };
+
+      double domain = 7.5;
+      double expected = 5.75;
+
+      
+      double result = linearInterpolation(mapping[2].domain, mapping[2].range, mapping[3].domain, mapping[3].range, domain);
+
+      
+      const double EPSILON = 1e-6;
+      assert(fabs(result - expected) < EPSILON);
    }
 
 
@@ -825,9 +965,27 @@ private:
     *********************************************************/
    void linearInterpolation_mappingSmall()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // SETUP: Define the mapping array based on the diagram
+      Mapping mapping[] = {
+          {1, 2},    // mapping[0]
+          {3, 3},    // mapping[1]
+          {7, 5},    // mapping[2]
+          {8, 6.5},  // mapping[3]
+      };
 
+      // SETUP
+      double domain = 0.2; 
+      double expected = 2;   
+
+      // EXERCISE
+      double result = linearInterpolation(mapping, sizeof(mapping) / sizeof(mapping[0]), domain);
+
+      // VERIFY
+      const double EPSILON = 1e-6;
+      assert(fabs(result - expected) < EPSILON);
+
+      // TEARDOWN
+   }
 
    /*********************************************************
     * LINEAR INTERPOLATION - too large - off the end on the high side
@@ -846,9 +1004,27 @@ private:
     *********************************************************/
    void linearInterpolation_mappingLarge()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // SETUP: Define the mapping array based on the diagram
+      Mapping mapping[] = {
+          {1, 2},    // mapping[0]
+          {3, 3},    // mapping[1]
+          {7, 5},    // mapping[2]
+          {8, 6.5},  // mapping[3]
+      };
 
+      // SETUP
+      double domain = 50;
+      double expected = 6.5; 
+
+      // EXERCISE
+      double result = linearInterpolation(mapping, sizeof(mapping) / sizeof(mapping[0]), domain);
+
+      // VERIFY
+      const double EPSILON = 1e-6;
+      assert(fabs(result - expected) < EPSILON);
+
+      // TEARDOWN
+   }
 
    /*****************************************************************
     *****************************************************************
@@ -866,7 +1042,18 @@ private:
      ********************************************************/
    void gravityFromAltitude_0()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      double altitude = 0;     
+      double expectedGravity = 9.807;  
+
+      // EXERCISE
+      double result = gravityFromAltitude(altitude);
+
+      // VERIFY
+      const double EPSILON = 1e-6;
+      assert(fabs(result - expectedGravity) < EPSILON);
+
+      // TEARDOWN
    }
 
 
@@ -877,7 +1064,18 @@ private:
      ********************************************************/
    void gravityFromAltitude_10000()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      double altitude = 10000;    
+      double expectedGravity = 9.776; 
+
+      // EXERCISE
+      double result = gravityFromAltitude(altitude);
+
+      // VERIFY
+      const double EPSILON = 1e-6;
+      assert(fabs(result - expectedGravity) < EPSILON);
+
+      // TEARDOWN
    }
 
     /*******************************************************
@@ -887,7 +1085,18 @@ private:
      ********************************************************/
    void gravityFromAltitude_80000()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // SETUP
+      double altitude = 80000;   
+      double expectedGravity = 9.564; 
+
+      // EXERCISE
+      double result = gravityFromAltitude(altitude);
+
+      // VERIFY
+      const double EPSILON = 1e-6;
+      assert(fabs(result - expectedGravity) < EPSILON);
+
+      // TEARDOWN
    }
 
     /*******************************************************
@@ -907,7 +1116,18 @@ private:
      ********************************************************/
    void gravityFromAltitude_43333()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // Setup: Define the altitude and expected gravity
+      double altitude = 43333.3;
+      double expectedGravity = 9.7933;
+
+      // Exercise: Call the function that calculates gravity based on altitude
+      double result = gravityFromAltitude(altitude);  // Replace with actual function call
+
+      // Verify: Check if the result is within an acceptable range
+      const double EPSILON = 1e-4;  // Precision tolerance for floating-point comparison
+      assert(fabs(result - expectedGravity) < EPSILON);
+
+      // Teardown: No specific teardown needed for this test
    }
 
     /*******************************************************

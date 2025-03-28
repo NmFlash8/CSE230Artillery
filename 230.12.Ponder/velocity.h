@@ -52,6 +52,7 @@ public:
    void add(const Velocity& rhs) { this->dx += rhs.dx; this->dy += rhs.dy; }
    void reverse() { dx = -dx; dy = -dy; }
 
+
 private:
    double dx;           // horizontal velocity
    double dy;           // vertical velocity
