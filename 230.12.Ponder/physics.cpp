@@ -8,12 +8,12 @@
  ************************************************************************/
 
 #include "physics.h"  // for the prototypes
-
+#include <cmath>      // for fabs
 
  /*********************************************************
- * LINEAR INTERPOLATION
- * From a list of domains and ranges, linear interpolate
- *********************************************************/
+  * LINEAR INTERPOLATION
+  * From a list of domains and ranges, linear interpolate
+  *********************************************************/
 double linearInterpolation(const Mapping mapping[], int numMapping, double domain)
 {
    // Edge cases: If the domain is outside the range of the provided mappings, return the boundary values.
@@ -35,20 +35,7 @@ double linearInterpolation(const Mapping mapping[], int numMapping, double domai
          double r0 = mapping[i].range;
          double d1 = mapping[i + 1].domain;
          double r1 = mapping[i + 1].range;
-         {
-    // Setup: Define the altitude and expected gravity
-    double altitude = 43333.3;
-    double expectedGravity = 9.7933;
-    
-    // Exercise: Call the function that calculates gravity based on altitude
-    double result = gravityFromAltitude(altitude);  // Replace with actual function call
-    
-    // Verify: Check if the result is within an acceptable range
-    const double EPSILON = 1e-4;  // Precision tolerance for floating-point comparison
-    assert(fabs(result - expectedGravity) < EPSILON);
-    
-    // Teardown: No specific teardown needed for this test
-}
+
          // Perform linear interpolation
          return linearInterpolation(d0, r0, d1, r1, domain);
       }
@@ -74,7 +61,6 @@ double gravityFromAltitude(double altitude)
    int numMapping = sizeof(gravityTable) / sizeof(gravityTable[0]);
    return linearInterpolation(gravityTable, numMapping, altitude);
 }
-
 
 /*********************************************************
  * DENSITY FROM ALTITUDE
@@ -108,7 +94,6 @@ double speedSoundFromAltitude(double altitude)
    return linearInterpolation(speedOfSoundTable, numMapping, altitude);
 }
 
-
 /*********************************************************
  * DRAG FROM MACH
  * Determine the drag coefficient for a M795 shell given speed in Mach
@@ -116,12 +101,11 @@ double speedSoundFromAltitude(double altitude)
 double dragFromMach(double speedMach)
 {
    const Mapping dragTable[] = {
-       {0.000, 0.0000}, {0.100, 0.0543}, {0.300, 0.1629}, {0.500, 0.1659}, {0.700, 0.2031}, 
-       {0.890, 0.2597}, {0.920, 0.3010}, {0.960, 0.3287}, {0.980, 0.4002}, {1.000, 0.4258}, 
-       {1.020, 0.4335}, {1.060, 0.4483}, {1.240, 0.4064}, {1.530, 0.3663}, {1.990, 0.2897}, 
+       {0.000, 0.0000}, {0.100, 0.0543}, {0.300, 0.1629}, {0.500, 0.1659}, {0.700, 0.2031},
+       {0.890, 0.2597}, {0.920, 0.3010}, {0.960, 0.3287}, {0.980, 0.4002}, {1.000, 0.4258},
+       {1.020, 0.4335}, {1.060, 0.4483}, {1.240, 0.4064}, {1.530, 0.3663}, {1.990, 0.2897},
        {2.870, 0.2297}, {2.890, 0.2306}, {5.000, 0.2656}
    };
    int numMapping = sizeof(dragTable) / sizeof(dragTable[0]);
    return linearInterpolation(dragTable, numMapping, speedMach);
 }
-

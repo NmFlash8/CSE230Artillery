@@ -738,24 +738,19 @@ private:
     *         d
     *********************************************************/
    void linearInterpolation_coordinatesBackwards()
-   {
-      // SETUP
-      double d0 = 1.0;   
-      double r0 = 9.0;   
-      double d1 = 7.0;    
-      double r1 = -3.0;   
-      double d = 3.0;     
-      double expected = 5.0;  
+   {  // SETUP
+      double d0 = 1.0;
+      double r0 = 9.0;
+      double d1 = 7.0;
+      double r1 = -3.0;
+      double d = 3.0;
+      double expected = 5.0;
       const double EPSILON = 0.0001;
-
       // EXERCISE
       double result = linearInterpolation(d0, r0, d1, r1, d);
-
       // VERIFY
       assert(fabs(result - expected) < EPSILON);
-
-      // TEARDOWN 
-   }
+   }  // TEARDOWN 
 
    /*****************************************************************
     *****************************************************************
@@ -772,32 +767,46 @@ private:
     *****************************************************************
     *****************************************************************/
 
-   /*********************************************************
-    * LINEAR INTERPOLATION - mapping at [0]
-    *
-    *    |        8,6.5 * mapping[3]
-    *    |            /
-    *    |      7,5   * mapping[2]
-    *    |          /
-    *    |       /
-    *    |  3,3 * mapping[1]
-    *   r|     /
-    *    |1,2 * mapping[0]  (d,r)
-    *    +-------------
-    *       d
-    *********************************************************/
+    /*********************************************************
+     * LINEAR INTERPOLATION - mapping at [0]
+     *
+     *    |     8,6.5 * mapping[3]
+     *    |          /
+     *    |    7,5  * mapping[2]
+     *    |        /
+     *    |       /
+     *    |  3,3 * mapping[1]
+     *   r|     /
+     *    |1,2 * mapping[0]  (d,r)
+     *    +-------------
+     *       d
+     *********************************************************/
    void linearInterpolation_mappingZero()
-   {  
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }  
+   {  // SETUP
+      Mapping mappings[] = {
+         {1, 2},  // (d0, r0)
+         {3, 3},
+         {7, 5},
+         {8, 6.5} // (d1, r1)
+      };
+      int numMappings = 4;
+      double domain = 1; // Should return the range at index 0, which is 2
+
+      // EXERCISE
+      double result = linearInterpolation(mappings, numMappings, domain);
+
+      // VERIFY
+      assert(result == 2);
+
+   }  // TEARDOWN   
 
    /*********************************************************
     * LINEAR INTERPOLATION - mapping at [2]
     *
-    *    |        8,6.5 * mapping[3]
-    *    |            /
-    *    |      7,5   * mapping[2] (d,r)
+    *    |     8,6.5 * mapping[3]
     *    |          /
+    *    |   7,5   * mapping[2] (d,r)
+    *    |        /
     *    |       /
     *    |  3,3 * mapping[1]
     *   r|     /
@@ -806,36 +815,60 @@ private:
     *       d
     *********************************************************/
    void linearInterpolation_mappingTwo()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      Mapping mappings[] = {
+         {1, 2},
+         {3, 3},
+         {7, 5},
+         {8, 6.5}
+      };
+      int numMappings = 4;
+      double domain = 7;
+      // EXERCISE
+      double result = linearInterpolation(mappings, numMappings, domain);
+      // VERIFY
+      assert(result == 5);
+   }  // TEARDOWN  
 
-   /*********************************************************
-    * LINEAR INTERPOLATION - mapping midway between [0]and[1]
-    *
-    *    |        8,6.5 * mapping[3]
-    *    |            /
-    *    |      7,5   * mapping[2]
-    *    |          /
-    *    |       /
-    *    |  3,3 * mapping[1]
-    *   r|2,2.5* (d,r)
-    *    |1,2 * mapping[0]  
-    *    +-------------
-    *       d
-    *********************************************************/
+
+/*********************************************************
+ * LINEAR INTERPOLATION - mapping midway between [0] and [1]
+ *
+ *    |     8,6.5 * mapping[3]
+ *    |          /
+ *    |     7,5 * mapping[2]
+ *    |        /
+ *    |       /
+ *    |  3,3 * mapping[1]
+ *   r|2,2.5* (d,r)
+ *    |1,2 * mapping[0]
+ *    +-------------
+ *       d
+ *********************************************************/
    void linearInterpolation_mappingMid01()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      Mapping mappings[] = {
+         {1, 2},
+         {3, 3},
+         {7, 5},
+         {8, 6.5}
+      };
+      int numMappings = 4;
+      double domain = 2.5;
+      // EXERCISE
+      double result = linearInterpolation(mappings, numMappings, domain);
+      // VERIFY
+      assert(result == 2.75); 
+   }  // TEARDOWN
+
 
    /*********************************************************
     * LINEAR INTERPOLATION - mapping closer to [1] than [0]
     *
-    *    |           8,6.5 * mapping[3]
-    *    |               /
-    *    |         7,5   * mapping[2]
+    *    |        8,6.5 * mapping[3]
     *    |             /
+    *    |      7,5   * mapping[2]
+    *    |           /
     *    |          /
     *    |     3,3 * mapping[1]
     *   r|2.8,2.9 * (d,r)
@@ -844,17 +877,29 @@ private:
     *       d
     *********************************************************/
    void linearInterpolation_mappingTop01()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      Mapping mappings[] = {
+         {1, 2},
+         {3, 3},
+         {7, 5},
+         {8, 6.5}
+      };
+      int numMappings = 4;
+      double domain = 2.8;
+      // EXERCISE
+      double result = linearInterpolation(mappings, numMappings, domain);
+      // VERIFY
+      assert(result == 2.9);
+   }  // TEARDOWN
+
 
    /*********************************************************
     * LINEAR INTERPOLATION - mapping closer to [2] than [3]
     *
-    *    |        8,6.5 * mapping[3]
-    *    |     7.3,5.5 * (d,r)
-    *    |      7,5   * mapping[2]
-    *    |          /
+    *    |     8,6.5 * mapping[3]
+    *    |  7.3,5.5 * (d,r)
+    *    |     7,5 * mapping[2]
+    *    |        /
     *    |       /
     *    |  3,3 * mapping[1]
     *   r|     /
@@ -863,50 +908,87 @@ private:
     *       d
     *********************************************************/
    void linearInterpolation_mappinglower23()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      Mapping mappings[] = {
+         {1, 2},
+         {3, 3},
+         {7, 5},
+         {8, 6.5}
+      };
+      int numMappings = 4;
+      double domain = 7.3;
+      // EXERCISE
+      double result = linearInterpolation(mappings, numMappings, domain);
+      // VERIFY
+      assert(std::abs(result - 5.45) < epsilon);
+   }  // TEARDOWN
 
 
-   /*********************************************************
-    * LINEAR INTERPOLATION - too small - off the end on the low side
-    *
-    *    |        8,6.5 * mapping[3]
-    *    |             /
-    *    |      7,5   * mapping[2]
-    *    |          /
-    *    |       /
-    *    |  3,3 * mapping[1]
-    *   r|     /
-    *    |1,2 * mapping[0]
-    *    |0,2 * (d,r)
-    *    +-------------
-    *       d
-    *********************************************************/
+/*********************************************************
+ * LINEAR INTERPOLATION - too small - off the end on the low side
+ *
+ *    |     8,6.5 * mapping[3]
+ *    |          /
+ *    |   7,5   * mapping[2]
+ *    |        /
+ *    |       /
+ *    |  3,3 * mapping[1]
+ *   r|     /
+ *    |1,2 * mapping[0]
+ *    |0,2* (d,r)
+ *    +-------------
+ *       d
+ *********************************************************/
    void linearInterpolation_mappingSmall()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      Mapping mappings[] = {
+         {1, 2},
+         {3, 3},
+         {7, 5},
+         {8, 6.5}
+      };
+      int numMappings = 4;
+      double domain = 0.2;
+      // EXERCISE
+      double result = linearInterpolation(mappings, numMappings, domain);
+      // VERIFY
+      assert(std::abs(result - 2.0) < epsilon);
+   }  // TEARDOWN
 
-   /*********************************************************
-    * LINEAR INTERPOLATION - too large - off the end on the high side
-    *
-    *    |       50,6.5 * (d,r)
-    *    |        8,6.5 * mapping[3]
-    *    |             /
-    *    |      7,5   * mapping[2]
-    *    |          /
-    *    |       /
-    *    |  3,3 * mapping[1]
-    *   r|     /
-    *    |1,2 * mapping[0]
-    *    +-------------
-    *       d
-    *********************************************************/
+/*********************************************************
+ * LINEAR INTERPOLATION - too large - off the end on the high side
+ *
+ *    |     50,6.5 * (d,r)
+ *    |     8,6.5 * mapping[3]
+ *    |          /
+ *    |   7,5   * mapping[2]
+ *    |        /
+ *    |       /
+ *    |  3,3 * mapping[1]
+ *   r|     /
+ *    |1,2 * mapping[0]
+ *    +-------------
+ *       d
+ *********************************************************/
    void linearInterpolation_mappingLarge()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      Mapping mappings[] = {
+         {1, 2},
+         {3, 3},
+         {7, 5},
+         {8, 6.5}
+      };
+      int numMappings = 4;
+      double domain = 50.0;
+      // EXERCISE
+      double result = linearInterpolation(mappings, numMappings, domain);
+      // VERIFY
+      assert(std::abs(result - 6.5) < epsilon);
+   }  // TEARDOWN
+
 
    /*****************************************************************
     *****************************************************************
@@ -917,15 +999,20 @@ private:
     *****************************************************************/
 
 
-    /*******************************************************
-        * GRAVITY FROM ALTITUDE - at the low range, 0 meters
-        * input:  altitude=0
-        * output: gravity=9.807
-        ********************************************************/
+    /*********************************************************
+     * GRAVITY FROM ALTITUDE - at the low range, 0 meters
+     * input:  altitude=0
+     * output: gravity=9.807
+     *********************************************************/
    void gravityFromAltitude_0()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 0.0;
+      // EXERCISE
+      double result = gravityFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 9.807) < epsilon);
+   }  // TEARDOWN
 
 
    /*******************************************************
@@ -934,9 +1021,14 @@ private:
     * output: gravity=9.776
     ********************************************************/
    void gravityFromAltitude_10000()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 10000.0;
+      // EXERCISE
+      double result = gravityFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 9.776) < epsilon);
+   }  // TEARDOWN
 
    /*******************************************************
     * GRAVITY FROM ALTITUDE - at the high range, 80,000m
@@ -944,19 +1036,30 @@ private:
     * output: gravity=9.564
     ********************************************************/
    void gravityFromAltitude_80000()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 80000.0;
+      // EXERCISE
+      double result = gravityFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 9.564) < epsilon);
+   }  // TEARDOWN
 
    /*******************************************************
     * GRAVITY FROM ALTITUDE - exactly between two values, 5,5000m
     * input:  altitude=5,5000m
-    * output: gravity=9.795
+    * output: gravity=9.7895
     ********************************************************/
    void gravityFromAltitude_5500()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 5500.0;
+      // EXERCISE
+      double result = gravityFromAltitude(altitude);
+      // VERIFY
+
+      assert(std::abs(result - 9.7895) < epsilon);
+   }  // TEARDOWN
 
    /*******************************************************
     * GRAVITY FROM ALTITUDE - one-third between two values, 43,333.3m
@@ -964,9 +1067,16 @@ private:
     * output: gravity=9.795
     ********************************************************/
    void gravityFromAltitude_43333()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 43333.3;
+      // EXERCISE
+      double result = gravityFromAltitude(altitude);
+      // VERIFY
+      std::cout << std::fixed << std::setprecision(10);
+      std::cout << result << endl;
+      assert(std::abs(result - 9.795) < epsilon);
+   }  // TEARDOWN
 
    /*******************************************************
     * GRAVITY FROM ALTITUDE - two-third between two values, 3,666.6m
