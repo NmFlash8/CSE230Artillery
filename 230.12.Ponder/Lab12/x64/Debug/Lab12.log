@@ -1,10 +1,15 @@
-﻿  test.cpp
-C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testHowitzer.h(172,31): error C2662: 'void Angle::setUp(void)': cannot convert 'this' pointer from 'const Angle' to 'Angle &'
-  (compiling source file 'test.cpp')
-      C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testHowitzer.h(172,16):
-      Conversion loses qualifiers
-      C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\angle.h(46,9):
-      see declaration of 'Angle::setUp'
-      C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testHowitzer.h(172,31):
-      while trying to match the argument list '()'
-  
+﻿  acceleration.cpp
+  angle.cpp
+  ground.cpp
+  main.cpp
+  physics.cpp
+  position.cpp
+  projectile.cpp
+  simulation.cpp
+  test.cpp
+  uiDraw.cpp
+  uiInteract.cpp
+  velocity.cpp
+  Generating Code...
+  LINK : C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\x64\Debug\Lab12.exe not found or not built by the last incremental link; performing full link
+  Lab12.vcxproj -> C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\x64\Debug\Lab12.exe
