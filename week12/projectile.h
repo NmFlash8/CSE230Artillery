@@ -18,13 +18,13 @@
 #define DEFAULT_PROJECTILE_WEIGHT 46.7       // kg
 #define DEFAULT_PROJECTILE_RADIUS 0.077545   // m
 
-// forward declaration for the unit test class
-class TestProjectile; 
+ // forward declaration for the unit test class
+class TestProjectile;
 
- /**********************************************************************
-  * Projectile
-  *    Everything we need to know about a projectile
-  ************************************************************************/
+/**********************************************************************
+ * Projectile
+ *    Everything we need to know about a projectile
+ ************************************************************************/
 class Projectile
 {
 public:
