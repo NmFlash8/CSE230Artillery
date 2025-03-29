@@ -12,6 +12,10 @@
 
 #include "howitzer.h"
 #include "unitTest.h"
+#include <cassert>         
+#include <cmath>           
+#include "position.h"   
+#include "angle.h"      
 
 /*******************************
  * TEST HOWITZER
@@ -167,8 +171,17 @@ private:
     *********************************************/
    void getElevation_up()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Howitzer h;
+      h.setElevation(0); // Use the setter to set the elevation to 0
+
+      // Exercise
+      double elevation = h.getElevation().getRadians();
+
+      // Verify
+      assert(elevation == 0.0);
+
+   }  // Teardown
 
    /*********************************************
     * name:    GET ELEVATION - right
@@ -177,8 +190,17 @@ private:
     *********************************************/
    void getElevation_right()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Howitzer h;
+      h.setElevation(0.4); // Use the setter to set the elevation to 0.4 radians
+
+      // Exercise
+      double elevation = h.getElevation().getRadians();
+
+      // Verify
+      assert(elevation == 0.4);
+
+   }  // Teardown
 
    /*********************************************
     * name:    GET ELEVATION - left
@@ -187,8 +209,17 @@ private:
     *********************************************/
    void getElevation_left()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Howitzer h;
+      h.setElevation(5.8); // Use the setter to set the elevation to 5.8 radians
+
+      // Exercise
+      double elevation = h.getElevation().getRadians();
+
+      // Verify
+      assert(elevation == 5.8);
+
+   }  // Teardown
 
    /*****************************************************************
     *****************************************************************
@@ -203,8 +234,21 @@ private:
      *********************************************/
    void generatePosition_small()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Howitzer h;
+      Position posUpperRight;
+      posUpperRight.setPixelsX(10); // Set board width to 10px
+      posUpperRight.setPixelsY(10); // Set board height to 10px
+
+      // Exercise
+      h.generatePosition(posUpperRight);
+      Position howitzerPos = h.getPosition();
+      double x = howitzerPos.getPixelsX();
+
+      // VErify
+      assert(x >= 1.0 && x <= 9.0);
+
+   }  // Teardown
 
     /*********************************************
     * name:    GENERATE POSITION large board
@@ -213,8 +257,21 @@ private:
     *********************************************/
    void generatePosition_large()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Howitzer h;
+      Position posUpperRight;
+      posUpperRight.setPixelsX(1000); // Set board width to 1000px
+      posUpperRight.setPixelsY(1000); // Set board height to 1000px
+
+      // Exercise
+      h.generatePosition(posUpperRight);
+      Position howitzerPos = h.getPosition();
+      double x = howitzerPos.getPixelsX();
+      
+      // Verify
+      assert(x >= 100.0 && x <= 900.0);
+
+   }  // Teardown
 
    /*********************************************
     * name:    RAISE to the right/down
@@ -223,8 +280,17 @@ private:
     *********************************************/
    void raise_rightDown()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Howitzer h;
+      h.setElevation(0.5); 
+      h.raise(-0.1); 
+
+      // Verify
+      double elevation = h.getElevation().getRadians();
+
+      assert(elevation == 0.6);
+
+   }  // Teardown
 
    /*********************************************
     * name:    RAISE to the right/up
@@ -233,8 +299,19 @@ private:
     *********************************************/
    void raise_rightUp()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Howitzer h;
+      h.setElevation(0.5); // Set the initial elevation to 0.5 radians
+
+      // Exercise
+      h.raise(0.1); // Raise the elevation to the right/up by 0.1 radians
+
+      // Verify
+      double elevation = h.getElevation().getRadians();
+
+      // Ensure the elevation has been updated correctly
+      assert(elevation == 0.4);
+   }  // Teardown
 
    /*********************************************
     * name:    RAISE to the left down
@@ -263,8 +340,18 @@ private:
     *********************************************/
    void rotate_clock()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Howitzer h;
+      h.setElevation(1.23); 
+
+      // Exercise
+      h.rotate(0.3);
+
+      // Verify
+      double elevation = h.getElevation().getRadians();
+      assert(elevation == 1.53);
+
+   }  // Teardown
 
    /*********************************************
     * name:    ROTATE COUNTER CLOCKWISE no wrapping
@@ -293,7 +380,18 @@ private:
     *********************************************/
    void rotate_wrapCounterClock()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // Setup
+      Howitzer howitzer;
+      howitzer.getElevation().setRadians(0.1);  
+
+      // Exercise
+      howitzer.rotate(-0.2 - (4 * M_PI));
+
+      // Verify
+      double expected = 2 * M_PI - 0.1; // 6.1 radians
+      assert(abs(howitzer.getElevation().getRadians() - expected) < 0.0001);
+
+      // Teardown
    }
 
    /*****************************************************************
