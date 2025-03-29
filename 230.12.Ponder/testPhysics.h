@@ -1064,7 +1064,7 @@ private:
    /*******************************************************
     * GRAVITY FROM ALTITUDE - one-third between two values, 43,333.3m
     * input:  altitude=43,333m
-    * output: gravity=9.795
+    * output: gravity=9.795 !!!!CHANGED THIS IS NOT CORRECT ACCORDING TO THE GIVEN TABLE!!!!
     ********************************************************/
    void gravityFromAltitude_43333()
    {  // SETUP
@@ -1073,20 +1073,23 @@ private:
       // EXERCISE
       double result = gravityFromAltitude(altitude);
       // VERIFY
-      std::cout << std::fixed << std::setprecision(10);
-      std::cout << result << endl;
-      assert(std::abs(result - 9.795) < epsilon);
+      assert(std::abs(result - 9.6740001) < epsilon);
    }  // TEARDOWN
 
    /*******************************************************
     * GRAVITY FROM ALTITUDE - two-third between two values, 3,666.6m
     * input:  altitude=3,666.6m
-    * output: gravity=9.795
+    * output: gravity=9.7950002
     ********************************************************/
    void gravityFromAltitude_3666()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 3666.6;
+      // EXERCISE
+      double result = gravityFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 9.7950002) < epsilon);
+   }  // TEARDOWN
 
    /*******************************************************
     * GRAVITY FROM ALTITUDE - elevation of Mt Everest, 8,848.86m
@@ -1094,9 +1097,14 @@ private:
     * output: gravity=9.795
     ********************************************************/
    void gravityFromAltitude_8848()
-   {  // setup
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }  // teardown
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 8848.86;
+      // EXERCISE
+      double result = gravityFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 9.77945342) < epsilon);
+   }  // TEARDOWN
 
 
 
@@ -1114,9 +1122,14 @@ private:
      * output: density=1.225
      ********************************************************/
    void densityFromAltitude_0()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 0.0;
+      // EXERCISE
+      double result = densityFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 1.225) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * DENSITY FROM ALTITUDE - exactly on 10,000 meters
@@ -1124,9 +1137,14 @@ private:
      * output: density=0.4135000
      ********************************************************/
    void densityFromAltitude_10000()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 10000.0;
+      // EXERCISE
+      double result = densityFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 0.4135) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * DENSITY FROM ALTITUDE - at the high range, 80,000m
@@ -1134,9 +1152,14 @@ private:
      * output: density=0.0000185
      ********************************************************/
    void densityFromAltitude_80000()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 80000.0;
+      // EXERCISE
+      double result = densityFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 0.0000185) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * DENSITY FROM ALTITUDE - exactly between two values, 5,5000m
@@ -1144,9 +1167,14 @@ private:
      * output: density=0.69825
      ********************************************************/
    void densityFromAltitude_5500()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 5500.0;
+      // EXERCISE
+      double result = densityFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 0.69825) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * DENSITY FROM ALTITUDE - one-third between two values, 43,333.3m
@@ -1154,19 +1182,29 @@ private:
      * output: density=0.0030063   almost a vacuum
      ********************************************************/
    void densityFromAltitude_43333()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 43333.3;
+      // EXERCISE
+      double result = densityFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 0.0030063432) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * DENSITY FROM ALTITUDE - two-third between two values, 3,666.6m
      * input:  altitude=3,666.6m
-     * output: density=0.849372
+     * output: density=0.849372660
      ********************************************************/
    void densityFromAltitude_3666()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 3666.6;
+      // EXERCISE
+      double result = densityFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 0.8493726600) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * DENSITY FROM ALTITUDE - elevation of Mt Everest, 8,848.86m
@@ -1174,15 +1212,15 @@ private:
      * output: density= 0.4759719  1/3 that of sea level
      ********************************************************/
    void densityFromAltitude_8848()
-   {  // setup
-      assertUnit(NOT_YET_IMPLEMENTED);
-      //double altitude = 8848.86;
-      //double density = -999.999;
-      //// exercise
-      //density = densityFromAltitude(altitude);
-      //// verify
-      //assertEquals(density, 0.4759719);
-   }  // teardown
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 8848.86;
+      // EXERCISE
+      double result = densityFromAltitude(altitude);
+      // VERIFY
+
+      assert(std::abs(result - 0.4759719180) < epsilon);
+   }  // TEARDOWN
    
 
    /*****************************************************************
@@ -1199,9 +1237,14 @@ private:
      * output: 340m/s
      ********************************************************/
    void speedSoundFromAltitude_0()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 0.0;
+      // EXERCISE
+      double result = speedSoundFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 340.0) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * SPEED OF SOUND FROM ALTITUDE : 10,000m
@@ -1209,9 +1252,14 @@ private:
      * output: 299m/s
      ********************************************************/
    void speedSoundFromAltitude_10000()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 10000.0;
+      // EXERCISE
+      double result = speedSoundFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 299.0) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * SPEED OF SOUND FROM ALTITUDE : 80,000m
@@ -1219,9 +1267,14 @@ private:
      * output: 269m/s
      ********************************************************/
    void speedSoundFromAltitude_80000()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 80000.0;
+      // EXERCISE
+      double result = speedSoundFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 269.0) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * SPEED OF SOUND FROM ALTITUDE : 5,500m
@@ -1229,9 +1282,14 @@ private:
      * output: 318.0m/s
      ********************************************************/
    void speedSoundFromAltitude_5500()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 5500.0;
+      // EXERCISE
+      double result = speedSoundFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 318.0) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * SPEED OF SOUND FROM ALTITUDE : 43,333m
@@ -1239,9 +1297,14 @@ private:
      * output: 328.3m/s
      ********************************************************/
    void speedSoundFromAltitude_43333()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 43333.0;
+      // EXERCISE
+      double result = speedSoundFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 328.3329) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * SPEED OF SOUND FROM ALTITUDE : 3,666m
@@ -1249,9 +1312,15 @@ private:
      * output: 325.3m/s
      ********************************************************/
    void speedSoundFromAltitude_3666()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 3666.0;
+      // EXERCISE
+      double result = speedSoundFromAltitude(altitude);
+      // VERIFY
+
+      assert(std::abs(result - 325.336) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * SPEED OF SOUND FROM ALTITUDE : on top of Mount Everest
@@ -1259,9 +1328,14 @@ private:
      * output: 303.76m/s
      ********************************************************/
    void speedSoundFromAltitude_8848()
-   {  // setup
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }  // teardown
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double altitude = 8848.0;
+      // EXERCISE
+      double result = speedSoundFromAltitude(altitude);
+      // VERIFY
+      assert(std::abs(result - 303.76) < epsilon);
+   }  // TEARDOWN
 
    /*****************************************************************
     *****************************************************************
@@ -1277,9 +1351,14 @@ private:
      * output: 0
      ********************************************************/
    void dragFromMach_000()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double speed = 0.0; 
+      // EXERCISE
+      double result = dragFromMach(speed);
+      // VERIFY
+      assert(std::abs(result - 0.0) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * DRAG FROM MACH : top speed
@@ -1287,9 +1366,14 @@ private:
      * output: 0.2656
      ********************************************************/
    void dragFromMach_500()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double speed = 5.00; 
+      // EXERCISE
+      double result = dragFromMach(speed);
+      // VERIFY
+      assert(std::abs(result - 0.2656) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * DRAG FROM MACH : speed of sound
@@ -1297,9 +1381,14 @@ private:
      * output: 0.4258
      ********************************************************/
    void dragFromMach_100()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double speed = 1.00;
+      // EXERCISE
+      double result = dragFromMach(speed);
+      // VERIFY
+      assert(std::abs(result - 0.4258) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * DRAG FROM MACH : halfway between 0.5 and 0.7
@@ -1307,9 +1396,14 @@ private:
      * output: 0.1845
      ********************************************************/
    void dragFromMach_060()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double speed = 0.6;
+      // EXERCISE
+      double result = dragFromMach(speed);
+      // VERIFY
+      assert(std::abs(result - 0.1845) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * DRAG FROM MACH : one third between 0 and .3
@@ -1317,9 +1411,14 @@ private:
      * output: 00.0543
      ********************************************************/
    void dragFromMach_010()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double speed = 0.1;
+      // EXERCISE
+      double result = dragFromMach(speed);
+      // VERIFY
+      assert(std::abs(result - 0.0543) < epsilon);
+   }  // TEARDOWN
 
     /*******************************************************
      * DRAG FROM MACH : random spot
@@ -1327,8 +1426,13 @@ private:
      * output: 00.0543
      ********************************************************/
    void dragFromMach_314()
-   {  // setup
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }  // teardown
+   {  // SETUP
+      const double epsilon = 1e-9; // add float tolerance
+      double speed = 3.14159;
+      // EXERCISE
+      double result = dragFromMach(speed);
+      // VERIFY
+      assert(std::abs(result - 0.2347732938) < epsilon);
+   }  // TEARDOWN
 
 };
