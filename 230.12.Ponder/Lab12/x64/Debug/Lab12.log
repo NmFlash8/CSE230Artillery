@@ -1,15 +1,2 @@
-﻿  acceleration.cpp
-  angle.cpp
-  ground.cpp
-  main.cpp
-  physics.cpp
-  position.cpp
-  projectile.cpp
-  simulation.cpp
-  test.cpp
-  uiDraw.cpp
-  uiInteract.cpp
-  velocity.cpp
-  Generating Code...
-  LINK : C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\x64\Debug\Lab12.exe not found or not built by the last incremental link; performing full link
+﻿  test.cpp
   Lab12.vcxproj -> C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\x64\Debug\Lab12.exe

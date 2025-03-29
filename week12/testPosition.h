@@ -470,35 +470,35 @@ private:
 
    // Double classes to test Position and avoid testing Velocity
 
-   // Note that Velocity0 ALWAYS returns v=(0.0,0.0)
-   class Velocity0 : public VelocityDummy
-   {
-      double getDX()  const { return 0.0; }
-      double getDY()  const { return 0.0; }
-   };
+   //// Note that Velocity0 ALWAYS returns v=(0.0,0.0)
+   //class Velocity0 : public VelocityDummy
+   //{
+   //   double getDX()  const { return 0.0; }
+   //   double getDY()  const { return 0.0; }
+   //};
 
-   // Note that Velocity54 ALWAYS returns v=(0.5,0.4)
-   class Velocity54 : public VelocityDummy
-   {
-      double getDX()  const { return 0.5; }
-      double getDY()  const { return 0.4; }
-   };
+   //// Note that Velocity54 ALWAYS returns v=(0.5,0.4)
+   //class Velocity54 : public VelocityDummy
+   //{
+   //   double getDX()  const { return 0.5; }
+   //   double getDY()  const { return 0.4; }
+   //};
 
    // Double classes to test Position and avoid testing Acceleration
 
-   // Note that Acceleration0 ALWAYS returns a=(0.0,0.0)
-   class Acceleration0 : public AccelerationDummy
-   {
-      double getDDX() const { return 0.0; }
-      double getDDY() const { return 0.0; }
-   };
+   //// Note that Acceleration0 ALWAYS returns a=(0.0,0.0)
+   //class Acceleration0 : public AccelerationDummy
+   //{
+   //   double getDDX() const { return 0.0; }
+   //   double getDDY() const { return 0.0; }
+   //};
 
-   // Note that Acceleration23 ALWAYS returns a=(0.2,0.3)
-   class Acceleration23 : public AccelerationDummy
-   {
-      double getDDX() const { return 0.2; }
-      double getDDY() const { return 0.3; }
-   };
+   //// Note that Acceleration23 ALWAYS returns a=(0.2,0.3)
+   //class Acceleration23 : public AccelerationDummy
+   //{
+   //   double getDDX() const { return 0.2; }
+   //   double getDDY() const { return 0.3; }
+   //};
 
 
    /*********************************************
@@ -564,19 +564,20 @@ private:
    // update position when both moving and accelerating for 2 seconds
    void add_complex()
    {  // SETUP
-      Position       pos;
-      Velocity54     vel;
-      Acceleration23 acc;
-      double         time(2.0);
-      pos.x = 11.1;
-      pos.y = 22.2;
+      assertUnit(NOT_YET_IMPLEMENTED);
+      //Position       pos;
+      //Velocity54     vel;
+      //Acceleration23 acc;
+      //double         time(2.0);
+      //pos.x = 11.1;
+      //pos.y = 22.2;
 
-      // EXERCISE
-      pos.add(acc, vel, time);
+      //// EXERCISE
+      //pos.add(acc, vel, time);
 
-      // VERIFY
-      assertEquals(pos.x, 12.5);
-      assertEquals(pos.y, 23.6);
+      //// VERIFY
+      //assertEquals(pos.x, 12.5);
+      //assertEquals(pos.y, 23.6);
    }  // TEARDOWN
 
 

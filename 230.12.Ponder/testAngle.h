@@ -473,34 +473,67 @@ private:
    }  // teardown
    
    /*********************************************
-    * name:    SET DX DY  UP
+    * name:    SET DX DY UP
     * input:   dx=0 dy=1
     * output:  0 degrees
     *********************************************/
    void setDxDy_up()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      Angle a;
+      double dx = 0.0;
+      double dy = 1.0;
+
+      // exercise
+      a.setDxDy(dx, dy);
+
+      // verify
+      assertEquals(a.getDegrees(), 0.0);
+      assertEquals(dx, 0.0);
+      assertEquals(dy, 1.0);
+   }  // teardown
+
 
    /*********************************************
-    * name:    SET DX DY  RIGHT
+    * name:    SET DX DY RIGHT
     * input:   dx=4 dy=0
     * output:  90 degrees
     *********************************************/
    void setDxDy_right()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      Angle a;
+      double dx = 4.0;
+      double dy = 0.0;
+
+      // exercise
+      a.setDxDy(dx, dy);
+
+      // verify
+      assertEquals(a.getDegrees(), 90.0);
+      assertEquals(dx, 4.0);
+      assertEquals(dy, 0.0);
+   }  // teardown
+
 
    /*********************************************
-    * name:    SET DX DY  LEFT
+    * name:    SET DX DY LEFT
     * input:   dx=-0.01 dy=0
     * output:  270 degrees
     *********************************************/
    void setDxDy_left()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      Angle a;
+      double dx = -0.01;
+      double dy = 0.0;
+
+      // exercise
+      a.setDxDy(dx, dy);
+
+      // verify
+      assertEquals(a.getDegrees(), 270.0);
+      assertEquals(dx, -0.01);
+      assertEquals(dy, 0.0);
+   }  // teardown
+
 
    /*********************************************
     * name:    SET DX DY  DIAGONAL
@@ -599,12 +632,20 @@ private:
    /*********************************************
     * name:    GET DX - UP
     * input:   0 degrees
-    * output:  0 
+    * output:  0
     *********************************************/
    void getDx_up()
-   { 
-      assertUnit(NOT_YET_IMPLEMENTED); 
-   }
+   {  // setup
+      Angle a;
+      a.setDegrees(0.0);
+
+      // exercise
+      double dx = a.getDx();
+
+      // verify
+      assertEquals(dx, 0.0);
+   }  // teardown
+
 
    /*********************************************
     * name:    GET DX - DOWN
@@ -612,9 +653,17 @@ private:
     * output:  0
     *********************************************/
    void getDx_down()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      Angle a;
+      a.setDegrees(180.0);
+
+      // exercise
+      double dx = a.getDx();
+
+      // verify
+      assertEquals(dx, 0.0);
+   }  // teardown
+
 
 
    /*********************************************
@@ -623,9 +672,17 @@ private:
     * output:  -1
     *********************************************/
    void getDx_left()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      Angle a;
+      a.setDegrees(270.0);
+
+      // exercise
+      double dx = a.getDx();
+
+      // verify
+      assertEquals(dx, -1.0);
+   }  // teardown
+
 
    /*********************************************
     * name:    GET DX - RIGHT
@@ -633,9 +690,17 @@ private:
     * output:  1
     *********************************************/
    void getDx_right()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      Angle a;
+      a.setDegrees(90.0);
+
+      // exercise
+      double dx = a.getDx();
+
+      // verify
+      assertEquals(dx, 1.0);
+   }  // teardown
+
 
    /*********************************************
     * name:    GET DX - DIAGONAL
@@ -661,9 +726,17 @@ private:
     * output:  1
     *********************************************/
    void getDy_up()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      Angle a;
+      a.setDegrees(0.0);
+
+      // exercise
+      double dy = a.getDy();
+
+      // verify
+      assertEquals(dy, 1.0);
+   }  // teardown
+
 
    /*********************************************
     * name:    GET DY - DOWN
@@ -671,9 +744,17 @@ private:
     * output:  -1
     *********************************************/
    void getDy_down()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      Angle a;
+      a.setDegrees(180.0);
+
+      // exercise
+      double dy = a.getDy();
+
+      // verify
+      assertEquals(dy, -1.0);
+   }  // teardown
+
 
 
    /*********************************************
@@ -682,9 +763,17 @@ private:
     * output:  0
     *********************************************/
    void getDy_left()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      Angle a;
+      a.setDegrees(270.0);
+
+      // exercise
+      double dy = a.getDy();
+
+      // verify
+      assertEquals(dy, 0.0);
+   }  // teardown
+
 
    /*********************************************
     * name:    GET DY - RIGHT
@@ -692,9 +781,17 @@ private:
     * output:  0
     *********************************************/
    void getDy_right()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      Angle a;
+      a.setDegrees(90.0);
+
+      // exercise
+      double dy = a.getDy();
+
+      // verify
+      assertEquals(dy, 0.0);
+   }  // teardown
+
 
    /*********************************************
     * name:    GET DY - DIAGONAL
@@ -719,9 +816,17 @@ private:
     * output:  true
     *********************************************/
    void isRight_right()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      Angle a;
+      a.setDegrees(30.0);
+
+      // exercise
+      bool result = a.isRight();
+
+      // verify
+      assertEquals(result, true);
+   }  // teardown
+
 
    /*********************************************
     * name:    IS RIGHT - LEFT
@@ -729,9 +834,17 @@ private:
     * output:  false
     *********************************************/
    void isRight_left()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      Angle a;
+      a.setDegrees(330.0);
+
+      // exercise
+      bool result = a.isRight();
+
+      // verify
+      assertEquals(result, false);
+   }  // teardown
+
 
    /*********************************************
     * name:    IS LEFT - right
@@ -739,18 +852,34 @@ private:
     * output:  false
     *********************************************/
    void isLeft_right()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      Angle a;
+      a.setDegrees(30.0);
 
-      /*********************************************
+      // exercise
+      bool result = a.isLeft();
+
+      // verify
+      assertEquals(result, false);
+   }  // teardown
+
+
+   /*********************************************
     * name:    IS LEFT - LEFT
     * input:   330 degrees
     * output:  true
     *********************************************/
    void isLeft_left()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // setup
+      Angle a;
+      a.setDegrees(330.0);
+
+      // exercise
+      bool result = a.isLeft();
+
+      // verify
+      assertEquals(result, true);
+   }  // teardown
+
 
 };
