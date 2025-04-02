@@ -1,2 +1,22 @@
 ﻿  test.cpp
-  Lab12.vcxproj -> C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\x64\Debug\Lab12.exe
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testHowitzer.h(248,7): warning C4003: not enough arguments for function-like macro invocation 'assertEquals'
+  (compiling source file 'test.cpp')
+  
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testHowitzer.h(271,7): warning C4002: too many arguments for function-like macro invocation 'assertUnit'
+  (compiling source file 'test.cpp')
+  
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testHowitzer.h(387,7): warning C4003: not enough arguments for function-like macro invocation 'assertEquals'
+  (compiling source file 'test.cpp')
+  
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testHowitzer.h(409,7): warning C4003: not enough arguments for function-like macro invocation 'assertEquals'
+  (compiling source file 'test.cpp')
+  
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testHowitzer.h(248,7): error C2059: syntax error: ')'
+  (compiling source file 'test.cpp')
+  
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testHowitzer.h(387,7): error C2059: syntax error: ')'
+  (compiling source file 'test.cpp')
+  
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testHowitzer.h(409,7): error C2059: syntax error: ')'
+  (compiling source file 'test.cpp')
+  

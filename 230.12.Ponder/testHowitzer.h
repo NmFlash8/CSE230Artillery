@@ -72,15 +72,15 @@ private:
 
       // Exercise
       double muzzleVelocity = howitzer.getMuzzleVelocity();
-      double elevation = howitzer.getElevation().getDegrees();
+      double elevation = howitzer.elevation.getDegrees();
       double posX = howitzer.getPosition().getPixelsX();
       double posY = howitzer.getPosition().getPixelsY();
 
       // Verify
-      assert(muzzleVelocity == DEFAULT_MUZZLE_VELOCITY);
-      assert(elevation == 45.0);
-      assert(posX == 0.0);
-      assert(posY == 0.0);
+      assertEquals(muzzleVelocity, DEFAULT_MUZZLE_VELOCITY);
+      assertEquals(elevation, 45.0);
+      assertEquals(posX, 0.0);
+      assertEquals(posY, 0.0);
    }  // Teardown
 
    /*****************************************************************
@@ -104,8 +104,8 @@ private:
       Position pos = howitzer.getPosition();
 
       // Verify
-      assert(pos.getPixelsX() == 0.0);
-      assert(pos.getPixelsY() == 0.0);
+      assertEquals(pos.getPixelsX(), 0.0);
+      assertEquals(pos.getPixelsY(), 0.0);
    }  // Teardown
 
 
@@ -124,8 +124,8 @@ private:
       Position pos = howitzer.getPosition();
 
       // Verify
-      assert(pos.getPixelsX() == 123.4);
-      assert(pos.getPixelsY() == 567.8);
+      assertEquals(pos.getPixelsX(), 123.4);
+      assertEquals(pos.getPixelsY(), 567.8);
    }  // Teardown
 
 
@@ -143,7 +143,7 @@ private:
       double m = howitzer.getMuzzleVelocity();
 
       // Verify
-      assert(m == 24.68);
+      assertEquals(m, 24.68);
    }  // Teardown
 
    /*********************************************
@@ -160,7 +160,7 @@ private:
       double m = howitzer.getMuzzleVelocity();
 
       // Verify
-      assert(m == 827.00);
+      assertEquals(m, 827.00);
    }  // Teardown
 
 
@@ -176,10 +176,10 @@ private:
       h.setElevation(0); // Use the setter to set the elevation to 0
 
       // Exercise
-      double elevation = h.getElevation().getRadians();
+      double elevation = h.elevation.getRadians();
 
       // Verify
-      assert(elevation == 0.0);
+      assertEquals(elevation, 0.0);
 
    }  // Teardown
 
@@ -195,10 +195,10 @@ private:
       h.setElevation(0.4); // Use the setter to set the elevation to 0.4 radians
 
       // Exercise
-      double elevation = h.getElevation().getRadians();
+      double elevation = h.elevation.getRadians();
 
       // Verify
-      assert(elevation == 0.4);
+      assertEquals(elevation, 0.4);
 
    }  // Teardown
 
@@ -214,10 +214,10 @@ private:
       h.setElevation(5.8); // Use the setter to set the elevation to 5.8 radians
 
       // Exercise
-      double elevation = h.getElevation().getRadians();
+      double elevation = h.elevation.getRadians();
 
       // Verify
-      assert(elevation == 5.8);
+      assertEquals(elevation, 5.8);
 
    }  // Teardown
 
@@ -233,8 +233,7 @@ private:
      * output:  1px <= x <= 9px
      *********************************************/
    void generatePosition_small()
-   {
-      // Setup
+   {  // Setup
       Howitzer h;
       Position posUpperRight;
       posUpperRight.setPixelsX(10); // Set board width to 10px
@@ -245,8 +244,8 @@ private:
       Position howitzerPos = h.getPosition();
       double x = howitzerPos.getPixelsX();
 
-      // VErify
-      assert(x >= 1.0 && x <= 9.0);
+      // Verify
+      assertEquals(x >= 1.0 && x <= 9.0);
 
    }  // Teardown
 
@@ -269,7 +268,7 @@ private:
       double x = howitzerPos.getPixelsX();
       
       // Verify
-      assert(x >= 100.0 && x <= 900.0);
+      assertUnit(true x >= 100.0 && x <= 900.0);
 
    }  // Teardown
 
@@ -286,9 +285,9 @@ private:
       h.raise(-0.1); 
 
       // Verify
-      double elevation = h.getElevation().getRadians();
+      double elevation = h.elevation.getRadians();
 
-      assert(elevation == 0.6);
+      assertEquals(elevation, 0.6);
 
    }  // Teardown
 
@@ -307,10 +306,10 @@ private:
       h.raise(0.1); // Raise the elevation to the right/up by 0.1 radians
 
       // Verify
-      double elevation = h.getElevation().getRadians();
+      double elevation = h.elevation.getRadians();
 
       // Ensure the elevation has been updated correctly
-      assert(elevation == 0.4);
+      assertEquals(elevation, 0.4);
    }  // Teardown
 
    /*********************************************
@@ -339,18 +338,14 @@ private:
     * output:  h.elevation=1.53
     *********************************************/
    void rotate_clock()
-   {
-      // Setup
+   {  // Setup
       Howitzer h;
       h.setElevation(1.23); 
-
       // Exercise
       h.rotate(0.3);
-
       // Verify
-      double elevation = h.getElevation().getRadians();
-      assert(elevation == 1.53);
-
+      double elevation = h.elevation.getRadians();
+      assertEquals(elevation, 1.53);
    }  // Teardown
 
    /*********************************************
@@ -382,14 +377,14 @@ private:
    {
       // Setup
       Howitzer howitzer;
-      howitzer.getElevation().setRadians(0.1);  
+      howitzer.elevation.setRadians(0.1);  
 
       // Exercise
       howitzer.rotate(-0.2 - (4 * M_PI));
 
       // Verify
       double expected = 2 * M_PI - 0.1; // 6.1 radians
-      assert(abs(howitzer.getElevation().getRadians() - expected) < 0.0001);
+      assertEquals(abs(howitzer.elevation.getRadians() - expected) < 0.0001);
 
       // Teardown
    }
@@ -411,7 +406,7 @@ private:
    // teardown the standard fixture - reset the zoom to what it was previously
    void teardownStandardFixture()
    {
-      assert(metersFromPixels != -1.0);
+      assertEquals(metersFromPixels != -1.0);
       Position p;
       p.metersFromPixels = metersFromPixels;
    }

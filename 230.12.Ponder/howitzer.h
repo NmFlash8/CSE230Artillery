@@ -60,6 +60,9 @@ class Howitzer
       // get the muzzle velocity
       double getMuzzleVelocity() const { return muzzleVelocity; }
 
+      // setElevation
+      void setElevation(int elevation){}
+
       // move the angle of the howitzer
       void rotate(double radian) { elevation.add(radian); }
 
