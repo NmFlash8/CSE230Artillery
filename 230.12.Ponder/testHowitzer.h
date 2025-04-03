@@ -245,7 +245,7 @@ private:
       double x = howitzerPos.getPixelsX();
 
       // Verify
-      assertEquals(x >= 1.0 && x <= 9.0);
+      assertEquals(true, x >= 1.0 && x <= 9.0);
 
    }  // Teardown
 
@@ -268,7 +268,7 @@ private:
       double x = howitzerPos.getPixelsX();
       
       // Verify
-      assertUnit(true x >= 100.0 && x <= 900.0);
+      assertUnit(true, x >= 100.0 && x <= 900.0);
 
    }  // Teardown
 
@@ -384,7 +384,7 @@ private:
 
       // Verify
       double expected = 2 * M_PI - 0.1; // 6.1 radians
-      assertEquals(abs(howitzer.elevation.getRadians() - expected) < 0.0001);
+      assertEquals(true, abs(howitzer.elevation.getRadians() - expected) < 0.0001);
 
       // Teardown
    }
@@ -406,7 +406,7 @@ private:
    // teardown the standard fixture - reset the zoom to what it was previously
    void teardownStandardFixture()
    {
-      assertEquals(metersFromPixels != -1.0);
+      assertEquals(true, metersFromPixels != -1.0);
       Position p;
       p.metersFromPixels = metersFromPixels;
    }
