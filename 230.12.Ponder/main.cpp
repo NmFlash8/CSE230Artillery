@@ -13,6 +13,7 @@
 #include "simulation.h" // for SIMULATION
 #include "position.h"   // for POSITION
 #include "test.h"       // for the unit tests
+#include "ground.h"     // for ground
 using namespace std;
 
 
@@ -25,14 +26,14 @@ using namespace std;
  **************************************/
 void callBack(const Interface* pUI, void* p)
 {
-   // the first step is to cast the void pointer into a simulator object. This
-   // is the first step of every single callback function in OpenGL. 
+   // Cast the void pointer to a Simulator object
    Simulator* pSim = (Simulator*)p;
 
+   // Create an output stream
    ogstream gout;
-   Position pos(10,10);
-   gout = pos;
-   gout << "Hello world";
+
+   // Draw the ground using the simulator's ground object
+   pSim->getGround().draw(gout);
 }
 
 double Position::metersFromPixels = 40.0;

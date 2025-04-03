@@ -429,9 +429,9 @@ private:
 
       assertEquals(updated.pos.getMetersX(), 149.97565);  // X position updates with velocity & drag
       assertEquals(updated.pos.getMetersY(), 155.127952); // Y position updates with velocity, gravity & drag
-      assertEquals(updated.v.getDX(), 49.9513);           // Horizontal velocity decreases slightly due to drag
-      assertEquals(updated.v.getDY(), -49.744096);        // Vertical velocity decreases due to gravity & drag
-      assertEquals(updated.t, 101.0);                     // Time increments
+      assertEquals(updated.v.getDX(),        49.9513);    // Horizontal velocity decreases slightly due to drag
+      assertEquals(updated.v.getDY(),       -49.744096);  // Vertical velocity decreases due to gravity & drag
+      assertEquals(updated.t,                101.0);      // Time increments
    }
 
 

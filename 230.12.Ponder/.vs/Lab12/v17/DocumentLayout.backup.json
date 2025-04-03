@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\ground.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|solutionrelative:ground.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\ground.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|solutionrelative:ground.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\simulation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|solutionrelative:simulation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\testProjectile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|solutionrelative:testProjectile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -22,11 +38,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "simulation.h",
+              "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\simulation.h",
+              "RelativeDocumentMoniker": "simulation.h",
+              "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\simulation.h",
+              "RelativeToolTip": "simulation.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-03T21:37:09.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ground.cpp",
+              "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\ground.cpp",
+              "RelativeDocumentMoniker": "ground.cpp",
+              "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\ground.cpp",
+              "RelativeToolTip": "ground.cpp",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAwwLEAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-03T21:31:21.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ground.h",
+              "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\ground.h",
+              "RelativeDocumentMoniker": "ground.h",
+              "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\ground.h",
+              "RelativeToolTip": "ground.h",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAwwBoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-03T21:25:11.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAABMAAAAAAAAAAAAwwCQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-03T21:23:47.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "projectile.h",
               "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\projectile.h",
               "RelativeDocumentMoniker": "projectile.h",
@@ -34,25 +102,24 @@
               "RelativeToolTip": "projectile.h",
               "ViewState": "AgIAAAwAAAAAAAAAAAAuwCUAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-03T20:50:36.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T20:50:36.569Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "testProjectile.h",
               "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\testProjectile.h",
               "RelativeDocumentMoniker": "testProjectile.h",
               "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\testProjectile.h",
               "RelativeToolTip": "testProjectile.h",
-              "ViewState": "AgIAAJoBAAAAAAAAAAAwwKQBAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAK0AAAAAAAAAAAAwwLoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-03T20:50:34.22Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "projectile.cpp",
               "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\projectile.cpp",
               "RelativeDocumentMoniker": "projectile.cpp",
@@ -60,8 +127,7 @@
               "RelativeToolTip": "projectile.cpp",
               "ViewState": "AgIAACYAAAAAAAAAAAAuwFQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-03T20:50:31.853Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T20:50:31.853Z"
             }
           ]
         }
