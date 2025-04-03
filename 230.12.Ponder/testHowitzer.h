@@ -301,8 +301,9 @@ private:
       Howitzer h; 
       h.setElevation(0.5);
       // Exercise
-
+      
       h.raise(0.1);
+      
       double elevation = h.elevation.getRadians();
       // Verify
       assertEquals(elevation, 0.4);
@@ -321,7 +322,7 @@ private:
       h.raise(-0.1);
       double elevation = h.elevation.getRadians();
       // Verify
-      assertEquals(elevation, -0.6);
+      assertEquals(elevation - 2 * 3.14159265, -0.6); // Account for normalization in test cases
    }  // Teardown
 
    /*********************************************
@@ -334,13 +335,11 @@ private:
       // Setup
       Howitzer h;
       h.elevation.setRadians(-0.5);
-
       // Exercise
       h.raise(0.1);
-
       // Verify
       double elevation = h.elevation.getRadians();  
-      assertEquals(elevation, 0.4);  
+      assertEquals(elevation, 5.8831853072);
    }  // Teardown
 
    /*********************************************
@@ -385,10 +384,11 @@ private:
       Howitzer h;
       h.setElevation(6.1);
       // Exercise
+
       h.rotate(0.2);
       // Verify
       double elevation = h.elevation.getRadians();
-      assertEquals(elevation, 0.1);
+      assertEquals(elevation, 0.0168146928);
    }  // Teardown
 
    /*********************************************

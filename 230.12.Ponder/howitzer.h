@@ -75,9 +75,6 @@ class Howitzer
          elevation.add(elevation.isRight() ? -radian : radian);
       }
 
-
-
-
       // get the elevation
       const Angle & getElevation() { return elevation; }
 

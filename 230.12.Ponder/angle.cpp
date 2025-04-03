@@ -49,15 +49,10 @@ double Angle::convertToRadians(double degrees) const
  *************************************************/
 double Angle::normalize(double radians) const
 {
-   const double TWO_PI = 2 * M_PI;
-
-   // Normalize the angle to be within [0, 2 * M_PI]
-   radians = fmod(radians, TWO_PI);
-
-   // If radians is negative, make it positive by adding TWO_PI
-   if (radians < 0)
-      radians += TWO_PI;
-
+   while (radians >= 2 * M_PI)
+      radians -= 2 * M_PI;
+   while (radians < 0)
+      radians += 2 * M_PI;
    return radians;
 }
 
