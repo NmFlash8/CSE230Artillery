@@ -54,11 +54,11 @@ private:
     *****************************************************************
     *****************************************************************/
 
-   /*********************************************
-    * name:    DEFAULT CONSTRUCTOR
-    * input:   nothing
-    * output:  mass=46.7, radius=0.077545 flightPath={}
-    *********************************************/
+    /*********************************************
+     * name:    DEFAULT CONSTRUCTOR
+     * input:   nothing
+     * output:  mass=46.7, radius=0.077545 flightPath={}
+     *********************************************/
    void defaultConstructor()
    {
       // Setup
@@ -138,13 +138,13 @@ private:
     *****************************************************************
     * FIRE
     *****************************************************************
-    *****************************************************************/  
+    *****************************************************************/
 
-   /*********************************************
-    * name:    FIRE horizontally right
-    * input:   angle=90  pos=(111,222) muzzleVelocity=100
-    * output:  flightPath={pos=111,222 v=100,0 t=1}
-    *********************************************/
+    /*********************************************
+     * name:    FIRE horizontally right
+     * input:   angle=90  pos=(111,222) muzzleVelocity=100
+     * output:  flightPath={pos=111,222 v=100,0 t=1}
+     *********************************************/
    void fire_right()
    {
       // Setup: Create a projectile
@@ -246,13 +246,13 @@ private:
     *****************************************************************
     * ADVANCE
     *****************************************************************
-    *****************************************************************/ 
+    *****************************************************************/
 
-   /*********************************************
-    * name:    ADVANCE : the projectile is not fired. Nothing will happen
-    * input:   flightPath={}
-    * output:  flightPath={}
-    *********************************************/
+    /*********************************************
+     * name:    ADVANCE : the projectile is not fired. Nothing will happen
+     * input:   flightPath={}
+     * output:  flightPath={}
+     *********************************************/
    void advance_nothing()
    {
       // Setup: Create a projectile that has not been fired
@@ -349,7 +349,7 @@ private:
       // Setup: Create a projectile with initial vertical motion
       Projectile p;
       Projectile::PositionVelocityTime state;
-      state.pos.setMeters(100, 200);  // Initial position (100,200)
+      state.pos.setMeters(100, 200);  // Initial position (100, 200)
       state.v.setDX(0);               // No horizontal velocity
       state.v.setDY(100);             // Initial vertical velocity (100)
       state.t = 100;                  // Initial time
@@ -362,9 +362,9 @@ private:
       const Projectile::PositionVelocityTime& updated = p.flightPath.back();
 
       assertEquals(updated.pos.getMetersX(), 100, 0.0001);      // X position remains unchanged
-      assertEquals(updated.pos.getMetersY(), 294.9021, 0.0001); // Y moves up, slowed by gravity + drag
+      assertEquals(updated.pos.getMetersY(), 294.9021, 0.0001); // Y moves up, slowed by gravity
       assertEquals(updated.v.getDX(), 0, 0.0001);               // No horizontal velocity
-      assertEquals(updated.v.getDY(), 89.8042, 0.0001);         // Vertical velocity decreases due to gravity & drag
+      assertEquals(updated.v.getDY(), 89.8042, 0.0001);         // Vertical velocity decreases due to gravity
       assertEquals(updated.t, 101);                             // Time increments
    }
 
@@ -455,7 +455,7 @@ private:
     *****************************************************************
     *****************************************************************/
 
-   // setup standard fixture - set the zoom to 1100m per pixel
+    // setup standard fixture - set the zoom to 1100m per pixel
    void setupStandardFixture()
    {
       Position p;
@@ -472,4 +472,3 @@ private:
    }
 
 };
-

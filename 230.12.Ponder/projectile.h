@@ -18,13 +18,13 @@
 #define DEFAULT_PROJECTILE_WEIGHT 46.7       // kg
 #define DEFAULT_PROJECTILE_RADIUS 0.077545   // m
 
-// forward declaration for the unit test class
-class TestProjectile; 
+ // forward declaration for the unit test class
+class TestProjectile;
 
- /**********************************************************************
-  * Projectile
-  *    Everything we need to know about a projectile
-  ************************************************************************/
+/**********************************************************************
+ * Projectile
+ *    Everything we need to know about a projectile
+ ************************************************************************/
 class Projectile
 {
 public:
@@ -35,13 +35,11 @@ public:
    Projectile() : mass(DEFAULT_PROJECTILE_WEIGHT), radius(DEFAULT_PROJECTILE_RADIUS) {}
 
    // advance the round forward until the next unit of time
-   void advance(double simulationTime) {}
+   void advance(double simulationTime);  // Keep only one declaration
 
    void fire(const Position& pos, const Angle& angle, double muzzleVelocity);
 
-
 private:
-
    // keep track of one moment in the path of the projectile
    struct PositionVelocityTime
    {
