@@ -32,14 +32,12 @@ public:
    friend ::TestProjectile;
 
    // create a new projectile with the default settings
-   Projectile() : mass(-99.9), radius(-99.9) {}
-
-
+   Projectile() : mass(DEFAULT_PROJECTILE_WEIGHT), radius(DEFAULT_PROJECTILE_RADIUS) {}
 
    // advance the round forward until the next unit of time
    void advance(double simulationTime) {}
 
-
+   void fire(const Position& pos, const Angle& angle, double muzzleVelocity);
 
 
 private:
@@ -56,4 +54,6 @@ private:
    double mass;           // weight of the M795 projectile. Defaults to 46.7 kg
    double radius;         // radius of M795 projectile. Defaults to 0.077545 m
    std::list<PositionVelocityTime> flightPath;
+   void reset();
+
 };
