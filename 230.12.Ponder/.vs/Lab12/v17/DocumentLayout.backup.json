@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\testPhysics.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|solutionrelative:testPhysics.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\testHowitzer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|solutionrelative:testHowitzer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\howitzer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|solutionrelative:howitzer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\testHowitzer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|solutionrelative:testHowitzer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\angle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|solutionrelative:angle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\angle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|solutionrelative:angle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\testPhysics.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|solutionrelative:testPhysics.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2AD1A6B-78BD-4EFD-99F1-99D23E90C15A}|Lab12.vcxproj|C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\physics.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -30,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "physics.cpp",
               "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\physics.cpp",
               "RelativeDocumentMoniker": "physics.cpp",
@@ -43,30 +51,57 @@
               "ViewState": "AgIAAEoAAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-29T17:26:36.519Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "angle.cpp",
+              "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\angle.cpp",
+              "RelativeDocumentMoniker": "angle.cpp",
+              "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\angle.cpp",
+              "RelativeToolTip": "angle.cpp",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAkwL4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-03T03:10:35.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "angle.h",
+              "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\angle.h",
+              "RelativeDocumentMoniker": "angle.h",
+              "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\angle.h",
+              "RelativeToolTip": "angle.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-03T02:51:57.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "testPhysics.h",
               "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\testPhysics.h",
               "RelativeDocumentMoniker": "testPhysics.h",
               "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\testPhysics.h",
               "RelativeToolTip": "testPhysics.h",
-              "ViewState": "AgIAAN8FAAAAAAAAAAAkwOYFAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAN8FAAAAAAAAAAAkwO4FAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-03T02:41:25.106Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "testHowitzer.h",
               "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\testHowitzer.h",
               "RelativeDocumentMoniker": "testHowitzer.h",
               "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\testHowitzer.h",
               "RelativeToolTip": "testHowitzer.h",
-              "ViewState": "AgIAAPwAAAAAAAAAAIAwwAgBAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAMsAAAAAAAAAAAAkwN4AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-03T02:36:16.397Z",
               "EditorCaption": ""
@@ -79,14 +114,14 @@
               "RelativeDocumentMoniker": "howitzer.h",
               "ToolTip": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\howitzer.h",
               "RelativeToolTip": "howitzer.h",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEEAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAkwEEAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-02T01:53:04.292Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "physics.h",
               "DocumentMoniker": "C:\\Users\\nmcsh\\Documents\\GitHub\\CSE230Artillery\\230.12.Ponder\\physics.h",
               "RelativeDocumentMoniker": "physics.h",
