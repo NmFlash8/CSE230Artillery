@@ -1,4 +1,4 @@
-/**********************************************************************
+﻿/**********************************************************************
  * Header File:
  *    HOWITZER
  * Author:
@@ -61,7 +61,10 @@ class Howitzer
       double getMuzzleVelocity() const { return muzzleVelocity; }
 
       // setElevation
-      void setElevation(int elevation){}
+      void setElevation(double radians)
+      {
+         elevation.setRadians(radians);
+      }
 
       // move the angle of the howitzer
       void rotate(double radian) { elevation.add(radian); }
@@ -71,6 +74,9 @@ class Howitzer
       {
          elevation.add(elevation.isRight() ? -radian : radian);
       }
+
+
+
 
       // get the elevation
       const Angle & getElevation() { return elevation; }

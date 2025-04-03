@@ -13,7 +13,8 @@
 #include "howitzer.h"
 #include "unitTest.h"
 #include <cassert>         
-#include <cmath>           
+#include <cmath>     
+#include <iostream>
 #include "position.h"   
 #include "angle.h"      
 
@@ -281,14 +282,13 @@ private:
    {
       // Setup
       Howitzer h;
-      h.setElevation(0.5); 
-      h.raise(-0.1); 
+      h.elevation.setRadians(0.5);
 
-      // Verify
+      h.raise(-0.1);
       double elevation = h.elevation.getRadians();
 
+      // Verify
       assertEquals(elevation, 0.6);
-
    }  // Teardown
 
    /*********************************************
@@ -297,18 +297,14 @@ private:
     * output:  h.elevation=0.4radians
     *********************************************/
    void raise_rightUp()
-   {
-      // Setup
-      Howitzer h;
-      h.setElevation(0.5); // Set the initial elevation to 0.5 radians
-
+   {  // Setup
+      Howitzer h; 
+      h.setElevation(0.5);
       // Exercise
-      h.raise(0.1); // Raise the elevation to the right/up by 0.1 radians
 
-      // Verify
+      h.raise(0.1);
       double elevation = h.elevation.getRadians();
-
-      // Ensure the elevation has been updated correctly
+      // Verify
       assertEquals(elevation, 0.4);
    }  // Teardown
 
@@ -318,9 +314,15 @@ private:
     * output:  h.elevation=-0.6radians
     *********************************************/
    void raise_leftDown()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // Setup
+      Howitzer h;
+      h.setElevation(-0.5); 
+      // Exercise
+      h.raise(-0.1);
+      double elevation = h.elevation.getRadians();
+      // Verify
+      assertEquals(elevation, -0.6);
+   }  // Teardown
 
    /*********************************************
     * name:    RAISE to the left up
@@ -329,8 +331,17 @@ private:
     *********************************************/
    void raise_leftUp()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+      // Setup
+      Howitzer h;
+      h.elevation.setRadians(-0.5);
+
+      // Exercise
+      h.raise(0.1);
+
+      // Verify
+      double elevation = h.elevation.getRadians();  
+      assertEquals(elevation, 0.4);  
+   }  // Teardown
 
    /*********************************************
     * name:    ROTATE CLOCKWISE no wrapping
@@ -354,9 +365,15 @@ private:
     * output:  h.elevation=0.93
     *********************************************/
    void rotate_counterClock()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // Setup
+      Howitzer h;
+      h.setElevation(1.23);
+      // Exercise
+      h.rotate(-0.3);
+      // Verify
+      double elevation = h.elevation.getRadians();
+      assertEquals(elevation, 0.93);
+   }  // Teardown
 
    /*********************************************
     * name:    ROTATE CLOCKWISE CLOCKWISE WRAP BY 2PI
@@ -364,9 +381,15 @@ private:
     * output:  h.elevation=.1
     *********************************************/
    void rotate_wrapClock()
-   {
-      assertUnit(NOT_YET_IMPLEMENTED);
-   }
+   {  // Setup
+      Howitzer h;
+      h.setElevation(6.1);
+      // Exercise
+      h.rotate(0.2);
+      // Verify
+      double elevation = h.elevation.getRadians();
+      assertEquals(elevation, 0.1);
+   }  // Teardown
 
    /*********************************************
     * name:    ROTATE COUNTER CLOCKWISE WRAP BY 4PI
