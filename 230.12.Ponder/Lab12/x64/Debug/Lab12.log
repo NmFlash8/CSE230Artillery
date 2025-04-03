@@ -1,79 +1,50 @@
-﻿  projectile.cpp
-  test.cpp
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testPhysics.h(1089,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+﻿  test.cpp
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testPhysics.h(1089,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testPhysics.h(1106,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testPhysics.h(1106,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testPhysics.h(1122,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testPhysics.h(1122,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testPhysics.h(1138,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testPhysics.h(1138,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testPhysics.h(1154,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testPhysics.h(1154,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testPhysics.h(1170,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testPhysics.h(1170,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testHowitzer.h(272,7): warning C4002: too many arguments for function-like macro invocation 'assertUnit'
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testHowitzer.h(272,7): warning C4002: too many arguments for function-like macro invocation 'assertUnit'
   (compiling source file 'test.cpp')
   
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(298,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testProjectile.h(298,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(300,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testProjectile.h(331,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(331,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testProjectile.h(332,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(332,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testProjectile.h(333,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(333,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testProjectile.h(334,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(334,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testProjectile.h(364,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(364,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testProjectile.h(365,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(365,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testProjectile.h(366,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(366,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
+C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\testProjectile.h(367,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
   (compiling source file 'test.cpp')
   
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(367,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
-  (compiling source file 'test.cpp')
-  
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(397,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
-  (compiling source file 'test.cpp')
-  
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(398,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
-  (compiling source file 'test.cpp')
-  
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(399,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
-  (compiling source file 'test.cpp')
-  
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(400,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
-  (compiling source file 'test.cpp')
-  
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(442,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
-  (compiling source file 'test.cpp')
-  
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(443,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
-  (compiling source file 'test.cpp')
-  
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(444,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
-  (compiling source file 'test.cpp')
-  
-C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\testProjectile.h(445,7): warning C4002: too many arguments for function-like macro invocation 'assertEquals'
-  (compiling source file 'test.cpp')
-  
-  Generating Code...
-  Lab12.vcxproj -> C:\Users\diego\OneDrive\Desktop\BYUI\Winter Semester 2025\Encapsulation Design\Artillery\CSE230Artillery\CSE230Artillery\230.12.Ponder\x64\Debug\Lab12.exe
+  Lab12.vcxproj -> C:\Users\nmcsh\Documents\GitHub\CSE230Artillery\230.12.Ponder\x64\Debug\Lab12.exe

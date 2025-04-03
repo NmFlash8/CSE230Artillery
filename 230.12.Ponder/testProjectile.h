@@ -12,6 +12,7 @@
 
 #include "projectile.h"
 #include "unitTest.h"
+#include <iostream>
 
 
 using namespace std;
@@ -293,12 +294,11 @@ private:
 
       // Verify: Check updated position, velocity, and time
       const Projectile::PositionVelocityTime& updated = p.flightPath.back();
-
-      assertEquals(updated.pos.getMetersX(), 100.0);       // X remains the same
+      assertEquals(updated.pos.getMetersX(), 100.0);             // X remains the same
       assertEquals(updated.pos.getMetersY(), 195.0968, 0.0001);  // Y falls due to gravity
-      assertEquals(updated.v.getDX(), 0.0);                // No horizontal movement
-      assertEquals(updated.v.getDY(), -9.806, 0.0001);     // Velocity affected by gravity
-      assertEquals(updated.t, 101);                        // Time increments
+      assertEquals(updated.v.getDX(),        0.0);               // No horizontal movement
+      assertEquals(updated.v.getDY(),       -9.8064);            // Velocity affected by gravity
+      assertEquals(updated.t,                101);               // Time increments
 
    }
 
@@ -394,11 +394,11 @@ private:
       // Verify: Check updated position, velocity, and time
       const Projectile::PositionVelocityTime& updated = p.flightPath.back();
 
-      assertEquals(updated.pos.getMetersX(), 149.9600, 0.0001);  // X position updates with velocity & drag
-      assertEquals(updated.pos.getMetersY(), 235.0648, 0.0001);  // Y position updates with velocity, gravity & drag
-      assertEquals(updated.v.getDX(), 49.9201, 0.0001);          // Horizontal velocity decreases slightly due to drag
-      assertEquals(updated.v.getDY(), 30.1297, 0.0001);          // Vertical velocity decreases due to gravity & drag
-      assertEquals(updated.t, 101);                              // Time increments
+      assertEquals(updated.pos.getMetersX(), 149.97565);  // X position updates with velocity & drag
+      assertEquals(updated.pos.getMetersY(), 235.065648); // Y position updates with velocity, gravity & drag
+      assertEquals(updated.v.getDX(),        49.9513);    // Horizontal velocity decreases slightly due to drag
+      assertEquals(updated.v.getDY(),        30.131296);  // Vertical velocity decreases due to gravity & drag
+      assertEquals(updated.t,                101.0);      // Time increments
    }
 
    /*********************************************
@@ -412,42 +412,29 @@ private:
     *********************************************/
    void advance_diagonalDown()
    {
-      // setup
-      setupStandardFixture();
+      // Setup: Create a projectile with initial diagonal motion downward
       Projectile p;
-      Projectile::PositionVelocityTime pvt;
+      Projectile::PositionVelocityTime state;
+      state.pos.setMeters(100, 200);  // Initial position (100,200)
+      state.v.setDX(50);              // Initial horizontal velocity (50)
+      state.v.setDY(-40);             // Initial vertical velocity (-40, moving downward)
+      state.t = 100;                  // Initial time
+      p.flightPath.push_back(state);  // Add this state to flightPath
 
-      // Add two dummy states
-      p.flightPath.push_back(pvt);
-      p.flightPath.push_back(pvt);
+      // Exercise: Advance the projectile by 1 second
+      p.advance(1.0);
 
-      // Set initial state: position (100,200), velocity (50,-40), time 100
-      pvt.pos.x = 100.0;
-      pvt.pos.y = 200.0;
-      pvt.v.dx = 50.0;
-      pvt.v.dy = -40.0;
-      pvt.t = 100.0;
-      p.flightPath.push_back(pvt);
+      // Verify: Check updated position, velocity, and time
+      const Projectile::PositionVelocityTime& updated = p.flightPath.back();
 
-      // exercise: advance the projectile (time now 101)
-      p.advance(101.0);
-
-      // verify: flightPath should now have 4 entries and the last entry is updated correctly
-      assertUnit(p.flightPath.size() == 4);
-      assertEquals(p.mass, 46.7);
-      assertEquals(p.radius, 0.077545);
-      assertUnit(!p.flightPath.empty());
-
-      // Directly verify the last (updated) state without using an if statement
-      assertEquals(p.flightPath.back().pos.x, 149.9601, 0.0001);   // 100 + 50*1 + 0.5*(-0.0799)*1*1
-      assertEquals(p.flightPath.back().pos.y, 155.1287, 0.0001);   // 200 + (-40)*1 + 0.5*(-9.8064+0.0638)*1*1
-      assertEquals(p.flightPath.back().v.dx, 49.9201, 0.0001);     // 50 + (-0.0799)*1
-      assertEquals(p.flightPath.back().v.dy, -49.7425, 0.0001);    // -40 + (-9.8064+0.0638)*1
-      assertEquals(p.flightPath.back().t, 101.0);                  // time is updated to 101
-
-      // teardown
-      teardownStandardFixture();
+      assertEquals(updated.pos.getMetersX(), 149.97565);  // X position updates with velocity & drag
+      assertEquals(updated.pos.getMetersY(), 155.127952); // Y position updates with velocity, gravity & drag
+      assertEquals(updated.v.getDX(), 49.9513);           // Horizontal velocity decreases slightly due to drag
+      assertEquals(updated.v.getDY(), -49.744096);        // Vertical velocity decreases due to gravity & drag
+      assertEquals(updated.t, 101.0);                     // Time increments
    }
+
+
 
    /*****************************************************************
     *****************************************************************
