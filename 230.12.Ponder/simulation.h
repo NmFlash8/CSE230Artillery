@@ -18,13 +18,12 @@
 class Simulator
 {
 public:
-   // Constructor initializes the ground with the upper-right position
-   Simulator(const Position& posUpperRight) : ground(posUpperRight) {}
+   Simulator(const Position& posUpperRight) : posUpperRight(posUpperRight), ground(posUpperRight) {}
 
-   // Accessor for ground
    Ground& getGround() { return ground; }
    const Ground& getGround() const { return ground; }
 
 private:
-   Ground ground; // The ground object to be drawn
+   Position posUpperRight;
+   Ground ground;
 };
