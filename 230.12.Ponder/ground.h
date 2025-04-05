@@ -42,8 +42,8 @@ public:
    Position getTarget() const;
 
 private:
-   double * ground;               // elevation of the ground, in pixels 
-   int iTarget;                   // the location of the target, in pixels
-   int iHowitzer;                 // the location of the howitzer
-   Position posUpperRight;        // size of the screen
+   double * ground;        // elevation of the ground, in pixels 
+   int iTarget;            // the location of the target, in pixels
+   int iHowitzer;          // the location of the howitzer
+   Position posUpperRight; // size of the screen
 };

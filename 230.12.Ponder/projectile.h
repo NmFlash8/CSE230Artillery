@@ -21,7 +21,7 @@
  // forward declaration for the unit test class
 class TestProjectile;
 
-/**********************************************************************
+/************************************************************************
  * Projectile
  *    Everything we need to know about a projectile
  ************************************************************************/
@@ -34,10 +34,11 @@ public:
    // create a new projectile with the default settings
    Projectile() : mass(DEFAULT_PROJECTILE_WEIGHT), radius(DEFAULT_PROJECTILE_RADIUS) {}
 
-   // advance the round forward until the next unit of time
    void advance(double simulationTime);  // Keep only one declaration
-
    void fire(const Position& pos, const Angle& angle, double muzzleVelocity);
+   void draw(ogstream& gout, double flightTime) const;
+   Position getPosition() const;
+
 
 private:
    // keep track of one moment in the path of the projectile

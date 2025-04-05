@@ -61,7 +61,6 @@ int main(int argc, char** argv)
    // Initialize the simulation.
    Simulator sim(posUpperRight);
 
-
    // set everything into action
    ui.run(callBack, (void*)&sim);
 

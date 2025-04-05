@@ -15,12 +15,7 @@
 #include "velocity.h"
 #include "physics.h"
 #include "uiDraw.h"
-
-
-#pragma once
-
 #define DEFAULT_MUZZLE_VELOCITY   827.00     // m/s
-
 
 class TestHowitzer;
 
@@ -56,6 +51,7 @@ class Howitzer
          position.setPixelsX(xPixels);
          position.setPixelsY(0);
       }
+      void setPixelY(int y){ position.setPixelsY(y); }
 
       // get the muzzle velocity
       double getMuzzleVelocity() const { return muzzleVelocity; }

@@ -1,87 +1,54 @@
 ﻿/**********************************************************************
  * Header File:
- *    SIMULATION
+ *    SIMULATOR
  * Author:
  *    Diego Estrada & Noah McSheehy
  * Summary:
- *    Execute one simulation of a projectile being fired.
+ *    Executes one simulation of a projectile being fired.
  ************************************************************************/
 
 #pragma once
+
 #include "position.h"
 #include "ground.h"
-#include "howitzer.h" 
-#include "uiInteract.h"  
+#include "howitzer.h"
+#include "projectile.h"
+#include "uiInteract.h"
 #include <iostream>
+#include <cmath>
 
- /*********************************************
-  * Simulation
-  * Execute one simulation of a projectile being fired.
-  *********************************************/
+ // Constants
+constexpr double MUZZLE_VELOCITY = 827.0;
+constexpr double FLIGHT_SPEED = 1.0;
+constexpr double ANGLE_DELTA = 0.03;
+constexpr double SMALL_ANGLE_DELTA = 0.005;
+constexpr double HIT_THRESHOLD = 8.0;
+
+/*********************************************
+ * SIMULATOR
+ * Execute one simulation of a projectile being fired.
+ *********************************************/
 class Simulator
 {
 public:
-   Simulator(const Position& posUpperRight)
-      : posUpperRight(posUpperRight),
-      ground(posUpperRight),
-      howitzer() // Default constructor
-   {
-      // Reset the ground before generating the howitzer's position
-      Position pos = howitzer.getPosition();
-      ground.reset(pos);
-
-      std::cout << ground.getTarget() << std::endl;
-
-      // Now, generate the howitzer's position after the ground has been reset
-      howitzer.generatePosition(posUpperRight);
-
-      initialized = false;
-      firing = false;
-      flightTime = 0.0;
-   }
-
-
-   void draw(ogstream& gout)
-   {
-      if (!initialized)
-      {
-         Position pos = howitzer.getPosition();
-         ground.reset(pos);
-         initialized = true;
-      }
-
-      if (firing)
-         flightTime += 0.1;
-      else
-         flightTime = 0.0;
-
-      ground.draw(gout);
-      howitzer.draw(gout, flightTime); // Use updated time
-   }
-
-
-   void input(const Interface* pUI)
-   {
-      const double angleDelta = 0.03; // radians (~1.7 degrees)
-
-      if (pUI->isUp())
-         howitzer.raise(angleDelta);
-      if (pUI->isDown())
-         howitzer.raise(-angleDelta);
-
-      if (pUI->isSpace())
-      {
-         firing = true;
-         flightTime = 0.0;  // Reset timer when firing starts
-      }
-   }
+   Simulator(const Position& posUpperRight);
+   void draw(ogstream& gout);
+   void input(const Interface* pUI);
 
 private:
-   Position posUpperRight;
-   Ground   ground;
-   Howitzer howitzer;
-   bool     initialized;
-   bool     firing;              
-   double   flightTime;   
+   void initializeSimulation();
+   void updateProjectileFlight();
+   void displayText(ogstream& gout);
+   void handleHowitzerInput(const Interface* pUI);
+   bool checkForHit() const;
+   void startFiring();
 
+   Projectile projectile;
+   Position   posUpperRight;
+   Howitzer   howitzer;
+   Ground     ground;
+   bool       initialized;
+   bool       firing;
+   bool       hit;
+   double     flightTime;
 };

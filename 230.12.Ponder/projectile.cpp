@@ -16,7 +16,6 @@
 
 using namespace std;
 
-
 void Projectile::fire(const Position& pos, const Angle& angle, double muzzleVelocity)
 {
    // Clear the flight path before firing
@@ -99,4 +98,39 @@ void Projectile::advance(double simulationTime)
    newState.t = newTime;
 
    flightPath.push_back(newState);
+   if (flightPath.size() > 20)
+   {
+      flightPath.erase(flightPath.begin());  // Remove the first (oldest) state
+   }
+}
+
+Position Projectile::getPosition() const
+{
+   // If the flight path is empty, the projectile has not been fired
+   if (flightPath.empty()) {
+      return Position();  // Return a default Position (0.0, 0.0)
+   }
+
+   // Return the position of the most recent entry in the flight path
+   return flightPath.back().pos;
+}
+
+void Projectile::draw(ogstream& gout, double flightTime) const
+{
+   // Get the total number of traces in the flight path (should be <= 20)
+   int totalTraces = flightPath.size();
+
+   // Use an iterator to iterate over the flight path
+   int i = 0;
+   for (auto it = flightPath.begin(); it != flightPath.end(); ++it, ++i)
+   {
+      const PositionVelocityTime& state = *it;
+
+      // Calculate the size based on the stage (index i) in the flight path
+      // Invert the scaling so the first state has the largest size
+      double size = (1.0 - i / static_cast<double>(totalTraces - 1)) * 5.0;
+
+      // Draw the projectile at each position with the calculated size
+      gout.drawProjectile(state.pos, size);
+   }
 }
