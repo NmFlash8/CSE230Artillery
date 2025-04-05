@@ -2,7 +2,7 @@
 * Source File:
 *    Lab 12: M777 Howitzer
 * Author:
-*    <your name here>
+ *    Diego Estrada & Noah McSheehy
 * Summary:
 *    Simulate firing the M777 howitzer 15mm artillery piece
 ************************************************************************/
@@ -25,15 +25,12 @@ using namespace std;
  **************************************/
 void callBack(const Interface* pUI, void* p)
 {
-   // the first step is to cast the void pointer into a simulator object. This
-   // is the first step of every single callback function in OpenGL. 
-   Simulator* pSim = (Simulator*)p;
-
+   Simulator* pSim = static_cast<Simulator*>(p);
    ogstream gout;
-   Position pos(10, 10);
-   gout = pos;
-   gout << "Hello world";
+   pSim->input(pUI);
+   pSim->draw(gout);
 }
+
 
 double Position::metersFromPixels = 40.0;
 

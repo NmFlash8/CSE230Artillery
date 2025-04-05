@@ -2,7 +2,7 @@
  * Header File:
  *    TEST PROJECTILE
  * Author:
- *    <your name here>
+ *    Diego Estrada & Noah McSheehy
  * Summary:
  *    All the unit tests for Projectile
  ************************************************************************/

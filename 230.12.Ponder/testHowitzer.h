@@ -2,7 +2,7 @@
  * Header File:
  *    TEST HOWITZER
  * Author:
- *    <your name here>
+ *    Diego Estrada & Noah McSheehy
  * Summary:
  *    All the unit tests for Howitzer
  ************************************************************************/

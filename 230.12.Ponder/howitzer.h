@@ -2,7 +2,7 @@
  * Header File:
  *    HOWITZER
  * Author:
- *    <your name here>
+ *    Diego Estrada & Noah McSheehy
  * Summary:
  *    Everything we need to know about a howitzer (aka the gun)
  ************************************************************************/
@@ -41,8 +41,8 @@ class Howitzer
       void draw(ogstream& gout, double flightTime) const
       {
          gout.drawHowitzer(position,
-            elevation.getRadians(),
-            flightTime);
+              elevation.getRadians(),
+              flightTime);
       }
 
       // where is the howitzer at right now?
@@ -52,7 +52,7 @@ class Howitzer
       void generatePosition(const Position& posUpperRight)
       {
          double xPixels = random(posUpperRight.getPixelsX() * 0.1,
-            posUpperRight.getPixelsX() * 0.9);
+                          posUpperRight.getPixelsX() * 0.9);
          position.setPixelsX(xPixels);
          position.setPixelsY(0);
       }

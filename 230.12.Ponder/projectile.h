@@ -2,7 +2,7 @@
  * Header File:
  *    PROJECTILE
  * Author:
- *    <your name here>
+ *    Diego Estrada & Noah McSheehy
  * Summary:
  *    Everything we need to know about a projectile
  ************************************************************************/
